@@ -1,0 +1,63 @@
+/* cricketers pension : if played more than 10 test matches and 100 odis - 50,000
+played more than 10 test matches - 25000
+played more tahn 100 odis - 15000
+played for india - 10000
+amount is incremented by 1/4th for every mom awarded 
+didnt play for india but played ipl - 8000
+didnt play for india or in ipl - 7000
+*/
+import java.lang.*;
+import java.util.*;
+class Pension{
+public static void main(String args[]){
+int amount = 0;
+int mom;
+float total_amount = amount;
+Scanner sc = new Scanner(System.in);
+System.out.println("1.played for India");
+System.out.println("2.played ipl");
+System.out.println("3.didnt play ipl or fo india");
+int option = sc.nextInt();
+switch(option) {
+
+case 1 : amount = 10000;
+    System.out.print("enter number of test matches played : ");
+     int test = sc.nextInt();
+    System.out.print("enter number of odi matches palyed : ");
+    int odi = sc.nextInt();
+    if(test>10 && odi>100)
+    amount +=50000;
+    else if (test>10)
+    amount += 25000;
+    else if(odi>100)
+    amount +=15000;
+    else
+    amount=amount;
+    System.out.println(amount);
+    System.out.print("enter number of man of the match awards recieved : ");
+    mom = sc.nextInt();
+    total_amount = amount;
+    System.out.println("FINAL AMOUNT : "+(total_amount + total_amount*0.25*mom));
+    break;
+case 2 : amount = 8000;
+System.out.print("enter number of man of the match awards recieved : ");
+       mom = sc.nextInt();
+      total_amount = amount;
+      System.out.println("FINAL AMOUNT : "+(total_amount+total_amount*0.25*mom));
+      break;
+case 3 : amount = 7000;
+System.out.print("enter number of man of the match awards recieved : ");
+     mom = sc.nextInt();
+     total_amount = amount;
+     System.out.println("FINAL AMOUNT : "+(total_amount+total_amount*0.25*mom));
+     break;
+default : System.out.print("invalid choice");
+          break;
+}
+}
+}
+
+
+
+
+
