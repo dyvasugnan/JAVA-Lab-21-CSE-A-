@@ -9,7 +9,6 @@ class Base{
 
 //Child class inheriting from the parent class
 class Derived extends Base {
- int num2;
  void display(int num2){
      System.out.println("num2: " + num2);
  }
