@@ -1,0 +1,27 @@
+class A{
+    int a=2;
+    void display(){
+        System.out.println("a= "+a);
+    }
+    }
+class B extends A{
+    int b=3;
+    void display1(){
+         super.display();
+        System.out.println("b= "+b);
+        
+    }
+}
+class C extends B{
+    int c=b*a;
+    void display2(){
+        super.display1();
+    System.out.println("a*b= "+c);
+}
+}
+class MultilevelInheritance{
+    public static void main(String[] args){
+        C c=new C();
+        c.display2();
+    }
+}
