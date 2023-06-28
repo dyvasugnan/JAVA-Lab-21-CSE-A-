@@ -1,0 +1,37 @@
+package javalab;
+
+class Principal{
+	void display() {
+		System.out.println("class principal");
+	}
+}
+class Hod extends Principal{
+	void display1() {
+		System.out.println("class hod");
+	}
+}
+class Faculty extends Principal{
+	void display2() {
+		System.out.println("class faculty");
+	}
+}
+class Student extends Faculty{
+	void display3() {
+		System.out.println("class student");
+	}
+}
+
+public class Hybrid_inheritance{
+	public static void main(String args[]) {
+		Hod h = new Hod();
+		Faculty f = new Faculty();
+		Student s = new Student();
+		h.display1();
+		h.display();
+		f.display2();
+		f.display(); 		
+		s.display3();
+		s.display2();
+		s.display();
+		}
+}
