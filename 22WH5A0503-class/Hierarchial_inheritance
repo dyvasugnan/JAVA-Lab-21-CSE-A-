@@ -1,0 +1,30 @@
+package javalab;
+import java.lang.*;
+
+class Animal{
+	void eat() {
+		System.out.print("eating");
+	}
+}
+class Dog extends Animal{
+	void bark() {
+		System.out.print("barking");
+	}
+}
+class Cat extends Animal{
+	void meow() {
+		System.out.print("meowing..");
+	}
+}
+class Lion extends Animal{
+	void roar() {
+		System.out.println("roaring..");
+	}
+}
+class Hierarchial_inheritance {
+	public static void main(String[] args) {
+		Lion l = new Lion();
+		l.roar();
+		l.eat();
+	}
+}
