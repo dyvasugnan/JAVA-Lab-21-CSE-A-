@@ -1,0 +1,28 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+public class Fibonacci
+{
+    public static void main(String args[])
+    {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(n<=0)
+            System.out.println("-1");
+        else
+        {
+            int f0 = 0, f1= 1, f2 = 1;
+            System.out.print(f0 +" "+f1+" "+f2+" ");
+            while(n-3>0)
+            {
+                f0 = f1;
+                f1 = f2;
+                f2 = f0+f1;
+                System.out.print(f2+" ");
+                n--;
+            }
+        }
+        System.out.print("\n");
+    }
+}
