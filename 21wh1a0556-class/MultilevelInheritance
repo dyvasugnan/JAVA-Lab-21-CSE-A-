@@ -1,0 +1,30 @@
+class One {
+	int a=8;
+	void show() {
+		System.out.println("a = "+a);
+	}
+}
+class Two extends One{
+	int b;
+	void square() {
+		b=a*a;
+		System.out.println("square of number : "+b);
+	}
+}
+class Three extends Two{
+	int c;
+	void cube() {
+		c=b*a;
+		System.out.println("cube of number : "+c);
+	}
+}
+public class MultilevelInheritance {
+
+	public static void main(String[] args) {
+		Three th = new Three();
+		th.show();
+		th.square();
+		th.cube();
+	}
+
+}
