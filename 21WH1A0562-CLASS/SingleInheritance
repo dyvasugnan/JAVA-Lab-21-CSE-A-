@@ -1,0 +1,17 @@
+class A{
+    void display(){
+        System.out.println("Super class");
+    }
+}
+class B extends A{
+    void show(){
+        System.out.println("sub class");
+        super.display();
+    }
+}
+class SingleInheritance{
+    public static void main(String[] args){
+        B b=new B();
+        b.show();
+    }
+}
