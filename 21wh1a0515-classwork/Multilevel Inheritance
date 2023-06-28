@@ -1,0 +1,31 @@
+public class Main {
+    public static void main(String[] args) {
+       C c = new C();
+       c.display();
+       c.display1();
+       c.display2();
+    }
+}
+class A {
+    int x = 10;
+    void display() {
+        System.out.println("Value of x: " + x+"\n");
+    }
+}
+
+class B extends A {
+    int y = 20;
+    void display1() {
+        System.out.println("Value of x: "  + x  );
+        System.out.println("Value of y: " + y);
+    }
+}
+
+class C extends B {
+    int z = 30;
+    void display2() {
+        System.out.println("Value of x: " + x);
+        System.out.println("Value of y: " + y);
+        System.out.println("Value of z: " + z);
+    }
+}
