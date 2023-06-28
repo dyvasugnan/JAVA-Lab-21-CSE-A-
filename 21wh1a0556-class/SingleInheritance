@@ -1,0 +1,22 @@
+class Class1{
+	int a=15,b=10;
+	void show(){
+		System.out.println("a = "+a+"\n"+"b = "+b);
+		}
+}
+class Class2 extends Class1{
+	int c;
+	void show1() {
+		c=a-b;
+		System.out.print("c = "+c);
+	}
+}
+public class SingleInheritance {
+
+	public static void main(String[] args) {
+		Class2 c2 = new Class2();
+		c2.show();
+		c2.show1();
+	}
+
+}
