@@ -1,0 +1,42 @@
+class C
+{
+   public void disp_c()
+   {
+System.out.println("C");
+   }
+}
+
+class A extends C
+{
+   public void disp_a()
+   {
+System.out.println("A");
+   }
+}
+
+class B extends C
+{
+   public void disp_b()
+   {
+System.out.println("B");
+   }
+
+}
+
+class D extends A
+{
+   public void disp_d()
+   {
+System.out.println("D");
+   }
+}
+class HybridInheritance
+{
+public static void main(String args[])
+{
+D obj = new D();
+obj.disp_a();
+obj.disp_c();
+obj.disp_d();
+}
+}
