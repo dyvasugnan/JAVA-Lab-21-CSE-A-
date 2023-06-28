@@ -1,0 +1,33 @@
+class Demo1{
+	int a=23,b=12;
+	void show() {
+		System.out.println("a="+a+"\n"+"b="+b);
+		
+	}
+}
+class Demo2 extends Demo1{
+	int c;
+	void sum() {
+		c=a+b;
+		System.out.println("sum = "+c);
+	}
+}
+class Demo3 extends Demo1{
+	int d;
+	void product() {
+		d=a*b;
+		System.out.println("product = "+d);
+	}
+}
+public class HierarchicalInheritance {
+
+	public static void main(String[] args) {
+		Demo2 d2 = new Demo2();
+		d2.show();
+		d2.sum();
+		Demo3 d3 = new Demo3();
+		d3.show();
+		d3.product();
+	}
+
+}
