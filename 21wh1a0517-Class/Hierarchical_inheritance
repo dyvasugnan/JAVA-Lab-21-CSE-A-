@@ -1,0 +1,33 @@
+package javalab;
+
+import java.lang.*;
+
+class Baseone{
+    void parentclass(){
+         System.out.println("parent class");
+    }
+}
+class Derivedone extends Baseone{
+    void firstderived(){
+        System.out.println("derived class one");
+
+    }
+}
+
+class Derivedtwo extends Baseone{
+    void secondderived(){
+        System.out.println("derived class two");
+    }
+}
+
+public class Hierarchical_inheritance {
+    public static void main(String args[]){
+        Derivedone obj1 =new Derivedone();
+        Derivedtwo obj2=new Derivedtwo();
+       obj1.parentclass();
+       obj1.firstderived();
+        obj2.parentclass();
+        obj2.secondderived();
+    }
+    
+}
