@@ -1,0 +1,73 @@
+mport java.util.*;
+
+
+public class StudentGrade{
+    
+
+static class Student{
+        String name;
+        int id;
+        int marks[] = new int[3];
+        int avg;
+        int sum ;
+        
+        Scanner sc = new Scanner(System.in);
+
+        void readDetails(){
+            System.out.println("Enter name, id");
+            name = sc.next();
+            id = sc.nextInt();
+        }
+        
+        
+
+        void readMarks(){
+                System.out.println("Enter marks");
+                for(int i=0;i<3;i++){
+                    marks[i] = sc.nextInt();
+                    sum += marks[i];
+                }
+        }
+
+        int getAvg(){
+            avg = sum/3;
+            return avg;
+        }
+                void display(){
+            System.out.println("Name: "+name);
+            System.out.println("Id: "+id);
+            System.out.println("Avg: "+avg);
+        }
+
+    }
+
+    public static void main(String args[]){
+            int n;
+            Scanner s = new Scanner(System.in);
+            n = s.nextInt();
+
+            Student stu[] = new Student[n];
+
+            int Avg[] = new int[n];
+
+            for(int i=0;i<n;i++){
+            
+                stu[i] = new Student();
+                stu[i].readDetails();
+                stu[i].readMarks();
+                Avg[i] = stu[i].getAvg();
+
+            }
+
+            int max_ind = 0;
+            for(int i=0;i<n;i++){
+                if(Avg[i] > Avg[max_ind]){
+                        max_ind = i;
+                    }
+            }
+           System.out.println("STudent with max avg");
+            stu[max_ind].display();
+    }
+
+}
+
