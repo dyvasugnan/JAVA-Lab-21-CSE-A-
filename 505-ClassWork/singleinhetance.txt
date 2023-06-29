@@ -1,0 +1,20 @@
+class A{
+    int x;
+}
+class B extends A{
+    int y;
+     B(){
+        x=10;
+        y=23;
+     }
+     void sum(){
+         System.out.println("Sum = "+(x+y));
+     }
+  }
+  class Main{
+      public static void main(String[] args){
+          B b= new B();
+          b.sum();
+      }
+  }
+
