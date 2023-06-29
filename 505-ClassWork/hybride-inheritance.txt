@@ -1,0 +1,36 @@
+class Add{
+     void add(int a,int b){
+         System.out.println("sum of two integers:"+(a+b));
+     }
+}
+class Sub extends Add{
+    void dif(int a,int b){
+        System.out.println("difference between two integers:"+(a-b));
+        super.add(12,23);
+}
+}
+class Product extends Sub{
+    void pro(int a,int b){
+        System.out.println("product of two integers:"+(a*b));
+       super.dif(23,12);
+       super.add(12,6);
+        
+    }
+}
+class Division extends Sub{
+    void div(int a,int b){
+        System.out.println("Division of two integers:"+(a/b));
+        super.dif(43,12);
+        super.add(12,13);
+    }
+}
+class Main{
+     public static void main(String[] args){
+    Product p= new Product();
+        //p.pro(12,12);
+        Division d= new Division();
+        d.div(10,5);
+        p.pro(12,12);
+    }
+}
+
