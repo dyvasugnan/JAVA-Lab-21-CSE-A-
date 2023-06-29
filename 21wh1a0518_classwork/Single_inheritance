@@ -1,0 +1,30 @@
+package javalab;
+
+class First{
+	    int x;
+	    First(){
+	        x=17;
+	    }
+	void display(){
+	 System.out.println(x);
+	 }
+
+	 }
+
+	 class Second extends First{
+	    int y;
+	    Second(){
+	        y = 26;
+	    }
+	    void display(){
+	    super.display();
+	    System.out.println(y);
+	    }
+	}
+
+	public class Single_inheritance{
+	    public static void main(String args[]){
+	        Second t = new Second();
+	        t.display();
+	    }
+	}
