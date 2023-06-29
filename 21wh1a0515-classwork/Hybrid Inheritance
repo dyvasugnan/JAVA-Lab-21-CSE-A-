@@ -1,0 +1,43 @@
+public class Main {
+    public static void main(String[] args) {
+        D d = new D();
+        d.display();
+        C c = new C();
+        c.display();
+        B b = new B();
+        b.display();
+        A a = new A();
+        a.display();
+    }
+}
+class A {
+    int x = 10;
+    void display() {
+        System.out.println("Value of x: " + x);
+    }
+}
+
+class B extends A {
+    int y = 20;
+    void display() {
+        System.out.println("Value of x: " + x);
+        System.out.println("Value of y: " + y);
+    }
+}
+
+class C extends A {
+    int z = 30;
+    void display() {
+        System.out.println("Value of x: " + x);
+        System.out.println("Value of z: " + z);
+    }
+}
+
+class D extends B {
+    int w = 40;
+    void display() {
+        System.out.println("Value of x: " + x);
+        System.out.println("Value of y: " + y);
+        System.out.println("Value of w: " + w);
+    }
+}
