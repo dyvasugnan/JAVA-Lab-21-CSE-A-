@@ -1,0 +1,25 @@
+class Add{
+     void add(int a,int b){
+         System.out.println("sum of two integers:"+(a+b));
+     }
+}
+class Sub extends Add{
+    void dif(int a,int b){
+        System.out.println("difference between two integers:"+(a-b));
+        super.add(12,23);
+}
+}
+class Product extends Add{
+    void pro(int a,int b){
+        System.out.println("product of two integers:"+(a*b));
+        super.add(12,6);
+ }
+}
+class Main{
+    public static void main(String[] args){
+        Product p= new Product();
+        Sub s= new Sub();
+        p.pro(10,5);
+        s.dif(23,12);
+    }
+}
