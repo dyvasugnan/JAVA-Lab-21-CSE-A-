@@ -1,7 +1,7 @@
 package hello;
 import java.lang.*;
 import java.util.*;
- class EvenNumberSum {
+class EvenNumberSum {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
