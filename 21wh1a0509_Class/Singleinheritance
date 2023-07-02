@@ -1,0 +1,20 @@
+package java;
+class One{
+	void display() {
+		System.out.println("Main class");	
+	}
+}
+class Two extends One{
+	void display1() {
+		super.display();
+		System.out.println("Derived class");
+	}
+}
+public class Singleinheritance {
+
+	public static void main(String[] args) {
+		Two t = new Two();
+		t.display1();
+	}
+
+}
