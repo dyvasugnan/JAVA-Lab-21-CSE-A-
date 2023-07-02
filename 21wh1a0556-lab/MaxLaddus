@@ -1,0 +1,22 @@
+import java.util.*;
+import java.math.*;
+class MaxLaddus{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s[]=sc.nextLine().split(",");
+        int n = s.length;
+        int a[]=new int[n];
+        for(int i=0;i<n;i++)
+        a[i]=Integer.parseInt(s[i]);
+        Arrays.sort(a);
+        int c=0;
+        for(int i=1;i<n;i++){
+            if(a[i-1]==a[i])
+            c++;
+        }
+        if((n-c)>=(n/2))
+        System.out.println(n/2);
+        else
+        System.out.println(n-c);
+    }
+}
