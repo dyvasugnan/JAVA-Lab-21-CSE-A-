@@ -1,0 +1,39 @@
+import java.lang.*;
+import java.util.*;
+
+class Cricket{
+public static void main(String args[])throws Exception{
+Scanner sc = new Scanner(System.in);
+int testm = sc.nextInt();
+int odi = sc.nextInt();
+int mom = sc.nextInt();
+System.out.println("Choose : india/IPL/none");
+int played = sc.nextInt();
+double sum=0;
+if(testm>10 && odi>100){
+sum+=50000;
+}
+else if(testm>10){
+sum+=25000;
+}
+else if(odi>100){
+sum+=15000;
+}
+if(played == 0){
+sum+=10000;
+}
+else if(played == 1){
+sum+=8000;
+}
+else{
+sum+=7000;
+}
+if(mom>0){
+sum = mom*(sum+(sum*(0.25)));
+System.out.println("Sum = "+sum);
+}
+else{
+System.out.println("Sum = "+sum);
+}
+}
+}
