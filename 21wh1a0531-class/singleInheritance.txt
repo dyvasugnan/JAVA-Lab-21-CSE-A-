@@ -1,0 +1,18 @@
+class Base{
+    void show(){
+        System.out.println("Base class");
+    }
+}
+class Derived extends Base{
+    void show1(){
+        System.out.println("Derived class");
+    }
+}
+
+class SingleInheritance   {
+    public static void main(String[] args) {
+        Derived d = new Derived();
+        d.show();
+        d.show1();
+    }
+}
