@@ -1,0 +1,25 @@
+class One{
+    int x;
+    One(){
+        x=1;
+    }
+	void display(){
+		System.out.println(x);
+	}
+ }
+class Two extends One{
+	int y;
+    Two(){
+		y=2;
+    }
+    void display(){
+		super.display();
+		System.out.println(y);
+    }
+}
+public class Singleinheritance{
+    public static void main(String args[]){
+        Two t1 = new Two();
+        t1.display();
+    }
+}
