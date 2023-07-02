@@ -1,0 +1,35 @@
+class Base{
+    void show(){
+        System.out.println("Base class");
+    }
+}
+class Derived1 extends Base{
+    void show1(){
+        System.out.println("Derived class1");
+    }
+}
+class Derived2 extends Derived1{
+    void show2(){
+        System.out.println("Derived  class2");
+    }
+}
+class Derived3 extends Derived1{
+    void show3(){
+        System.out.println("Derived Derived class");
+    }
+}
+
+
+class HybridInheritance   {
+    public static void main(String[] args) {
+        Derived1 d1 = new Derived1();
+        Derived2 d2 = new Derived2();
+        Derived3 d3 = new Derived3(); 
+        d1.show();
+        d1.show1();
+        d2.show1();
+        d2.show2();
+        d3.show1();
+        d3.show3();
+    }
+}
