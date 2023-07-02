@@ -1,0 +1,22 @@
+import java.util.*;
+class StudentMarks {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n=sc.nextInt();
+       String name,stuName="";
+       int id,marks,max=0,stuId=0,stuMarks=0;
+       for(int i=0;i<n;i++){
+           name = sc.next();
+           id = sc.nextInt();
+           marks = sc.nextInt();
+           if(max<marks){
+               max=marks;
+               stuName=name;
+               stuId=id;
+               stuMarks=marks;
+           }
+       }
+       System.out.print(stuName+"\n"+stuId+"\n"+stuMarks+"\n");
+       
+    }
+}
