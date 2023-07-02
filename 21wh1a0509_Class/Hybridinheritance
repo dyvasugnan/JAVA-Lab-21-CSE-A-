@@ -1,0 +1,25 @@
+class One{  
+  public void display(){  
+    System.out.println("class A");  
+  }  
+}  
+class Two extends One{  
+  public void display(){  
+    System.out.println("class B");  
+  }  
+}  
+class Three extends One{  
+  public void display(){  
+    System.out.println("class C");  
+  }     
+}  
+public class Four extends Two{  
+  public void display(){  
+    System.out.println("class D");  
+    }  
+  public static void main(String args[]){  
+    Four f = new Four();  
+    f.display();  
+  }  
+} 
+#class D
