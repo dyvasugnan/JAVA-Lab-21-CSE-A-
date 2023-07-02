@@ -1,0 +1,19 @@
+class One {
+	int a;
+}
+class Derived extends One{
+	int b;
+	Derived(){
+		a=10;
+		b=20;
+	}
+		public void sum() {
+		System.out.print("Sum : "+(a+b));
+	}
+}
+public class SingleInheritance{
+public static void main(String args[]) {
+Derived obj = new Derived();
+obj.sum();
+}
+}
