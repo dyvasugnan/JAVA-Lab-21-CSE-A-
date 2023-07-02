@@ -1,0 +1,26 @@
+class Base{
+    void show(){
+        System.out.println("Base class1");
+    }
+}
+class Derived1 extends Base{
+    void show1(){
+        System.out.println("Derived class1");
+    }
+}
+class Derived2 extends Base{
+    void show2(){
+        System.out.println("Derived  class2");
+    }
+}
+
+class HierarchicalInheritance   {
+    public static void main(String[] args) {
+        Derived1 d1 = new Derived1();
+        Derived2 d2 = new Derived2();
+        d1.show();
+        d1.show1();
+        d2.show();
+        d2.show2();
+    }
+}
