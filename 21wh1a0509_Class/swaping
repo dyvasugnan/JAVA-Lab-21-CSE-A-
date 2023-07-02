@@ -1,0 +1,27 @@
+import java.lang.*;
+import java.util.*;
+class Demo{
+	int a;
+	int b;
+	Demo(int x,int y){
+		a = x;
+		b = y;
+	}
+	void swap(){
+		int temp = a;
+		a = b;
+		b = temp;
+	}
+	void display(){
+		System.out.println(a+" "+b);
+	}
+}
+public class Swap {
+	public static void main(String[] args) {
+		int a = 10,b = 20;
+		System.out.println("a "+a+" "+"b "+b);
+		Demo d = new Demo(a,b);
+		d.swap();
+		d.display();
+	}
+}
