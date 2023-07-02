@@ -1,0 +1,36 @@
+import java.util.*;
+class CricketPension {
+    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
+      System.out.println("player represented for India[y or n]");
+      String india = scanner.nextLine();
+      if (india.equalsIgnoreCase("y")) {
+        System.out.println("Enter the number of Test matches he has played");
+        int testMatches = scanner.nextInt();
+        System.out.println("Enter the number of ODI matches he has played");
+        int odiMatches = scanner.nextInt();
+        System.out.println("Number of man of the matches he has won");
+        int manOfTheMatches = scanner.nextInt();
+        int pensionAmount = 10000;
+        if (testMatches > 10 && odiMatches > 100) 
+          pensionAmount += 50000;
+        else if (testMatches > 10) 
+          pensionAmount += 25000;
+        else if (odiMatches > 100) 
+          pensionAmount += 15000;
+        pensionAmount += (manOfTheMatches * 2500);
+        System.out.println("Pension amount: Rs." + pensionAmount);
+    } 
+    else {
+      System.out.println("Enter the player's playing status [IPL/Other]");
+      String playingStatus = scanner.next();
+      int pensionAmount;
+      if (playingStatus.equalsIgnoreCase("IPL")) 
+        pensionAmount = 8000;
+      else 
+        pensionAmount = 7000;
+      System.out.println("Pension amount: Rs." + pensionAmount);
+    }
+
+  }
+}
