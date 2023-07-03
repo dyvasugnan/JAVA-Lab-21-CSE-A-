@@ -1,0 +1,25 @@
+class A{
+	void displayA() {
+		System.out.println("Super class A");
+	}
+}
+class B extends A{
+	void displayB() {
+		System.out.println("Sub class B");
+	}
+}
+class C extends A{
+	void displayC() {
+		System.out.println("Sub class C");
+	}
+}
+public class Hierarchal {
+	public static void main(String args[]) {
+	B b = new B();
+	C c = new C();
+	b.displayA();
+	b.displayB();
+	c.displayA();
+	c.displayC();
+	}
+}

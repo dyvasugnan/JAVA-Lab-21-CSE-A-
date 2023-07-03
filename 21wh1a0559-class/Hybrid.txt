@@ -1,0 +1,35 @@
+class A{
+	void displayA() {
+		System.out.println("Super class A");
+	}
+}
+class B extends A{
+	void displayB() {
+		System.out.println("Sub class B");
+	}
+}
+class C extends A{
+	void displayC() {
+		System.out.println("Sub class C");
+	}
+}
+class D extends B{
+	void displayD() {
+		System.out.println("Sub-sub class D");
+	}
+}
+
+public class Hybrid{
+	public static void main(String args[]) {
+		B b = new B();
+		C c = new C();
+		D d = new D();
+		b.displayB();
+		b.displayA();
+		c.displayC();
+		c.displayA(); 		
+		d.displayD();
+		d.displayB();
+		d.displayA();
+		}
+}
