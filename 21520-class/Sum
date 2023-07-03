@@ -1,0 +1,24 @@
+import java.util.*;
+public class Sum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	        Scanner sc=new Scanner(System.in);
+	        System.out.print("Enter the size of an array");
+	        int n=sc.nextInt();
+	        int [] num=new int[n];
+	        System.out.print("Enter the array elemnets:");
+	        for(int i=0;i<n;i++){
+	            num[i]=sc.nextInt();
+	        }
+	        int sum=0;
+	        
+	        for(int i=0;i<n;i++){
+	            sum=sum+num[i];
+	        }
+	        System.out.print(sum);
+	
+
+	}
+
+}
