@@ -1,0 +1,25 @@
+class Vehicle{
+	public void display() {
+		System.out.println("This is a vehicle");
+	}
+}
+class FourWheeler extends Vehicle{
+	public void show() {
+		System.out.println("This is a four wheeler");
+	}
+}
+class Car extends Vehicle{
+	public void Show() {
+		System.out.println("This is a car");
+	}
+}
+public class HierarchicalInheritance {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Car c= new Car();
+		c.display();
+		c.Show();
+	}
+
+}
