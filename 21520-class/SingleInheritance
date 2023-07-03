@@ -1,0 +1,17 @@
+class Vehicle{
+	void display() {
+		System.out.println("This is a vehicle");
+	}
+}
+class FourWheeler extends Vehicle{
+	void show() {
+		System.out.println("This is  a four wheeler");
+	}
+}
+class SingleInheritance{
+	public static void main(String[] args) {
+		FourWheeler fw = new FourWheeler();
+		fw.show();
+		fw.display();
+	}
+}
