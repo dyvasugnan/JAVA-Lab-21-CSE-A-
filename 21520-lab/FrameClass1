@@ -1,0 +1,39 @@
+package JavaLab;
+
+	import java.awt.*;
+	import java.awt.event.*;
+
+	public class FrameClass1 extends Frame {
+	public void paint(Graphics g) {
+	this.setBackground(Color.cyan);
+	g.drawRect(100,100, 800, 600);
+	g.setColor(Color.black);
+	g.drawOval(150,150,450,450);
+	g.setColor(Color.yellow);
+	g.fillOval(150,150,450,450);
+	g.drawOval(250, 300, 50, 50);
+	g.setColor(Color.black);
+	g.fillOval(250, 300, 50, 50);
+	g.drawOval(450, 300, 50, 50);
+	g.setColor(Color.black);
+	g.fillOval(450,300 ,50, 50);
+	g.drawArc(259, 350,200, 150, 150, 250);
+	g.setColor(Color.black);
+	g.drawLine(350,380 , 350, 300);
+	g.setColor(Color.black);
+	}
+	public static void main(String[] args) {
+	// TODO Auto-generated method stub
+	FrameClass1 f= new FrameClass1();
+	f.setSize(800,600);
+	f.setVisible(true);
+	f.addWindowListener(new Myclass());
+
+	}
+	}
+	class Myclass extends WindowAdapter{
+	public void windowClosing(WindowEvent we) {
+	System.exit(0);
+	}
+
+	}
