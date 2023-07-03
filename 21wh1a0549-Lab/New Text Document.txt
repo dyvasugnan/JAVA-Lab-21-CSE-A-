@@ -1,0 +1,65 @@
+
+class A
+{
+    int a;
+}
+class B extends A
+{
+    int b;
+    B()
+    {
+        a=5;
+        b=10;
+    }
+    void sum()
+    {
+        System.out.print("Sum is "+(a+b));
+    }
+}
+class Single
+{
+    public static void main(String args[])
+    {
+        B obj=new B();
+        obj.sum();
+    }
+}
+
+
+
+
+
+
+
+
+class A
+{
+    int a;
+}
+class B extends A
+{
+    int b;
+}
+class C extends B
+{
+    int c;
+    C()
+    {
+        a=10;
+        b=5;
+        c=3;
+    }
+    void mul()
+    {
+        System.out.print("Multiplication is "+(a*b*c));
+    }
+}
+class MultiLevel
+{
+    public static void main(String args[])
+    {
+        C obj=new C();
+        obj.mul();
+    }
+
+}
