@@ -1,0 +1,21 @@
+import java.util.Scanner;
+class gapfull{
+    public static void main(String args[]){
+        int num;
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter any number : ");
+        num=sc.nextInt();
+        int lastdigit=num%10;
+        int temp=num;
+        while(num>9)
+            num=num/10;
+        System.out.println("First Digit : "+num);
+        System.out.println("Last Digit : "+lastdigit);
+        int n = num*10 + lastdigit;
+        System.out.println("Number: "+n);
+        if(temp%n==0)
+            System.out.println("Gapfull");
+        else
+            System.out.println("Not gapfull");
+    }
+}
