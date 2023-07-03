@@ -1,0 +1,31 @@
+import java.lang.*;
+import java.util.*;
+class Pension{
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the No of test matches and ODIs : ");
+        int matches = sc.nextInt();
+        int ODIs = sc.nextInt();
+        int pension=0,mom,ipl;
+        System.out.print(" No. of Man of the match awards : ");
+        mom = sc.nextInt();
+        System.out.println("IPL matches played : ");
+        ipl = sc.nextInt();
+
+        if(matches>10 && ODIs>100)
+            pension = 50000;
+        else if(matches>10)
+            pension = 25000;
+        else if(ODIs>100)
+            pension = 15000;
+        if(matches>0 || ODIs>0)
+            pension += 10000;
+        else if(ipl > 0)
+            pension += 8000;
+        else
+            pension += 7000;
+
+        pension += mom*0.25*pension;
+        System.out.println("Total Pension = "+pension);
+    }
+}
