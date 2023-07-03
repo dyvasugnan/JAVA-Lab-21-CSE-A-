@@ -1,0 +1,26 @@
+import java.io.*;
+public class StudentInfo {
+
+	public static void main(String[] args) throws Exception{
+		// TODO Auto-generated method stub
+		InputStreamReader isr =new InputStreamReader(System.in);
+        BufferedReader br=new BufferedReader(isr);
+        System.out.print("Enter name");
+        String Name= br.readLine();
+        System.out.println(Name);
+        System.out.print("Enter an age");
+        String str1=br.readLine();
+        int age=Integer.parseInt(str1);
+        System.out.println(age);
+        System.out.print("Enter Gender");
+        char gender=(char)br.readLine().charAt(0);
+        System.out.println(gender);
+        System.out.print("Enter marks");
+        String str2=br.readLine();
+        float marks=Float.parseFloat(str2);
+        System.out.println(marks);
+
+
+	}
+
+}
