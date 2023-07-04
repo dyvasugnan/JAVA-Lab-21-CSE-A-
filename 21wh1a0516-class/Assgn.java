@@ -8,9 +8,6 @@ class Array1D{
 	}
 
 	Scanner sc = new Scanner(System.in);
-
-
-
 	int[] read(int a[]){
 		for(int i=0;i<c;i++){
 			a[i] = sc.nextInt();
@@ -31,25 +28,20 @@ class Array2D extends Array1D{
 		super(c);
 		this.r = r;
 	}
+	
 	int[][] read(int b[][]){
 		for(int i=0;i<r;i++){
-			
-			int z[] = new int[c];
-			z = super.read(z);
-			b[i] = z;
-
+			super.read(b[i]);
 		}
 		return b;
 	}
 	void display(int b[][]){
 		for(int i=0;i<r;i++){
-			
-			int z[] = new int [c];
-			z = b[i];
-			super.display(z);
+			super.display(b[i]);
 			System.out.println("");
 		}
 	}
+	
 }
 		
 
@@ -68,20 +60,12 @@ class Array3D extends Array2D{
 
 	void display(int s[][][]){
 		for(int i=0;i<h;i++){
-			
 			super.display(s[i]);
 			System.out.println();
 		}
 	}
+	
 }
-
-
-
-
-
-
-
-
 
 class Assgn{
 	public static void main(String args[]){
