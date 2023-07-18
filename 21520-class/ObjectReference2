@@ -1,0 +1,43 @@
+class Three{
+	int getx(int x) {
+		return x;
+	}
+	class Second{
+		Three obj;
+		Second(Three obj){
+			this.obj=obj;
+		}
+		int Square(int x) {
+			int res=x*obj.getx(x);
+			return res;
+		}
+	}
+	class One{
+		Second obj2;
+		One(Second obj2){
+			this.obj2=obj2;
+		}
+		int cube(int x){
+			int res=x*obj2.Square(x);
+			return res;
+		}
+		int square(int x) {
+			int res=obj2.Square(x);
+			return res;
+		}
+	}
+}
+public class Objectreference2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Three three = new Three();
+        Three.Second second = three.new Second(three);
+        Three.One one = three.new  One(second);
+        int res=one.square(10);
+        int result = one.cube(5);
+        System.out.println("Square:"+res);
+        System.out.println("Result: " + result);
+    }
+
+}
