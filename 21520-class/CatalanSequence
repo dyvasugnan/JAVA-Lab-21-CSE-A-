@@ -1,0 +1,24 @@
+//two programs 
+class OuterTest{
+	//void display1(){
+	class Inner{
+		void show() {
+			System.out.println("Inner Class");
+		}
+	}
+	//Inner in=new Inner();
+	//in.show();
+	//}
+}
+public class CatalanSequence {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		 OuterTest outer = new OuterTest();
+	        OuterTest.Inner inner = outer.new Inner();
+	        inner.show();
+	        //OuterTest outer=new outerTest();
+		//out.display1();
+	}
+
+}
