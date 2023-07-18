@@ -1,0 +1,25 @@
+class StudentA1{
+	int a,b;
+	void setDataA(int x,int y){
+		a=x;
+		b=y;
+	}
+	StudentA1 getDataA(){
+		System.out.println(a);
+		System.out.println(b);
+		return this;
+	}
+}
+	
+public class MethodChaining {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		StudentA1 s=new StudentA1();
+		s.setDataA(10,20);
+		s.getDataA();
+		s.setDataA(20,6);
+		s.getDataA();
+	}
+
+}
