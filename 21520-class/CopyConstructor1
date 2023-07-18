@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+class Box12{
+	int l;
+	int b;
+	Box12(int length,int breadth){
+		l=length;
+		b=breadth;
+		int area=l*b;
+		System.out.println("Area is:"+area);
+	}
+	Box12(Box12 x){
+		l=x.l;
+		b=x.b;
+	}
+}
+public class CopyConstructor1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter the length");
+		int length=sc.nextInt();
+		System.out.println("Enter the breadth");
+		int breadth=sc.nextInt();
+		Box12 a=new Box12(length,breadth);
+	}
+
+}
