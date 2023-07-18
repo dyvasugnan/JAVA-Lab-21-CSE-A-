@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+class Box{
+	int l;
+	int b;
+	Box(){
+		System.out.println("enter length");
+		Scanner sc=new Scanner(System.in);
+		l=sc.nextInt();
+		System.out.println("ener breadth");
+		b=sc.nextInt();
+		System.out.println(l*b);
+	}
+}
+public class AreaByDefaultConstructor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Box a=new Box();
+
+	}
+
+}
