@@ -1,0 +1,20 @@
+class Student1 {
+	int age;
+	float marks;
+	Student1(){
+		age=20;
+		marks=14.5f;
+	}
+	void display() {
+		System.out.println(age);
+		System.out.println(marks);
+	}
+}
+class DefaultConstructor{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Student1 s=new Student1();
+		s.display();
+	}
+}
