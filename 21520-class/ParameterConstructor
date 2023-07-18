@@ -1,0 +1,25 @@
+class StudentA {
+	int age;
+	float marks;
+	StudentA(){
+		
+	}
+	StudentA(int age ,float marks){
+		this.age=age;
+		this.marks=marks;
+	}
+	void display() {
+		System.out.println(age);
+		System.out.println(marks);
+	}
+}
+class ParameterConstructor{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int age=20;
+		float marks=14.5f;
+		StudentA s=new StudentA(age,marks);
+		s.display();
+	}
+}
