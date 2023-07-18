@@ -1,0 +1,23 @@
+import java.util.Scanner;
+class Person{
+	int age;
+	String name;
+	Scanner sc=new Scanner(System.in);
+	Person(){
+		System.out.println("Enter age and name");
+		int age=sc.nextInt();
+		String name=sc.nextLine();
+		System.out.print(age);
+		System.out.println(name);
+	}
+}
+public class DefaultConstructor1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person Divya=new Person();
+		Person obj=new Person();
+
+	}
+
+}
