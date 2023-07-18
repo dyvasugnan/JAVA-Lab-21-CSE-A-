@@ -1,0 +1,35 @@
+class One{
+	Two t;
+	One(Two t){
+		this.t=t;
+	}
+	class Three{
+		int x;
+		int getx() {
+		return x;
+		}
+	}
+	class Two{
+		Three t;
+		Two(Three t){
+			this.t=t;
+			}
+		void display() {
+			System.out.println("square:"+(t.getx()*t.getx()));
+		}
+	}
+}
+public class ObjectReference1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		One one = new One(null); // Initialize one with null
+        One.Three three = one.new Three(); // Create an instance of Three
+        three.x=5;//change the number here 
+        One.Two two = one.new Two(three); // Create an instance of Two with Three instance
+        one.t = two; // Assign the Two instance to t in One
+        one.t.display();
+
+	}
+
+}
