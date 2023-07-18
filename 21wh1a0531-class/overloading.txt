@@ -1,0 +1,22 @@
+class Demo{
+    int L;
+    Demo(int l){
+        L = l;
+        System.out.println(L);
+    }
+    Demo(int l,int m){
+        L = l+m;
+        System.out.println(L);
+    }
+    Demo(int m,int n,int o){
+        L = m*n*o;
+        System.out.println(L);
+    }
+}
+class Overloading
+{
+	public static void main(String[] args) {
+		Demo d = new Demo(5,5,2);
+		Demo d1 = new Demo(3,4);
+	}
+}
