@@ -1,0 +1,16 @@
+public class ObjectWithinClass {
+	int x;
+	ObjectWithinClass(){
+		x=10;
+	}
+	void show() {
+		System.out.println("Inner class");
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		ObjectWithinClass obj=new ObjectWithinClass();
+		obj.show();
+	}
+
+}
