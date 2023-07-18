@@ -1,0 +1,50 @@
+class StudentDetails1{
+	String name;
+	int age;
+	float marks;
+	int rollno;
+	StudentDetails1 setData(String Name) {
+		name=Name;
+		return this;
+	}
+	StudentDetails1 setData(String Name,int Age) {
+		setData(Name);
+		age=Age;
+		return this;
+	}
+	StudentDetails1 setData(String Name,int Age,float Marks){
+		setData(Name,Age);
+		marks=Marks;
+		return this;
+	}
+	StudentDetails1 setData(String Name,int Age,float Marks,int Rollno) {
+		setData(Name,Age,Marks);
+		rollno=Rollno;
+		return this;
+	}
+	StudentDetails1 getData() {
+		System.out.println(name);
+		return this;
+	}
+	 StudentDetails1 getDataWithAge() {
+	        System.out.println(name + " " + age);
+	        return this;
+	}
+	 StudentDetails1 getDataWithMarks() {
+		 System.out.println(name+" "+age+" "+marks);
+		 return this;
+	 }
+	 StudentDetails1 getDataWithRollno() {
+		 System.out.println(name+" "+age+" "+marks);
+		 return this;
+	 }
+}
+public class FourSetsAndFourGets {
+	public static void main(String[] args) {
+        StudentDetails1 student = new StudentDetails1();
+        student.setData("Divya").getData();
+        student.setData("Divya", 20).getDataWithAge();
+        student.setData("Divya", 20, 85.5f).getDataWithMarks();
+        student.setData("Divya", 22, 92.5f, 101).getDataWithRollno();
+    }
+}
