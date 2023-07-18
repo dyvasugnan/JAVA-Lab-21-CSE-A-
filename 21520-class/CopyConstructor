@@ -1,0 +1,24 @@
+class Person1{
+	int  age;
+	String name;
+	Person1(int Age,String Name){
+		age=Age;
+		name=Name;
+		System.out.println(age);
+		System.out.println(name);
+	}
+	Person1(Person1 p){
+		age=p.age;
+		name=p.name;
+	}
+}
+public class CopyConstructor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Person1 r=new Person1(20,"Divya");
+		Person1 s=new Person1(18,"Shruthi");
+
+	}
+
+}
