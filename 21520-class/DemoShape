@@ -1,0 +1,38 @@
+class ShapeA{
+	protected double l;
+	ShapeA(double l){
+	this.l=l;
+	}
+}
+class SquareA extends ShapeA{
+	SquareA(double l){
+		super(l);
+	}
+	double areaSquare() {
+		return(l*l);
+	}
+}
+class RectangleA extends ShapeA{
+	private double b;
+	RectangleA(double l,double b){
+		super(l);
+		this.b=b;
+	}
+	double rectArea() {
+		return(l*b);
+	}
+}
+public class DemoShape {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		SquareA s=new SquareA(5);
+		double sq_area=s.areaSquare();
+		System.out.println("area of the square"+sq_area);
+		RectangleA r=new RectangleA(10,5);
+		double rect_area=r.rectArea();
+		System.out.println("Area of the Rectangle:"+rect_area);
+
+	}
+
+}
