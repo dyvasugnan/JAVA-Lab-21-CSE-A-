@@ -1,0 +1,23 @@
+class PersonA{
+	int age;
+	String name;
+	PersonA(){
+		
+	}
+	PersonA(String Name,int Age){
+		name=Name;
+		age=Age;
+		System.out.println(name);
+		System.out.println(age);
+	}
+}
+class ParameterConstructor1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		PersonA d=new PersonA("Divya",25);
+		PersonA s=new PersonA("Shruthi",18);
+
+	}
+
+}
