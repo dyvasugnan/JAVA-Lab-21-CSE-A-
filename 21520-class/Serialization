@@ -1,0 +1,26 @@
+import java.io.*;
+
+public class Serialization {
+		// TODO Auto-generated method stub
+		static class Emp1 implements Serializable{
+			int id;
+			String name;
+			Emp1(int x,String n){
+				id=x;
+				name=n;
+			}
+		}
+			public static void main(String args[]) {
+				try {
+				Emp1 E = new Emp1(20,"abcd");
+				FileOutputStream fos=new FileOutputStream("test.txt");
+				ObjectOutputStream oos=new ObjectOutputStream(fos);
+				oos.writeObject(E);
+				oos.close();
+				System.out.println("Success");
+				}
+				catch(Exception e) {
+					System.out.println(e);
+				}
+			}
+}
