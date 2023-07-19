@@ -1,3 +1,5 @@
+// given an array find the last occurence of the element and return index
+
 import java.util.* ;
 import java.io.*; 
 class FindElement {
