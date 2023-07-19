@@ -1,0 +1,23 @@
+class One{  
+  void display1(){
+    System.out.println("class One");
+  }  
+}  
+class Two extends One{  
+  void display2(){
+    System.out.println("Class two");
+  }  
+}  
+class Three extends Two{  
+  void display3(){
+    System.out.println("class three");
+  }  
+}  
+class Multilevelinheritance{  
+  public static void main(String args[]){  
+    Three c=new Three();  
+    d.display1();  
+    d.display2();  
+    d.display3();  
+  }
+}   
