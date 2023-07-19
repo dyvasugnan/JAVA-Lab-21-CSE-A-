@@ -77,5 +77,6 @@ class Main{
         Array2d a1 = new Array2d(2, 5);
         a1.get();
         a1.print();
+
     }
 }
