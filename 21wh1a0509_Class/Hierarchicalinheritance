@@ -1,22 +1,22 @@
 class One{  
   void display1(){
-    System.out.println("class A");
+    System.out.println("class one");
   }  
 }  
 class Two extends One{  
   void display2(){
-    System.out.println("class B");
+  System.out.println("class two");
   }  
 }  
 class Three extends One{  
   void display3(){
-    System.out.println("class C");
+    System.out.println("class three");
   }  
 }  
-class Hierarchicalinheritance{  
+class Hierachicaliheritance3{  
   public static void main(String args[]){  
-    Three t=new Three();  
-    t.display3();  
-    t.display1();    
+    Three c=new Three();  
+    c.display3();  
+    c.display1();  
   }
-}  
+} 
