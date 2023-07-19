@@ -1,0 +1,26 @@
+import java.util.Scanner;
+class GapFull {
+    public static void main(String[] args) {
+        int num;
+        int num2;
+        System.out.print("Enter A: ");
+        Scanner sc = new Scanner(System.in);
+        num = sc.nextInt();
+        int c = 0, temp, fd, ld;
+        ld = num % 10;
+        temp = num;
+        while (num != 0) {
+            num = num / 10;
+            c++;
+        }
+        if (c >= 3) {
+            fd = temp / (int) Math.pow(10, c - 1);
+            num2 = fd * 10 + ld;
+            System.out.print("first digit= \n"+fd);
+            if (temp % num2 == 0)
+                System.out.println("Gapfill number");
+            else
+                System.out.println("Not a gapfill number");
+        }
+    }
+}
