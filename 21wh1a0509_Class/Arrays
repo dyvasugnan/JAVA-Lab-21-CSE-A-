@@ -1,0 +1,80 @@
+import java.util.*;
+import java.io.*;
+
+class Array1D{
+    int len;
+    int[] arr;
+    Array1D(int l){
+        len = l;
+        arr = new int[len];
+    }
+    void readArray(){
+        Scanner sc = new Scanner(System.in);
+        for(int i=0; i<len; i++){
+            arr[i] = sc.nextInt();
+        }
+    }
+    void printArray(){
+        for(int num: arr)
+            System.out.println(num);
+    }
+}
+
+class Array2D extends Array1D{
+    Array1D[] arr;
+    int r, c;
+    Array2D(int r,int c){
+        super(r);
+        this.c = c;
+        arr = new Array1D[r];
+        for(int i=0; i<r; i++){
+            arr[i] = new Array1D(c);
+        }
+    }
+   
+    void readArray(){
+        for(Array1D num: arr){
+            num.readArray();
+        }
+    }
+   
+    void printArray(){
+        for(Array1D num: arr){
+            num.printArray();
+        }
+    }
+}
+
+class Array3D extends Array2D{
+    Array2D[] arr;
+    int l, r, c;
+    Array3D(int l, int r,int c){
+        super(r, c);
+        this.l = l;
+       
+        arr = new Array2D[l];
+        for(int i=0; i<l; i++){
+            arr[i] = new Array2D(r, c);
+        }
+    }
+   
+    void readArray(){
+        for(Array2D num: arr){
+            num.readArray();
+        }
+    }
+   
+    void printArray(){
+        for(Array2D num: arr){
+            num.printArray();
+        }
+    }
+}
+
+class Arrays{
+    public static void main(String args[]){
+        Array2D a1 = new Array2D(2, 5);
+        a1.readArray();
+        a1.printArray();
+    }
+}
