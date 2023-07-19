@@ -1,0 +1,20 @@
+import java.util.Scanner;
+
+class Sample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        int num = sc.nextInt();
+        int x = num % 10;
+        System.out.println("Last digit is: " + x);
+        
+        String num1 = Integer.toString(num);
+        int lgt = num1.length();
+        double power = Math.pow(10, lgt - 1);
+        int y = (int)(num / power);
+        System.out.println("First digit is: " + y);
+        int div=x*10 + y;
+        int result=(int)(num/div);
+        System.out.println(+result);
+    }
+}
