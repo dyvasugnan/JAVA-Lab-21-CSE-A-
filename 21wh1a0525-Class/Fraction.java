@@ -1,3 +1,6 @@
+//given two fractions
+//we need to print addition of 2 fractions or product of two fractions in simplified manner
+
 import java.util.*;
 import java.io.*;
 
