@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number of test cases
+        int numTestCases = scanner.nextInt();
+
+        // Process each test case
+        for (int i = 0; i < numTestCases; i++) {
+            long n = scanner.nextLong(); // Use long data type for 'n'
+            long sum = sumOfEvenFibonacciTerms(n);
+            System.out.println(sum);
+        }
+
+        scanner.close();
+    }
+
+    public static long sumOfEvenFibonacciTerms(long n) {
+        long sum = 0;
+        long a = 1;
+        long b = 2;
+
+        while (b <= n) {
+            if (b % 2 == 0) {
+                sum += b;
+            }
+
+            long next = a + b;
+            a = b;
+            b = next;
+        }
+
+        return sum;
+    }
+}
