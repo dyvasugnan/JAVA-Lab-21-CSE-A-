@@ -1,6 +1,6 @@
 package javalab;
 import java.util.*;
-class Thanos{
+class PlanetData{
     public static void main(String args[]){
     	  Scanner sc = new Scanner(System.in);
         long population , rate , food, years = 0;
