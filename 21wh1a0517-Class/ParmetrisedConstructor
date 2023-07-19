@@ -11,7 +11,7 @@ class Test{
 		System.out.println("Age   :"+age);
 	}
 }
-public class PrametrisedConstructor {
+public class ParmetrisedConstructor {
    public static void main(String args[]) {
 	   Test t = new Test("likhitha",18);
 	   t.display();
