@@ -1,13 +1,13 @@
 package java;
 class One{
 	void display() {
-		System.out.println("Main class");	
+		System.out.println("super class");	
 	}
 }
 class Two extends One{
 	void display1() {
 		super.display();
-		System.out.println("Derived class");
+		System.out.println("sub class");
 	}
 }
 public class Singleinheritance {
