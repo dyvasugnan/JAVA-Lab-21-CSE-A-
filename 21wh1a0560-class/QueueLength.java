@@ -1,3 +1,10 @@
+/*
+Input Format
+
+First line has two numbers N and Q - representing size of grid and number of queries respectively.
+
+Next Q lines has Q queries, one per line. Each query consists of two integers x, y denoting the coordinates of the counter C and is independent of each other, for the given grid.
+*/
 import java.util.*;
 class QueueLength{
     public static void main(String[] args){
