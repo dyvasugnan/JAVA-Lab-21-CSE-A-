@@ -1,0 +1,37 @@
+import java.util.*;
+  2 import java.lang.*;
+  3 class Cricket{
+  4 public static void main(String args[]){
+  5 Scanner sc = new Scanner(System.in);
+  6 System.out.println("Enter the total number of matches");
+  7 int a = sc.nextInt();
+  8 System.out.println("Total no.of ODI's: ");
+  9 int b = sc.nextInt();
+ 10 System.out.println("Played for India(0,1): ");
+ 11 int d = sc.nextInt();
+ 12 System.out.println("played for IPL(0,1): ");
+ 13 int e = sc.nextInt();
+ 14
+ 15 int f=1;
+ 16 if (a>10 && b>100)
+ 17     f=50000;
+ 18 else if(a<10 && b>100)
+ 19     f=25000;
+ 20  else if(a>10 && b>100)
+ 21     f= 10000;
+ 22 else if(d==1)
+ 23     f = 10000;
+ 24 else if(d==0 && e==1)
+ 25     f = 8000;
+ 26 else if(d==0 && e==1)
+ 27     f = 7000;
+ 28 System.out.println("Enter the number of matches received: ");
+ 29 int c = sc.nextInt();
+ 30 for(int i=1;i<=c;i++){
+ 31     f+=f/4;
+ 32 }
+ 33 System.out.println(f);
+ 34 }
+ 35 }
+ 36
+ 37
