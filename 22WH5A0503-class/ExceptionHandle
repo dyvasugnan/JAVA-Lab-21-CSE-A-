@@ -1,0 +1,19 @@
+package javalab;
+
+public class ExceptionHandle {
+
+	public static void main(String[] args) {
+		try {
+			int divideByZero = 5 / 0;
+		}
+		catch(ArithmeticException e) {
+			System.out.println("ArithematicException => " + e.getMessage());
+		}
+		finally {
+			System.out.println("This is finally block");
+		}
+		// TODO Auto-generated method stub
+
+	}
+
+}
