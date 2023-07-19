@@ -78,15 +78,6 @@ class Main{
         a1.get();
         a1.print();
         System.out.println();
-
-		Array2d b1 = new Array2d(3, 5);
-		b1.get();
-		b1.print();
-        System.out.println();
-
-		Array3d c1 = new Array3d(2,2,3);
-		c1.get();
-		c1.print();
-		System.out.println();
-    }
 }
+}
+		
