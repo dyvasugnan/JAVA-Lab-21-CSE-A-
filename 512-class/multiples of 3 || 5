@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number of test cases
+        int numTestCases = scanner.nextInt();
+
+        // Process each test case
+        for (int i = 0; i < numTestCases; i++) {
+            int n = scanner.nextInt();
+            long sum = sumOfMultiplesOf3Or5(n);
+            System.out.println(sum);
+        }
+
+        scanner.close();
+    }
+
+    public static long sumOfMultiplesOf3Or5(int n) {
+        n -= 1; // Since we need multiples BELOW 'n', we decrease it by 1.
+        long sum = sumOfMultiples(n, 3) + sumOfMultiples(n, 5) - sumOfMultiples(n, 15);
+        return sum;
+    }
+
+    public static long sumOfMultiples(int n, int m) {
+        long k = n / m;
+        return m * k * (k + 1) / 2;
+    }
+}
