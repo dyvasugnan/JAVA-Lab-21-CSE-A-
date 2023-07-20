@@ -1,19 +1,19 @@
-import java.lang.*;
-import java.util.Scanner;
-class GapFull{
-    public static void main(String args[]){
-        System.out.print("Enter a number: ");
+import java.util.*;
+public class GapFull {
+	public static void main(String args[]){
         Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
         String s = sc.nextLine();
+        
         int a = s.charAt(0) - '0';
+        
         int n = Integer.parseInt(s);
+        
         int b = n%10;
-        int newnum = a*10 + b;
-        if(n%newnum == 0)
-            System.out.print("It is a GapFull number");
+        int x = a*10+b;
+        if(n % x == 0)
+            System.out.println("\nIt is a gapfull number");
         else
-            System.out.print("It is not a GapFull number");
-
-        System.out.print("\n");
-    }
+            System.out.println("\nIt is not a gapfull number");
+        }
 }
