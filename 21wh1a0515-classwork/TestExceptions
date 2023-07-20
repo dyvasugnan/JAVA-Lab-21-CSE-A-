@@ -1,0 +1,21 @@
+package javalab;
+
+class TestExceptions {
+    public static void main(String[] args) {
+        try{
+            int a=32,b=0;
+            int c=(a/b);
+            int arr[]= {1,2,3};
+            arr[30]=0;
+        }
+        catch(ArithmeticException e){
+            System.out.println("Divide by zero exception ");
+        }
+        catch(ArrayIndexOutOfBoundsException e){
+            System.out.println("Array index is out of bound ");
+        }
+        finally{
+            System.out.println("All exceptions are caught ");
+        }
+    }
+}
