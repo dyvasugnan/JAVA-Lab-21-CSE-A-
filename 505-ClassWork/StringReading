@@ -1,0 +1,11 @@
+import java.io.*;
+import java.lang.*;
+public class StringReading{
+	public static void main(String[] args) throws IOException {
+	    InputStreamReader isr=new InputStreamReader(System.in);
+	    BufferedReader br= new BufferedReader(isr);
+	    System.out.println("Enter the String: ");
+	    String str=br.readLine();
+	    System.out.println(str);
+	}
+}
