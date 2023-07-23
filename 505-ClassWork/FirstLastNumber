@@ -1,0 +1,21 @@
+import java.lang.*;
+import java.util.*;
+
+  class Main{
+      public static void main (String args[]){
+        Scanner sc= new Scanner(System.in);
+        System.out.println("Enter number: ");
+        int num=sc.nextInt();
+        int count=0;
+        int temp=num;
+           while(num>0){
+            count++;
+            num=num%10;
+            }
+             double p=Math.pow(10,count-1);
+            System.out.println("First number: "+num%10);
+            System.out.println("Last number: "+temp/p);
+        
+        
+    }
+}
