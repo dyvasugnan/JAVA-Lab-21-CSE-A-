@@ -1,0 +1,19 @@
+package javalab;
+class Test{
+	char c='a';
+	static float f;
+	Test(){
+		int i = 10;
+		System.out.println("Test:Test(");
+		System.out.println("c value: "+c);
+		System.out.println("i value: "+i);
+		System.out.println("f value: "+f);		
+	}
+}
+ class DefaultConstructor {
+
+	public static void main(String[] args) {
+		Test t = new Test();
+		System.out.println("DefaultConstructor:main()");
+	}
+}
