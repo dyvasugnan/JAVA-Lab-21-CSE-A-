@@ -1,0 +1,17 @@
+package javalab;
+class Demo{
+int x,y;
+Demo(int a, int b){
+ x=a;
+ y=b;
+ 
+ System.out.println("x value: "+x);
+ System.out.println("y value: "+y);
+}
+}
+class PConDemo{
+public static void main(String args[]){
+Demo d =new Demo(10,20);
+System.out.println("PConDemo:main()");
+}
+}
