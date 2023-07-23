@@ -1,0 +1,38 @@
+package javalab;
+
+import java.util.*;
+
+public class Mergestr {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter string s1:");
+		String s1 = sc.nextLine();
+		System.out.println("Enter string s2:");
+	    String s2 = sc.nextLine();
+	        
+	    StringBuilder result = new StringBuilder();
+	    int i = 0,j=0;
+	        
+	    while (i < s1.length() && j < s2.length()) {
+	            result.append(s1.charAt(i));
+	            i++;
+	            result.append(s2.charAt(j));
+	            j++;
+	    }
+	        
+	    if (i < s1.length()) {
+	            result.append(s1.substring(i));
+	    }
+	        
+	    if (j < s2.length()) {
+	            result.append(s2.substring(j));
+	    }
+	        
+	    System.out.println(result.toString());
+	        
+	    sc.close();
+	}
+
+}
