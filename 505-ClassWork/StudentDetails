@@ -1,0 +1,19 @@
+import java.io.*;
+public class StudentDetails{
+	public static void main(String[] args) throws IOException {
+	    InputStreamReader isr=new InputStreamReader(System.in);
+	    BufferedReader br= new BufferedReader(isr);
+	    System.out.println("Enter the name of the student: ");
+	    String name=br.readLine();
+	    System.out.println("Enter the age of the student: ");
+	    int age =Integer.parseInt(br.readLine());
+	    System.out.println("Enter the gender of the student : ");
+	    char gender=br.readLine().charAt(0);
+	   System.out.println("Enter the Marks of the student: ");
+	   float marks=Float.parseFloat(br.readLine());
+	    System.out.println(name);
+	     System.out.println(age);
+	     System.out.println(gender);
+	     System.out.println(marks);
+	}
+}
