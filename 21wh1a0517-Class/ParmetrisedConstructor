@@ -1,4 +1,4 @@
-package classprogram;
+package javalab;
 class Test{
 	String name;
 	int age;
@@ -13,7 +13,7 @@ class Test{
 }
 public class ParmetrisedConstructor {
    public static void main(String args[]) {
-	   Test t = new Test("likhitha",18);
+	   Test t = new Test("Kushi",19);
 	   t.display();
    }
 }
