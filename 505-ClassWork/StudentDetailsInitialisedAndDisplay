@@ -1,0 +1,20 @@
+import java.util.*;
+import java.lang.*;
+class StudentDetailsInitialisedAndDeisplay{
+    String name="Ancina";
+    int age=21;
+    float marks=59.0f;
+    
+    void display(){
+        System.out.println("Enter the name of the student:"+name);
+        System.out.println("Enter the age of the student:"+age);
+        System.out.println("Enter the marks of the student:"+marks);
+    }
+    
+}
+class Main{
+    public static void main(String args[]){
+        Student s=new Student();
+        s.display();
+    }
+}
