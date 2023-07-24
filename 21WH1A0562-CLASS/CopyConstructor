@@ -1,0 +1,20 @@
+public class CopyConstructor {
+	int age;
+	String name;
+	CopyConstructor(int a,String n)
+	{
+		age=a;
+		name=n;
+	}
+	CopyConstructor(CopyConstructor cp){
+		age=cp.age;
+		name=cp.name;
+	}
+}
+class Demo{
+	public static void main(String [] args) {
+		CopyConstructor cp=new CopyConstructor(12,"likki");
+		CopyConstructor cp1=new CopyConstructor(cp);
+		        System.out.println(" age = " + cp1.age + ", name = " + cp1.name);
+		    }
+		}
