@@ -1,0 +1,20 @@
+import java.util.*;
+import java.lang.*;
+class DefaultContructor{
+    int age;
+    float marks;
+    DefaultContructor(){
+        age=10;
+        marks=43.0f;
+    }
+    
+    
+}
+
+class Main{
+    public static void main(String args[]){
+        DefaultConstructor s= new DefaultConstrutor();
+        System.out.println(s.age);
+               System.out.println(s.marks);
+    }
+}
