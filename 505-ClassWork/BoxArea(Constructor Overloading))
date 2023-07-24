@@ -1,0 +1,38 @@
+class BoxArea {
+    private double length;
+    private double width;
+    private double height;
+    public BoxArea() {
+        length = 1.0;
+        width = 1.0;
+        height = 1.0;
+    }
+
+    public BoxArea(double length, double width, double height) {
+        this.length = length;
+        this.width = width;
+        this.height = height;
+    }
+    public BoxArea(BoxArea B){
+        length=B.length;
+        width=B.width;
+        height=B.height;
+        
+        
+    }
+    public double calculateArea() {
+        return 2 * (length * width + length * height + width * height);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BoxArea box1 = new BoxArea();
+
+        BoxArea box2 = new BoxArea(3.5, 2.0, 4.0);
+        BoxArea box3 = new BoxArea(box2);
+        System.out.println("Area of Box 1: " + box1.calculateArea());
+        System.out.println("Area of Box 2: " + box2.calculateArea());
+        System.out.println("Area of Box 3: " + box3.calculateArea());
+    }
+}
