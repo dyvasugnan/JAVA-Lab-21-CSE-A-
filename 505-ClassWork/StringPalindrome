@@ -1,0 +1,18 @@
+import java.io.*;
+import java.lang.*;
+public class Main{
+    public static void main(String arge[])throws IOException{
+    BufferedReader br= new BufferedReader(new InputStreamReader(System.in));
+    String name=br.readLine();
+    String reverse="";
+    for(int i=name.length()-1;i>=0;i--){
+        reverse +=name.charAt(i);
+    }
+    if(name.equalsIgnoreCase(reverse)){
+        System.out.println("String is palindrome");
+    }
+    else{
+        System.out.println("String is not a palindrome");
+    }
+    } 
+}
