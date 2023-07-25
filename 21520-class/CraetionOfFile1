@@ -1,0 +1,23 @@
+import java.io.*;
+public class CreationOfFile1 {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		DataInputStream dis = new DataInputStream(System.in);
+        FileOutputStream fout = null;
+        char ch;
+
+        System.out.println("Enter the text till #:");
+
+        try {
+            fout = new FileOutputStream("Myfile.txt");
+
+            while ((ch = (char) dis.read()) != '#') {
+                fout.write(ch);
+            }
+        } finally {
+            if (dis != null) dis.close();
+            if (fout != null) fout.close();
+        }
+    }
+}
