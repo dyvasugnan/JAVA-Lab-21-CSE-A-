@@ -1,0 +1,20 @@
+class Num{
+    int a,b,c,d;
+    Num(int x,int y){
+        a = x;
+        b = y;
+    }
+    
+    void swap(Num n){
+        int temp = n.a;
+        n.a = n.b;
+        n.b = temp;
+    }
+}
+class Swap{
+    public static void main(String[] args) {
+        Num n= new Num(20,30);
+        n.swap(n);
+        System.out.println("a: "+n.a+" b: "+n.b);
+    }
+}
