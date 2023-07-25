@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+class Swap{
+	int n1,n2;
+	Swap(int a,int b){
+		n1=a;
+		n2=b;
+	}
+	void swap1(Swap s) {
+		int temp;
+		temp=s.n1;
+		s.n1=s.n2;
+		s.n2=temp;
+	}
+		
+}
+public class Swapping {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		int n1=sc.nextInt();
+		int n2=sc.nextInt();
+		Swap s1=new Swap(n1,n2);
+		System.out.println(s1.n1+" "+s1.n2);
+		s1.swap1(s1);
+		System.out.println(s1.n1+" "+s1.n2);
+	}
+
+}
