@@ -5,7 +5,7 @@ package javalab;
 
 import java.util.*;
 
-public class Lab2_12_6_23 {
+public class HighestMarks {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		 Scanner sc = new Scanner(System.in);
