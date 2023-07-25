@@ -1,0 +1,43 @@
+import java.io.*;
+import java.util.*;
+class Student{
+	int age;
+	String name;
+	float[] marks;
+	void accept() throws IOException{
+		InputStreamReader isr=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(isr);
+		String str1=br.readLine();
+		this.age=Integer.parseInt(str1);
+		this.name=br.readLine();
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		this.marks = new float[n];
+		for(int i=0;i<n;i++)
+			this.marks[i]=sc.nextFloat();
+	}
+	public void display() {
+		System.out.println("Name:"+this.name);
+		System.out.println("Age:"+this.age);
+		Arrays.sort(this.marks);
+		System.out.println("SortedMarks");
+		for(float mark:this.marks) {
+			System.out.print(mark+" ");
+		}
+		System.out.println();
+	}
+}
+
+public class StudentDetails {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method stub
+		Student s=new Student();
+		s.accept();
+		s.display();
+		
+		
+
+	}
+
+}
