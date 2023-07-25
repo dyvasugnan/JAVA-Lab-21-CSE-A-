@@ -1,0 +1,29 @@
+import java.util.*;
+class BA{
+	void calInterest(double r) {
+		Scanner sc =new Scanner(System.in);
+		System.out.print("enter password: ");
+		String pd=sc.next();
+		if(pd.equals("admin123")) {
+			class Inner{
+				void calculate(double r) {
+					int amount=5000;
+					double interest=(r/100)*amount;
+					System.out.print(interest);
+					}
+			}
+			Inner in=new Inner();
+			in.calculate(r);
+			}
+		else {
+			System.out.print("invalid password");
+		}
+	}
+}
+public class BankAccount {
+
+	public static void main(String[] args) {
+	BA b=new BA();
+	b.calInterest(9.5);
+	}
+}
