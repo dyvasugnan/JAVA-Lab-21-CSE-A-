@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class LargestPalindrome {
+
+    // Function to check if a number is a palindrome
+    public static boolean isPalindrome(int num) {
+        String strNum = String.valueOf(num);
+        int len = strNum.length();
+        for (int i = 0; i < len / 2; i++) {
+            if (strNum.charAt(i) != strNum.charAt(len - 1 - i)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt(); // Number of test cases
+
+        for (int i = 0; i < t; i++) {
+            int n = scanner.nextInt(); // Read the input number
+
+            int largestPalindrome = 0;
+
+            // Iterate through all possible pairs of three-digit numbers
+            for (int j = 100; j <= 999; j++) {
+                for (int k = 100; k <= 999; k++) {
+                    int product = j * k;
+                    if (product < n && isPalindrome(product)) {
+                        largestPalindrome = Math.max(largestPalindrome, product);
+                    }
+                }
+            }
+
+            System.out.println(largestPalindrome); // Output the result
+        }
+    }
+}
