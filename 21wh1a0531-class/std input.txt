@@ -1,0 +1,11 @@
+import java.util.*;
+import java.io.*;
+class HelloWorld {
+    public static void main(String[] args)throws IOException{
+        InputStreamReader isr = new InputStreamReader(System.in);
+        BufferedReader br = new BufferedReader(isr);
+        String y = br.readLine();
+        int x = Integer.parseInt(y);
+        System.out.println("op:"+x);
+    }
+}
