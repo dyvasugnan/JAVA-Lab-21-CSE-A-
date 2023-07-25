@@ -1,0 +1,25 @@
+import java.util.*;
+
+class Student {
+    int a;
+    int b;
+    
+    Student setData(int x, int y) {
+        a = x;
+        b = y;
+        return this;
+    }
+
+    void getData() {
+        System.out.println(a);
+        System.out.println(b);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Student s = new Student(); 
+        s.setData(10, 11).getData();
+        s.setData(20, 21).getData();
+    }
+}
