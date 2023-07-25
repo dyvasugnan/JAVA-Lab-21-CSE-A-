@@ -1,0 +1,30 @@
+package javalab;
+import java.lang.*;
+
+class C{
+	public void display() {
+		System.out.println("C");
+	}
+}
+class A extends C{
+	public void display() {
+		System.out.println("A");
+	}
+}
+class B extends C{
+	public void display() {
+		System.out.println("B");
+	}
+}
+class D extends A{
+	public void display() {
+		System.out.println("D");
+	}
+}
+public class Hybrid {
+
+	public static void main(String[] args) {
+		D obj = new D();
+		obj.display();
+	}
+}
