@@ -1,0 +1,19 @@
+class Student{
+	int a,b;
+	Student getData(int x,int y) {
+		a=x;
+		b=y;
+		return this;
+	}
+	void setData() {
+		System.out.println(a);
+		System.out.println(b);
+	}
+}
+ class MethodChaining {
+	public static void main(String [] args) {
+		Student s=new Student();
+		s.getData(10, 2).getData(5,6).setData();
+	}
+
+}
