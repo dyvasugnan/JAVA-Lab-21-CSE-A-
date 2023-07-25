@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class LargestPrimeFactor {
+
+    // Function to find the largest prime factor of a given number
+    public static long largestPrimeFactor(long num) {
+        long largestFactor = 1;
+
+        // Handle even factors of the number
+        while (num % 2 == 0) {
+            largestFactor = 2;
+            num /= 2;
+        }
+
+        // Handle odd factors of the number
+        for (long i = 3; i <= Math.sqrt(num); i += 2) {
+            while (num % i == 0) {
+                largestFactor = i;
+                num /= i;
+            }
+        }
+
+        // If the remaining number is a prime greater than 2
+        if (num > 2)
+            largestFactor = num;
+
+        return largestFactor;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int t = scanner.nextInt(); // Number of test cases
+
+        for (int i = 0; i < t; i++) {
+            long num = scanner.nextLong(); // Read the input number
+            long result = largestPrimeFactor(num); // Find the largest prime factor
+            System.out.println(result); // Output the result
+        }
+    }
+}
