@@ -1,0 +1,18 @@
+class This{
+	int a=5;
+	int b=10;
+	This(int a,int b){
+		this.a=a;
+		this.b=b;
+		System.out.println(a*b);
+	}
+}
+public class ThisKeyword {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		This t=new This(2,3); 
+
+	}
+
+}
