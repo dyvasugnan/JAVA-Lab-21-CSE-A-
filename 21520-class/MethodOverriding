@@ -1,0 +1,28 @@
+class OverRide_Super{
+	void display() {
+		System.out.println("Super class Method");
+	}
+}
+class OverRide_Sub extends OverRide_Super{
+	void display() {
+		System.out.println("Sub class Method");
+	}
+}
+class OverRide_Sub1 extends OverRide_Sub{
+	void display() {
+		System.out.println("Sub1 class Method");
+	}
+}
+public class MethodOverriding {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		OverRide_Sub a=new OverRide_Sub();
+		OverRide_Super aa=new OverRide_Super();
+		OverRide_Sub1 aaa=new OverRide_Sub1();
+		a.display();
+		aa.display();
+		aaa.display();
+	}
+
+}
