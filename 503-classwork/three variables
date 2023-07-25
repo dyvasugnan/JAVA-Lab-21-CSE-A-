@@ -1,0 +1,13 @@
+public class VariableInitialization {
+    public static void main(String[] args) {
+        // Declaring and initializing variables
+        int myIntVariable = 10;
+        float myFloatVariable = 3.14f; // Note the 'f' suffix for float literals
+        double myDoubleVariable = 2.71828;
+
+        // Displaying the values of the variables
+        System.out.println("My int variable: " + myIntVariable);
+        System.out.println("My float variable: " + myFloatVariable);
+        System.out.println("My double variable: " + myDoubleVariable);
+    }
+}
