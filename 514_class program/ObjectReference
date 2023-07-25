@@ -1,0 +1,31 @@
+class First{
+	int x;
+	Second s;
+	First(Second s){
+		this.s=s;
+		x=10;
+	}
+	void display() {
+		System.out.println("x in First:"+x);
+	}
+}
+class Second{
+	int y;
+	Second(int y){
+	this.y=y;
+	}
+	void display() {
+		System.out.println("Y in second:"+y);
+	}
+}
+public class ObjectReference {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Second s=new Second(20);
+		First f=new First(s);
+		f.display();
+		s.display();
+	}
+
+}
