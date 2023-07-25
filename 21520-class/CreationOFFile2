@@ -1,0 +1,20 @@
+import java.io.DataInputStream;
+import java.io.FileOutputStream;
+import java.io.*;
+
+public class CreationOfFile2 {
+
+
+			public static void main(String[] args) throws IOException {
+				// TODO Auto-generated method stub
+				DataInputStream dis=new DataInputStream(System.in);
+				FileOutputStream fout = new FileOutputStream("Myfile.txt");
+				BufferedOutputStream bos=new BufferedOutputStream(fout,1024);
+				char ch;
+				System.out.println("Enter the text till #:");
+				while((ch=(char)dis.read())!='#') {
+					fout.write(ch);
+				}
+				fout.close();
+			}
+}
