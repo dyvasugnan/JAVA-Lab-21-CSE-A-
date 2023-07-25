@@ -1,0 +1,31 @@
+package javaclass;
+import java.util.*;
+public class GapfullNum {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);
+		int num,t;
+		System.out.print("Enter a number : ");
+		num = sc.nextInt();
+		int ld = num%10;
+		int digits = 0;
+		t = num;
+		if(num > 99) {
+		while(t > 0) {
+			t /= 10;
+			digits ++;
+		}
+		digits -= 1;
+		double fd = num / Math.pow(10, digits);
+		int res = (int)fd*10 + ld;;
+		if (num % res == 0)
+			System.out.print("Gapfull");
+		else
+			System.out.print("No");
+	}
+		else 
+			System.out.print("No");
+	}
+
+}
