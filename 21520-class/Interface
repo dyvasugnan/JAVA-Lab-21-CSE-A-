@@ -1,0 +1,25 @@
+interface Connect{
+	void connect();
+	void disconnect();
+}
+class OracleA implements Connect{
+	public void connect(){
+		System.out.println("Connect DB");
+	}
+	public void disconnect() {
+		System.out.println("Disconnect DB");
+	}
+	
+}
+public class Interface {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Connect inner;
+		OracleA o=new OracleA();
+		inner= o;
+		inner.connect();
+		inner.disconnect();
+	}
+
+}
