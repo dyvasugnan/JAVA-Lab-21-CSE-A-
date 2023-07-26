@@ -1,4 +1,4 @@
-Import java.lang.*;
+import java.lang.*;
 import java.util.*;
 public class Compartment {
 public static void main(String[] args) {
