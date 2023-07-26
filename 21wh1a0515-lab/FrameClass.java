@@ -1,41 +1,46 @@
 package javalab;
-
-//import java.lang.*;
-//import java.util.*;
-import java.awt.*;//abstract window toolkit (delete modulo info if errors are occuring near awt
+import java.awt.*;// abstract window toolkit
 import java.awt.event.*;
-public class FrameClass extends Frame{
-	public void paint(Graphics g) {
-		this.setBackground(Color.cyan);
-		//Font f1=new Font("Arial","Italic.Bold",30);
-		//g.setFont(f1);
-		//g.drawRect(100, 100, 200,50);
-		g.setColor(Color.yellow);
-		g.fillOval(100, 100, 200, 200);
-		g.setColor(Color.black);
-		g.fillOval(150, 150, 20, 20);
-		g.fillOval(230, 150, 20, 20);
-		g.drawLine(200, 180, 200, 200);
-		g.drawArc(160, 200, 100, 60, 100, 200);
-		//g.fillRect(200, 200, 200, 50);
-		
+
+public class FrameClass extends Frame implements ActionListener{
+	Button b1,b2,b3;
+	FrameClass(){
+		this.setLayout(null);
+		b1 = new Button("Red");
+		b2 = new Button("Blue");
+		b3 = new Button("Green");
+		b1.setBounds(100, 150, 100, 50);
+		b2.setBounds(100, 250, 100, 50);
+		b3.setBounds(100, 350, 100, 50);
+		this.add(b1);
+		this.add(b2);
+		this.add(b3);
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
 	}
-
-
+	public void actionPerformed(ActionEvent ae){
+		String str = ae.getActionCommand();
+		if(str == "Red")
+				this.setBackground(Color.RED);
+		if(str == "Blue")
+			this.setBackground(Color.BLUE);
+	
+		if(str == "Green")
+			this.setBackground(Color.GREEN);
+	
+	}
 	public static void main(String[] args) {
-		//Frame f=new Frame("My first Frame");
-		Frame f=new FrameClass();
-		//f.setTitle("Test");
+		// TODO Auto-generated method stub
+		FrameClass f = new FrameClass();
+		f.setTitle("Test");
 		f.setSize(400, 400);
 		f.setVisible(true);
-		f.addWindowListener(new Myclass());
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.exit(0);
+			}
+		});
 	}
 
-	
-}
-
-class Myclass extends WindowAdapter{
-	public void windowClosing(WindowEvent we) {
-		System.exit(0);
-	}
 }
