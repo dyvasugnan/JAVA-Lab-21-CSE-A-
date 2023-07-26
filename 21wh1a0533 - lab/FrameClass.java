@@ -1,39 +1,44 @@
 package javaclass;
-import java.lang.*;
-import java.util.*;
-import java.awt.*; // abstract window toolkit
+import java.awt.*;// abstract window toolkit
 import java.awt.event.*;
-public class FrameClass extends Frame{
-	public void paint(Graphics g) {
-		// TODO Auto-generated constructor stub
-		this.setBackground(Color.black);
-		Font f = new Font("Arial",Font.BOLD,30);
-		g.setFont(f);
-		g.drawString("EMOJI FACE",200,100);
-		//g.drawRect(100,100,500,50);
-		g.drawOval(100,100,200,200);
-		g.setColor(Color.cyan);
-		g.fillOval(100,100,200,200);
-		g.drawOval(180, 180, 20, 20);
-		g.setColor(Color.black);
-		g.fillOval(150, 150, 20, 20);
-		g.fillOval(220, 150, 20, 20);
-		g.setColor(Color.black);
-		g.drawLine(200, 220, 200, 200);
-		g.setColor(Color.black);
-		g.drawArc(150, 250, 100, 100, 40, 100);
-	}
-	public static void main(String[] args){
-		FrameClass f=new FrameClass();
-		//f.setTitle("");
+public class FrameClass extends Frame implements ActionListener {
+		Button b1,b2,b3;
+		FrameClass(){
+			this.setLayout(null);
+			b1 = new Button("Red");
+			b2 = new Button("Cyan");
+			b3 = new Button("Green");
+			b1.setBounds(100, 150, 100, 50);
+			b2.setBounds(100, 250, 100, 50);
+			b3.setBounds(100, 350, 100, 50);
+			this.add(b1);
+			this.add(b2);
+			this.add(b3);
+			b1.addActionListener(this);
+			b2.addActionListener(this);
+			b3.addActionListener(this);
+					}
+		public void actionPerformed(ActionEvent ae) {
+			String str = ae.getActionCommand();
+			if(str == "Red")
+					this.setBackground(Color.RED);
+			if(str == "Cyan")
+				this.setBackground(Color.CYAN);
 		
-		f.setSize(400,400);
+			if(str == "Green")
+				this.setBackground(Color.GREEN);
+		
+		}
+	
+	public static void main(String[] args) {
+		FrameClass f = new FrameClass();
+		f.setTitle("Test");
+		f.setSize(400, 400);
 		f.setVisible(true);
-		f.addWindowListener(new Myclass());
-	}
-}
-class Myclass extends WindowAdapter{
-	public void windowClosing(WindowEvent we) {
-		System.exit(0);
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.exit(0);
+			}
+		});
 	}
 }
