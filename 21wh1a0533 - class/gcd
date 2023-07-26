@@ -1,0 +1,45 @@
+package javaclass;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the number of test cases: ");
+        int testCases = sc.nextInt();
+
+        while(t>0) {
+            System.out.print("Enter a number (n) for test case " + testCase + ": ");
+            long number = scanner.nextLong();
+            long result = GCDGreaterThanOne(number);
+            System.out.println("Result for test case " + testCase + ": " + result);
+            t--;
+        }
+    }
+
+    public static long GCDGreaterThanOne(long start) {
+        long number = start;
+        while (true) {
+            long sumOfDigits = calcSumOfDigits(number);
+            if (gcd(number, sumOfDigits) > 1) {
+                return number;
+            }
+            number++;
+        }
+    }
+
+    public static long calcSumOfDigits(long num) {
+        long sum = 0;
+        while (num > 0) {
+            long digit = num % 10;
+            sum += digit;
+            num /= 10;
+        }
+        return sum;
+    }
+
+    public static long gcd(long a, long b) {
+        if (b == 0) {
+            return a;
+        }
+        return gcd(b, a % b);
+    }
+}
