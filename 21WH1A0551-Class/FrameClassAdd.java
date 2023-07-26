@@ -60,7 +60,7 @@ public class FrameClassAdd extends Frame implements ActionListener {
 	
 	public static void main(String[] args) {
 		FrameClassAdd f = new FrameClassAdd();
-		f.setTitle("Test");
+		f.setTitle("Add");
 		f.setSize(600, 600);
 		f.setVisible(true);
 		f.addWindowListener(new WindowAdapter() {
