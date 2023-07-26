@@ -49,9 +49,9 @@ public class FrameClass extends Frame implements ActionListener {
     res.setText(String.valueOf(c));
    }
    if(str == "Clear"){
-    n1.setText(" ");
-    n2.setText(" ");
-    res.setText(" ");
+    n1.setText("");
+    n2.setText("");
+    res.setText("");
     
    } 
   }
