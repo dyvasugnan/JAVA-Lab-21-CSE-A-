@@ -48,7 +48,7 @@ public class Div extends Frame implements ActionListener {
 			int a =  Integer.parseInt(n1.getText());
 			int b =  Integer.parseInt(n2.getText());
 			if(b != 0) {
-			int c = a / b;
+			float c = a / b;
 			res.setText(String.valueOf(c));
 			}
 			else {
