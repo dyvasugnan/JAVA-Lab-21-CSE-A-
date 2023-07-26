@@ -1,0 +1,45 @@
+package javalab;
+
+import java.awt.*;
+import java.awt.event.*;
+class FrameClass extends Frame implements ActionListener {
+    Button b1, b2, b3;
+
+    FrameClass() {
+        this.setLayout(null);
+        b1 = new Button("yellow");
+        b2 = new Button("orange");
+        b3 = new Button("green");
+        b1.setBounds(100, 100, 100, 50);
+        b2.setBounds(100, 200, 100, 50);
+        b3.setBounds(100, 300, 100, 50);
+        this.add(b1);
+        this.add(b2);
+        this.add(b3);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        String str = ae.getActionCommand();
+        if (str.equals("yellow"))
+            this.setBackground(Color.yellow);
+        if (str.equals("orange"))
+            this.setBackground(Color.orange);
+        if (str.equals("green"))
+            this.setBackground(Color.green);
+    }
+
+    public static void main(String[] args) {
+    FrameClass f = new FrameClass();
+        f.setTitle("Background Display");
+        f.setSize(400, 400);
+        f.setVisible(true);
+        f.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we) {
+                System.exit(0);
+            }
+        });
+    }
+}
