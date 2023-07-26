@@ -1,4 +1,3 @@
-package java_clss;
 import java.awt.*;
 import java.awt.event.*;
 public class DivGui extends Frame implements ActionListener{
@@ -16,13 +15,13 @@ public class DivGui extends Frame implements ActionListener{
 		n2=new TextField();
 		res=new TextField();
 		num1.setBounds(100,150,100,50);
-		n1.setBounds(200,150,300,50);
+		n1.setBounds(200,150,150,50);
 		num2.setBounds(100,250,100,50);
-		n2.setBounds(200,250,300,50);
+		n2.setBounds(200,250,150,50);
 		result.setBounds(100,350,100,50);
-		res.setBounds(200,350,300,50);
+		res.setBounds(200,350,150,50);
 		b1.setBounds(150,450,100,50);
-		b2.setBounds(150,550,100,100);
+		b2.setBounds(150,550,100,50);
 		this.add(b1);
 		this.add(b2);
 		this.add(num1);
@@ -47,10 +46,10 @@ public class DivGui extends Frame implements ActionListener{
 			res.setText(String.valueOf(c));
 			}
 		catch(ArithmeticException aex) {
-			res.setText(" "+aex);
+			res.setText("ArithmeticException ");
 		}
 			catch(NumberFormatException nfe) {
-				res.setText(" "+nfe);
+				res.setText("NumberFormatException");
 			}
 			}	
 		if(str=="Clear") {
@@ -71,5 +70,6 @@ public class DivGui extends Frame implements ActionListener{
 		});
 	}
 }
+
 
 
