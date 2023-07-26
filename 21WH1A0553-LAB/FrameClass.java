@@ -1,32 +1,45 @@
-package javalab;
-import java.awt.*;
+package src;
+
+import java.awt.*;// abstract window toolkit
 import java.awt.event.*;
-public class FrameClass extends Frame{
-	public void paint(Graphics g) {
-		this.setBackground(Color.lightGray);
-       // g.drawRect(80, 70, 200, 200);
-        g.setColor(Color.pink);
-        g.fillRect(50, 55, 200, 200);
-        g.drawOval(80, 70, 150, 150);
-        g.setColor(Color.yellow);
-        g.fillOval(80, 70, 150, 150);
-        g.setColor(Color.black);
-        g.fillOval(120, 120, 15, 15);
-        g.fillOval(170, 120, 15, 15);
-        g.drawArc(130, 170, 50, 20, 180, 180);
-	}
+public class FrameClass extends Frame implements ActionListener {
+		Button b1,b2,b3;
+		FrameClass(){
+			this.setLayout(null);
+			b1 = new Button("Red");
+			b2 = new Button("Blue");
+			b3 = new Button("Green");
+			b1.setBounds(100, 150, 100, 50);
+			b2.setBounds(100, 250, 100, 50);
+			b3.setBounds(100, 350, 100, 50);
+			this.add(b1);
+			this.add(b2);
+			this.add(b3);
+			b1.addActionListener(this);
+			b2.addActionListener(this);
+			b3.addActionListener(this);
+					}
+		public void actionPerformed(ActionEvent ae) {
+			String str = ae.getActionCommand();
+			if(str == "Red")
+					this.setBackground(Color.RED);
+			if(str == "Blue")
+				this.setBackground(Color.BLUE);
+		
+			if(str == "Green")
+				this.setBackground(Color.GREEN);
+		
+		}
+	
 	public static void main(String[] args) {
 		FrameClass f = new FrameClass();
 		f.setTitle("Test");
 		f.setSize(400, 400);
 		f.setVisible(true);
-		f.addWindowListener(new Myclass());
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.exit(0);
+			}
+		});
 	}
-
-}
-class Myclass extends WindowAdapter{
-	public void windowClosing(WindowEvent we) {
-		System.exit(0);
-	}
-	
 }
