@@ -1,5 +1,4 @@
-package guijava;
-
+package gui;
 import java.awt.*;// abstract window toolkit
 import java.awt.event.*;
 public class FrameClass extends Frame implements ActionListener {
@@ -8,24 +7,28 @@ public class FrameClass extends Frame implements ActionListener {
 		Label num1,num2,result;
 		FrameClass(){
 			this.setLayout(null);
-			b1 = new Button("Div");
+			b1 = new Button("Add");
 		    b2 = new Button("Clear");
 			num1 = new Label("Number 1");
 			num2 = new Label("Number 2");
 			result = new Label("Result");
+			
 			n1 = new TextField();
 			n2 = new TextField();
 			res = new TextField();
+			
 			num1.setBounds(100, 150, 100, 50);
 			n1.setBounds(200, 150, 100, 50);
 			
 			num2.setBounds(100, 250, 100, 50);
 			n2.setBounds(200, 250, 100, 50);
 			
-			result.setBounds(100, 350, 100, 60);
+			result.setBounds(100, 350, 100, 50);
 			res.setBounds(200, 350, 100, 50);
+			
 			b1.setBounds(150, 450, 100, 50);
 			b2.setBounds(250,450,100,50);
+			
 			this.add(b1);
 			this.add(b2);
 			this.add(num1);
@@ -34,6 +37,7 @@ public class FrameClass extends Frame implements ActionListener {
 			this.add(n1);
 			this.add(n2);
 			this.add(res);
+			
 			b1.addActionListener(this);
 			b2.addActionListener(this);
 			n1.addActionListener(this);
@@ -42,16 +46,11 @@ public class FrameClass extends Frame implements ActionListener {
 		}
 		public void actionPerformed(ActionEvent ae) {
 			String str = ae.getActionCommand();
-			if(str == "Div") {
+			if(str == "Add") {
 				int a = Integer.parseInt(n1.getText());
 				int b = Integer.parseInt(n2.getText());
-				if(b==0) {
-					res.setText("Error:division by 0");
-				}
-				else {
-				int c = a/b ;
+				int c = a+b ;
 				res.setText(String.valueOf(c));
-				}
 			}
 			else if(str == "Clear") {
 				n1.setText("");
