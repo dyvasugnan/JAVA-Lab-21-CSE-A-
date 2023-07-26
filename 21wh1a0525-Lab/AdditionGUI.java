@@ -76,7 +76,7 @@ public class FrameClass extends Frame implements ActionListener
         f.setVisible(true);
         f.addWindowListener(new WindowAdapter()
         {
-            public void windowCLosing(WindowEvent we)
+            public void windowClosing(WindowEvent we)
             {
                 System.exit(0);
             }
