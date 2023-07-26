@@ -1,4 +1,5 @@
-package gui;
+package guijava;
+
 import java.awt.*;// abstract window toolkit
 import java.awt.event.*;
 public class FrameClass extends Frame implements ActionListener {
@@ -7,7 +8,7 @@ public class FrameClass extends Frame implements ActionListener {
 		Label num1,num2,result;
 		FrameClass(){
 			this.setLayout(null);
-			b1 = new Button("Add");
+			b1 = new Button("Div");
 		    b2 = new Button("Clear");
 			num1 = new Label("Number 1");
 			num2 = new Label("Number 2");
@@ -21,7 +22,7 @@ public class FrameClass extends Frame implements ActionListener {
 			num2.setBounds(100, 250, 100, 50);
 			n2.setBounds(200, 250, 100, 50);
 			
-			result.setBounds(100, 350, 100, 50);
+			result.setBounds(100, 350, 100, 60);
 			res.setBounds(200, 350, 100, 50);
 			b1.setBounds(150, 450, 100, 50);
 			b2.setBounds(250,450,100,50);
@@ -41,11 +42,16 @@ public class FrameClass extends Frame implements ActionListener {
 		}
 		public void actionPerformed(ActionEvent ae) {
 			String str = ae.getActionCommand();
-			if(str == "Add") {
+			if(str == "Div") {
 				int a = Integer.parseInt(n1.getText());
 				int b = Integer.parseInt(n2.getText());
-				int c = a+b ;
+				if(b==0) {
+					res.setText("Error:division by 0");
+				}
+				else {
+				int c = a/b ;
 				res.setText(String.valueOf(c));
+				}
 			}
 			else if(str == "Clear") {
 				n1.setText("");
