@@ -56,7 +56,7 @@ public class AdditionGUI extends Frame implements ActionListener {
 		}
 	}
 	public static void main(String[] args) {
-		Addition f = new Addition();
+		AdditionGUI f = new AdditionGUI();
 		f.setTitle("Addition");
 		f.setBackground(Color.gray);
 		f.setSize(400, 400);
