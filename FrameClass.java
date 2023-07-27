@@ -1,4 +1,4 @@
-package javalab;
+package Hello_world;
 import java.awt.*;
 import java.awt.event.*;
 
@@ -17,6 +17,7 @@ public class FrameClass extends Frame implements ActionListener {
 			this.add(b2);
 			this.add(b3);
 			b1.addActionListener(this);
+			b2.addActionListener(this);
 			b2.addActionListener(this);
 			b3.addActionListener(this);
 					}
