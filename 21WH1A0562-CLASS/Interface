@@ -1,0 +1,25 @@
+package java_clss;
+interface A{
+	int a=10;
+	void show();
+}
+interface B{
+	int a=15;
+	void show();
+}
+	
+class C implements A,B{
+	int c=A.a+B.a;
+	public void show() {
+		System.out.println(A.a+" ");
+		System.out.println(B.a+" ");
+		System.out.println(c+" ");
+		
+	}
+}
+public class Interface {
+	public static void main(String [] args) {
+		 C c =new C();
+		 c.show();
+	}
+}
