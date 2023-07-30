@@ -1,0 +1,39 @@
+import java.util.*;
+abstract class one
+{
+    int x,y;
+    one(int x,int y)
+    {
+        this.x=x;
+        this.y=y;
+    }
+    abstract void read();
+}
+class two extends one
+{
+    int z,a;
+    two(int x,int y,int z)
+    {
+        super(x,y);
+        this.z=z;
+    }
+    Scanner sc=new Scanner(System.in);
+    void read()
+    {
+        System.out.print("Enter a number: ");
+        a=sc.nextInt();
+    }
+    void display()
+    {
+        System.out.println(super.x+ " " +super.y+ " " +a);
+    }
+}
+class MainAbstract
+{
+    public static void main(String args[])throws Exception
+    {
+        two t=new two(10,20,30);
+        t.read();
+        t.display();
+    }
+}
