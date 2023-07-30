@@ -1,0 +1,332 @@
+/******************************************************************************
+
+                            Online Java Compiler.
+                Code, Compile, Run and Debug java program online.
+Write your code in this editor and press "Run" button to execute it.
+
+*******************************************************************************/
+
+import java.awt.*;
+import java.awt.event.*;
+public class MyGui3 extends Frame implements ActionListener{
+    Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,plus,minus,div,mod,mul,equal,clear,delete;
+    Label l;
+    TextField t;
+    int result;
+    MyGui3()
+    {
+        this.setLayout(null);
+        this.setSize(800, 800);
+        this.setTitle("Calculator");
+        this.setBackground(Color.WHITE);
+        b0=new Button("0");
+        b1=new Button("1");
+        b2=new Button("2");
+        b3=new Button("3");
+        b4=new Button("4");
+        b5=new Button("5");
+        b6=new Button("6");
+        b7=new Button("7");
+        b8=new Button("8");
+        b9=new Button("9");
+        plus=new Button("+");
+        minus=new Button("-");
+        mul=new Button("*");
+        div=new Button("/");
+        mod=new Button("%");
+        equal = new Button("=");
+        clear=new Button("Clear");
+        delete=new Button("Delete");
+        l=new Label("Enter :");
+        t=new TextField();
+        Font bf = new Font("Casteller", Font.BOLD, 16);
+
+        l.setBounds(100 ,50,150,100);
+        t.setBounds(300 ,50,350,100);
+        b0.setBounds(100,150,150,100);
+        b1.setBounds(300,150,150,100);
+        b2.setBounds(500,150,150,100);
+        b3.setBounds(100,250,150,100);
+        b4.setBounds(300,250,150,100);
+        b5.setBounds(500 ,250,150,100);
+        b6.setBounds(100 ,350,150,100);
+        b7.setBounds(300 ,350,150,100);
+        b8.setBounds(500 ,350,150,100);
+        b9.setBounds(100 ,450,150,100);
+        plus.setBounds(300 ,450,150,100);
+        minus.setBounds(500 ,450,150,100);
+        mul.setBounds(100 ,550,150,100);
+        div.setBounds(300,550,150,100);
+        mod.setBounds(500 ,550,150,100);
+        delete.setBounds(100 ,650,150,100);
+        clear.setBounds(300 ,650,150,100);
+        equal.setBounds(500 ,650,150,100);
+
+        b0.setBackground(Color.BLACK);
+        b0.setForeground(Color.WHITE);
+        b0.setFont(bf);
+        b1.setBackground(Color.BLACK);
+        b1.setForeground(Color.WHITE);
+        b1.setFont(bf);
+        b2.setBackground(Color.BLACK);
+        b2.setForeground(Color.WHITE);
+        b2.setFont(bf);
+        b3.setBackground(Color.BLACK);
+        b3.setForeground(Color.WHITE);
+        b3.setFont(bf);
+        b4.setBackground(Color.BLACK);
+        b4.setForeground(Color.WHITE);
+        b4.setFont(bf);
+        b5.setBackground(Color.BLACK);
+        b5.setForeground(Color.WHITE);
+        b5.setFont(bf);
+        b6.setBackground(Color.BLACK);
+        b6.setForeground(Color.WHITE);
+        b6.setFont(bf);
+        b7.setBackground(Color.BLACK);
+        b7.setForeground(Color.WHITE);
+        b7.setFont(bf);
+        b8.setBackground(Color.BLACK);
+        b8.setForeground(Color.WHITE);
+        b8.setFont(bf);
+        b9.setBackground(Color.BLACK);
+        b9.setForeground(Color.WHITE);
+        b9.setFont(bf);
+        plus.setBackground(Color.BLACK);
+        plus.setForeground(Color.WHITE);
+        plus.setFont(bf);
+        minus.setBackground(Color.BLACK);
+        minus.setForeground(Color.WHITE);
+        minus.setFont(bf);
+        div.setBackground(Color.BLACK);
+        div.setForeground(Color.WHITE);
+        div.setFont(bf);
+        mul.setBackground(Color.BLACK);
+        mul.setForeground(Color.WHITE);
+        mul.setFont(bf);
+        mod.setBackground(Color.BLACK);
+        mod.setForeground(Color.WHITE);
+        mod.setFont(bf);
+        clear.setBackground(Color.BLACK);
+        clear.setForeground(Color.WHITE);
+        clear.setFont(bf);
+        equal.setBackground(Color.BLACK);
+        equal.setForeground(Color.WHITE);
+        equal.setFont(bf);
+        l.setBackground(Color.BLACK);
+        l.setForeground(Color.WHITE);
+        l.setFont(bf);
+        t.setBackground(Color.BLACK);
+        t.setForeground(Color.WHITE);
+        t.setFont(bf);
+        delete.setBackground(Color.BLACK);
+        delete.setForeground(Color.WHITE);
+        delete.setFont(bf);
+        this.add(l);
+        this.add(t);
+        this.add(b0);
+        this.add(b1);
+        this.add(b2);
+        this.add(b3);
+        this.add(b4);
+        this.add(b5);
+        this.add(b6);
+        this.add(b7);
+        this.add(b8);
+        this.add(b9);
+        this.add(plus);
+        this.add(minus);
+        this.add(mul);
+        this.add(div);
+        this.add(mod);
+        this.add(clear);
+        this.add(delete);
+        this.add(equal);
+        b0.addActionListener(this);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        b4.addActionListener(this);
+        b5.addActionListener(this);
+        b6.addActionListener(this);
+        b7.addActionListener(this);
+        b8.addActionListener(this);
+        b9.addActionListener(this);
+        plus.addActionListener(this);
+        minus.addActionListener(this);
+        div.addActionListener(this);
+        mod.addActionListener(this);
+        mul.addActionListener(this);
+        clear.addActionListener(this);
+        equal.addActionListener(this);
+        t.addActionListener(this);
+        delete.addActionListener(this);
+
+    }
+        String str="";
+        public void actionPerformed(ActionEvent ae)
+        {
+            try
+            {
+                String s= ae.getActionCommand();
+                char ch;
+                    if(ae.getSource()==b1)
+                    {
+                        str+="1";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b2)
+                    {
+                        str+="2";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b3)
+                    {
+                        str+="3";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b4)
+                    {
+                        str+="4";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b5)
+                    {
+                        str+="5";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b6)
+                    {
+                        str+="6";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b7)
+                    {
+                        str+="7";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b8)
+                    {
+                        str+="8";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b9)
+                    {
+                        str+="9";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==b0)
+                    {
+                        str+="0";
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==plus)
+                    {
+                        ch='+';
+                        str+=ch;
+                        t.setText(str);
+
+                    }
+                    if(ae.getSource()==minus)
+                    {
+                        ch='-';
+                        str+=ch;
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==mul)
+                    {
+                        ch='*';
+                        str+=ch;
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==mod)
+                    {
+                        ch='%';
+                        str+=ch;
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==div)
+                    {
+                        ch='/';
+                        str+=ch;
+                        t.setText(str);
+                    }
+                    if(ae.getSource()==equal)
+                    {
+                        result = calculateResult(str);
+                        t.setText(String.valueOf(result));
+                        str = "";
+                    }
+                    if(ae.getSource()==clear)
+                    {
+                        t.setText("");
+                        str="";
+                    }
+                    if (ae.getSource() == delete) 
+                    {
+                        if (!str.isEmpty()) 
+                        {
+                            str = str.substring(0, str.length() - 1);
+                            t.setText(str);
+                        }
+                    }
+            }
+            catch (NumberFormatException nfe) 
+            {
+                t.setText(String.valueOf("enter only numbers."));
+            } 
+            catch (ArithmeticException a) 
+            {
+                t.setText(String.valueOf("Division by zero is not possible."));
+            }
+        }
+        private int calculateResult(String input) {
+            int result = 0;
+            try {
+                String[] parts = input.split("[+-//*/%]");
+                int num1 = Integer.parseInt(parts[0]);
+                int num2 = Integer.parseInt(parts[1]);
+                char operator = input.charAt(parts[0].length());
+                switch (operator) {
+                    case '+':
+                        result = num1 + num2;
+                        break;
+                    case '-':
+                        result = num1 - num2;
+                        break;
+                    case '*':
+                        result = num1 * num2;
+                        break;
+                    case '/':
+                        if (num2 != 0) {
+                            result = num1 / num2;
+                        } else {
+                            throw new ArithmeticException("Division by zero is not possible.");
+                        }
+                        break;
+                    case '%':
+                        if (num2 != 0) {
+                            result = num1 % num2;
+                        } else {
+                            throw new ArithmeticException("Modulo by zero is not possible.");
+                        }
+                        break;
+                    default:
+                        throw new IllegalArgumentException("Invalid operator: " + operator);
+                }
+            } catch (NumberFormatException nfe) {
+                t.setText(String.valueOf("Invalid input format."));
+            }
+            return result;
+        }
+        public static void main(String args[])
+        {
+            MyGui3 m= new MyGui3();
+            m.setVisible(true);
+            m.addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent we) {
+                    System.exit(0);
+                }
+            });
+        }   
+    }
