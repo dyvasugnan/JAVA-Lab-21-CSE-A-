@@ -170,6 +170,9 @@ public class SimpleCalc  extends Frame implements ActionListener{
 		}
 		else if(str.equals("AC")) {
 			t.setText(" ");
+			str = t.getText();
+			str = str.trim();
+			t.setText(str);
 		}
 		}
 	catch(ArithmeticException ae1){
