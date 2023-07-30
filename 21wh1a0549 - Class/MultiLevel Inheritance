@@ -1,0 +1,59 @@
+import java.util.*;
+class add
+{ int a,b;
+    add(int a,int b)
+    {
+        this.a=a;
+        this.b=b;
+    }
+    void addition()
+    {
+        System.out.println("sum : "+ (a+b));    
+    }
+}
+class sub extends add
+{
+    int x,y;
+    sub(int a, int b,int x,int y)
+    {
+        super(a,b);
+        this.x=x;
+        this.y=y;
+    }
+    void subtraction()
+    {
+        System.out.println("sub : "+ (x-y)); 
+    }
+}
+class mul extends sub
+{
+    int x,y;
+    mul(int a,int b,int c,int d,int x,int y)
+    {
+        super(a,b,c,d);
+        this.x=x;
+        this.y=y;
+    }
+    void multiplication()
+    {
+        System.out.println("Mul : "+x*y);
+    }
+}
+class Practice
+{
+    public static void main(String args[])
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter the numbers");
+        int a=sc.nextInt();
+        int b=sc.nextInt();
+        int c=sc.nextInt();
+        int d=sc.nextInt();
+        int x=sc.nextInt();
+        int y=sc.nextInt();
+        mul m= new mul(a,b,c,d,x,y);
+        m.addition();
+        m.subtraction();
+        m.multiplication();
+    }
+}
