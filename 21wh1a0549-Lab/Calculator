@@ -280,7 +280,7 @@ public class MyGui3 extends Frame implements ActionListener{
         private int calculateResult(String input) {
             int result = 0;
             try {
-                String[] parts = input.split("[+-*/%]");
+                String[] parts = input.split("[+-//*/%]");
                 int num1 = Integer.parseInt(parts[0]);
                 int num2 = Integer.parseInt(parts[1]);
                 char operator = input.charAt(parts[0].length());
