@@ -1,0 +1,19 @@
+import java.awt.*;
+
+public class FramePanel {
+           	
+	    public static void main(String[] args) {
+	       
+	        Frame frame = new Frame("Java GUI Example");
+	        frame.setSize(400,400);
+	        TextField textField = new TextField(20);
+	        Panel panel = new Panel(new GridLayout(4, 4, 20, 20));
+	        for (int i = 1; i <= 16; i++) {
+	            Button button = new Button("button"+i);
+	            panel.add(button);
+	        }
+	        frame.add(textField, BorderLayout.NORTH); 
+	        frame.add(panel, BorderLayout.CENTER); 
+	        frame.setVisible(true);
+	    }
+}
