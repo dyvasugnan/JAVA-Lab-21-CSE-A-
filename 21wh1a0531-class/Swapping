@@ -1,0 +1,28 @@
+class Demo{
+    int x,y;
+    Demo(int a,int b){
+        x=a;
+        y=b;
+    }
+    void swap(){
+        int temp=x;
+        x=y;
+        y=temp;
+    }
+    void display(){
+        System.out.println(x+" "+y);
+    }
+}
+
+class Swapping{
+    public static void main(String[] args) {
+        int a=50;
+        int b=100;
+        Demo d = new Demo(a,b);
+        System.out.println("Before swapping");
+        System.out.println(a+" "+b);
+        System.out.println("After Swapping");
+        d.swap();
+        d.display();
+    }
+}
