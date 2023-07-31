@@ -2,7 +2,7 @@
 import java.awt.*;
 import java.awt.event.*;
 public class Calculator extends Frame implements ActionListener{
-		
+		// TODO Auto-generated constructor stub
 		Button b0,b1,b2,b3,b4,b5,b6,b7,b8,b9,ac;
 		Button add,sub,mul,div,equal;
 		TextField t;
@@ -27,27 +27,59 @@ public class Calculator extends Frame implements ActionListener{
 			equal = new Button("=");
 			
 			t = new TextField();
+			t.setBounds(10, 100, 390, 50);
+			t.setEditable(false);
+			t.setBackground(Color.LIGHT_GRAY);
+			t.setForeground(Color.white);
 			
-			t.setBounds(300, 200, 400, 50);
-			
-			b0.setBounds(300, 400, 100, 50);
-			b1.setBounds(500, 350, 100, 50);
-			b2.setBounds(400, 350, 100, 50);
-			b3.setBounds(300, 350, 100, 50);
-			b4.setBounds(500, 300, 100, 50);
-			b5.setBounds(400, 300, 100, 50);
-			b6.setBounds(300, 300, 100, 50);
-			b7.setBounds(500, 250, 100, 50);
-			b8.setBounds(400, 250, 100, 50);
-			b9.setBounds(300, 250, 100, 50);
-			
-			ac.setBounds(400, 400, 100, 50);
-			add.setBounds(600, 400, 100, 50);
-			sub.setBounds(600, 350, 100, 50);
-			mul.setBounds(600, 300, 100, 50);
-			div.setBounds(600, 250, 100, 50);
-			equal.setBounds(500, 400, 100, 50);
-			
+			b0.setBounds(10,300,90,50);
+			b0.setBackground(Color.DARK_GRAY);
+			b0.setForeground(Color.WHITE);
+			b1.setBounds(10, 250, 90, 50);
+			b1.setBackground(Color.DARK_GRAY);
+			b1.setForeground(Color.WHITE);
+			b2.setBounds(100, 250, 100, 50);
+			b2.setBackground(Color.DARK_GRAY);
+			b2.setForeground(Color.WHITE);
+			b3.setBounds(200, 250, 100, 50);
+			b3.setBackground(Color.DARK_GRAY);
+			b3.setForeground(Color.WHITE);
+			b4.setBounds(10, 200, 90, 50);
+			b4.setBackground(Color.DARK_GRAY);
+			b4.setForeground(Color.WHITE);
+			b5.setBounds(100, 200, 100, 50);
+			b5.setBackground(Color.DARK_GRAY);
+			b5.setForeground(Color.WHITE);
+			b6.setBounds(200, 200, 100, 50);
+			b6.setBackground(Color.DARK_GRAY);
+			b6.setForeground(Color.WHITE);
+			b7.setBounds(200, 150, 100, 50);
+			b7.setBackground(Color.DARK_GRAY);
+			b7.setForeground(Color.WHITE);
+			b8.setBounds(100, 150, 100, 50);
+			b8.setBackground(Color.DARK_GRAY);
+			b8.setForeground(Color.WHITE);
+			b9.setBounds(10, 150, 90, 50);
+			b9.setBackground(Color.DARK_GRAY);
+			b9.setForeground(Color.WHITE);
+			ac.setBounds(100,300, 100, 50);
+			ac.setBackground(Color.GRAY);
+			ac.setForeground(Color.BLUE);
+			add.setBounds(300, 300, 100, 50);
+			add.setBackground(Color.GRAY);
+			add.setForeground(Color.BLUE);
+			sub.setBounds(300, 250, 100, 50);
+			sub.setBackground(Color.GRAY);
+			sub.setForeground(Color.BLUE);
+			mul.setBounds(300, 200, 100, 50);
+			mul.setBackground(Color.GRAY);
+			mul.setForeground(Color.BLUE);
+			div.setBounds(300, 150, 100, 50);
+			div.setBackground(Color.GRAY);
+			div.setForeground(Color.BLUE);
+			equal.setBounds(200, 300, 100, 50);
+			equal.setBackground(Color.GRAY);
+			equal.setForeground(Color.BLUE);
 			this.add(t);
 			
 			this.add(b0);
