@@ -28,7 +28,7 @@ public class Radiobutton extends Frame implements ItemListener, ActionListener {
         b.setBounds(200, 250, 100, 30);
         t.setBounds(30, 300, 200, 30);
 
-        // Add components to the Frame
+        // Add components
         this.add(l);
         this.add(c1);
         this.add(c2);
@@ -36,12 +36,12 @@ public class Radiobutton extends Frame implements ItemListener, ActionListener {
         this.add(b);
         this.add(t);
 
-        // Add item listeners to the CheckBox components
+        // Add item listeners to the CheckBox 
         c1.addItemListener(this);
         c2.addItemListener(this);
         c3.addItemListener(this);
 
-        // Add an action listener to the Button
+        
         b.addActionListener(this);
     }
 
@@ -59,18 +59,18 @@ public class Radiobutton extends Frame implements ItemListener, ActionListener {
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-        // No need to handle the background color setting here
+        // background setting in action
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // Handle button click event here
+        // Handle button 
         Checkbox ch = cbg.getSelectedCheckbox();
         //or String s = cbg.getSelectedCheckbox().getLabel();
         if (ch != null) {
             t.setText(ch.getLabel());
 
-            // Set the background color based on the selected RadioButton
+           
             String s = ch.getLabel();
             if (s.equals("IceCream")) {
                 this.setBackground(Color.GRAY);
