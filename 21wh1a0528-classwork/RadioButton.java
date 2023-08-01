@@ -1,0 +1,61 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class RadioButton extends Frame implements ItemListener{
+	
+	CheckboxGroup cbg = new CheckboxGroup();
+		
+	
+	RadioButton(){
+		
+		Checkbox cb1 = new Checkbox("Red",cbg,true); //by default selected
+		Checkbox cb2 = new Checkbox("Yellow",cbg,false);
+		Checkbox cb3 = new Checkbox("Green",cbg,false);
+		this.setLayout(new FlowLayout());
+		this.add(cb1);
+		this.add(cb2);
+		this.add(cb3);
+		cb1.addItemListener(this);
+		cb2.addItemListener(this);
+		cb3.addItemListener(this);
+		
+	}
+	public void itemStateChanged(ItemEvent ie) {
+		repaint();
+	}
+	public void paint(Graphics g) {
+		String str = cbg.getSelectedCheckbox().getLabel();
+		this.setBackground(Color.pink);
+		
+		Font f = new Font("Arial", Font.BOLD, 36); 
+	    g.setFont(f);
+		
+	    if (str=="Red") {
+	        g.setColor(Color.RED); 
+	        g.drawString("Stop", 250, 300);
+	    }
+	    if (str=="Yellow") {
+	        g.setColor(Color.YELLOW); 
+	        g.drawString("Slow", 250, 300);
+	    }
+	    if (str=="Green") {
+	        g.setColor(Color.GREEN); 
+	        g.drawString("Go", 280, 300);
+	    }
+	}
+	public static void main(String[] args) {
+		RadioButton r=new RadioButton();
+        r.setTitle("Traffic Lights");
+        r.setSize(600,600);
+        r.setVisible(true);
+        r.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent we){
+                System.exit(0);
+            }
+        });
+
+
+	}
+
+}
+
