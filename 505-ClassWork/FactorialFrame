@@ -1,0 +1,74 @@
+import java.awt.*;
+import java.awt.event.*;
+
+
+public class FactorialFrame extends Frame implements ActionListener {
+    Label inputLabel, resultLabel;
+    TextField inputField, resultField;
+    Button calculateButton, clear;
+
+    public FactorialFrame() {
+        setTitle("Factorial Calculator");
+        setSize(300, 150);
+        setLayout(new FlowLayout());
+
+        inputLabel = new Label("Enter a number:");
+        inputField = new TextField(10);
+        resultLabel = new Label("Factorial:");
+        resultField = new TextField(15);
+        resultField.setEditable(false);
+        calculateButton = new Button("Calculate");
+        clear = new Button("Clear");
+
+        add(inputLabel);
+        add(inputField);
+        add(resultLabel);
+        add(resultField);
+        add(calculateButton);
+        add(clear);
+
+        calculateButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                calculateFactorial();
+            }
+        });
+
+        clear.addActionListener(this);
+    }
+
+    private void calculateFactorial() {
+        try {
+            int num = Integer.parseInt(inputField.getText());
+            long factorial = 1;
+
+            for (int i = 1; i <= num; i++) {
+                factorial *= i;
+            }
+
+            resultField.setText(String.valueOf(factorial));
+        } catch (NumberFormatException ex) {
+            resultField.setText("Invalid Input");
+        }
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String str = e.getActionCommand();
+        if (str.equals("Clear")) {
+            inputField.setText("");
+            resultField.setText("");
+        }
+    }
+
+    public static void main(String[] args) {
+        FactorialFrame f = new FactorialFrame();
+        f.setVisible(true);
+    }
+}
+
+
+
+
+        
+
+    
+
