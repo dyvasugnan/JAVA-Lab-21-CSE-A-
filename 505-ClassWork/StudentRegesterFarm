@@ -1,0 +1,135 @@
+import java.awt.*;
+import java.awt.event.*;
+import java.awt.CheckboxGroup;
+import java.awt.event.ItemEvent;
+import java.awt.event.ItemListener;
+
+        
+        
+ public class StudentRegesterFarm  {
+    public static void main(String[] args) {
+        // Create a Frame
+    	 Frame frame = new Frame("Student Registration Form");
+         
+         Label titleLabel = new Label("Student Registration Form");
+         
+         Label nameLabel = new Label("First Name:");
+         TextField nameField = new TextField(30);
+         
+         Label lastNameLabel = new Label("Last Name:");
+         TextField lastNameField = new TextField(30);
+         
+         Label branchLabel = new Label("Branch:");
+         Choice branchChoice = new Choice();
+         branchChoice.add("CSE");
+         branchChoice.add("EEE");
+         branchChoice.add("IT");
+         branchChoice.add("Mechanical");
+         
+         Label languageLabel = new Label("Languages Known:");
+         Checkbox teluguCheckbox = new Checkbox("Telugu");
+         Checkbox englishCheckbox = new Checkbox("English");
+        
+         Checkbox hindiCheckbox = new Checkbox("Hindi");
+         
+         Label genderLabel = new Label("Gender:");
+         CheckboxGroup genderGroup = new CheckboxGroup();
+         Checkbox maleCheckbox = new Checkbox("Male", genderGroup, false);
+         Checkbox femaleCheckbox = new Checkbox("Female", genderGroup, false);
+         
+         Label knownProgramsLabel = new Label("Known Programming Languages:");
+         List knownProgramsList = new List(5, true);
+         knownProgramsList.add("C");
+         knownProgramsList.add("C++");
+         knownProgramsList.add("Java");
+         knownProgramsList.add("Python");
+         knownProgramsList.add("Ruby");
+         
+         Button submitButton = new Button("Submit");
+         
+         Panel formPanel = new Panel(new GridBagLayout());
+         GridBagConstraints c = new GridBagConstraints();
+         c.anchor = GridBagConstraints.WEST;
+         c.insets = new Insets(5, 10, 5, 10);
+         
+         c.gridx = 0;
+         c.gridy = 0;
+         c.gridwidth = 2;
+         formPanel.add(titleLabel, c);
+         
+         c.gridwidth = 1;
+         c.gridy = 1;
+         formPanel.add(nameLabel, c);
+         
+         c.gridx = 1;
+         formPanel.add(nameField, c);
+         
+         c.gridy = 2;
+         formPanel.add(lastNameLabel, c);
+         
+         c.gridx = 1;
+         formPanel.add(lastNameField, c);
+         
+         c.gridy = 3;
+         formPanel.add(branchLabel, c);
+         
+         c.gridx = 1;
+         formPanel.add(branchChoice, c);
+         
+         c.gridy = 4;
+         formPanel.add(languageLabel, c);
+         
+         c.gridx = 1;
+         Panel languagePanel = new Panel();
+         languagePanel.add(teluguCheckbox);
+         languagePanel.add(englishCheckbox);
+         languagePanel.add(hindiCheckbox);
+         formPanel.add(languagePanel, c);
+         
+         c.gridy = 5;
+         formPanel.add(genderLabel, c);
+         
+         c.gridx = 1;
+         Panel genderPanel = new Panel();
+         genderPanel.add(maleCheckbox);
+         genderPanel.add(femaleCheckbox);
+         formPanel.add(genderPanel, c);
+         
+         c.gridy = 6;
+         formPanel.add(knownProgramsLabel, c);
+         
+         c.gridx = 1;
+         formPanel.add(knownProgramsList, c);
+         
+         c.gridy = 7;
+         c.gridx = 0;
+         c.gridwidth = 2;
+         formPanel.add(submitButton, c);
+         
+         submitButton.addActionListener(new ActionListener() {
+             public void actionPerformed(ActionEvent e) {
+                 String firstName = nameField.getText();
+                 String lastName = lastNameField.getText();
+                 String branch = branchChoice.getSelectedItem();
+                 
+                 System.out.println("First Name: " + firstName);
+                 System.out.println("Last Name: " + lastName);
+                 System.out.println("Branch: " + branch);
+                 
+                 System.out.println("Languages Known:");
+                 if (teluguCheckbox.getState()) System.out.println("Telugu");
+                 if (englishCheckbox.getState()) System.out.println("English");
+                 if (hindiCheckbox.getState()) System.out.println("Hindi");
+                
+                 System.out.println("Known Programming Languages:");
+                 for (String language : knownProgramsList.getSelectedItems()) {
+                     System.out.println(language);
+                 }
+             }
+         });
+
+         frame.add(formPanel);
+         frame.setSize(400, 500);
+         frame.setVisible(true);
+     }
+ }
