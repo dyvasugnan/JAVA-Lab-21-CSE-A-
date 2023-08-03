@@ -1,0 +1,16 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class SwingFrame extends JFrame{
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		JFrame jf = new JFrame();
+		jf.setSize(400,400);
+		jf.setVisible(true);
+		Container c = jf.getContentPane();
+		c.setBackground(Color.blue);
+		jf.setDefaultCloseOperation(EXIT_ON_CLOSE);
+	}
+
+}
