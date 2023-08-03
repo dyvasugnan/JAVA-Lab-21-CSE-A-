@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Input the number of test cases
+        int numTestCases = scanner.nextInt();
+
+        // Handle each test case
+        for (int i = 0; i < numTestCases; i++) {
+            int n = scanner.nextInt();
+            int result = findNthPrime(n);
+            System.out.println(result);
+        }
+
+        scanner.close();
+    }
+
+    public static boolean isPrime(int num) {
+        if (num <= 1)
+            return false;
+        if (num <= 3)
+            return true;
+        if (num % 2 == 0 || num % 3 == 0)
+            return false;
+        for (int i = 5; i * i <= num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0)
+                return false;
+        }
+        return true;
+    }
+
+    public static int findNthPrime(int n) {
+        int count = 0;
+        int num = 2; // Starting from the first prime number
+
+        while (count < n) {
+            if (isPrime(num)) {
+                count++;
+            }
+            num++;
+        }
+
+        return num - 1; // num will be incremented once more after finding the nth prime
+    }
+}
