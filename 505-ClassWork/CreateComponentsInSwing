@@ -1,0 +1,33 @@
+import javax.swing.*;
+import java.awt.*;
+
+public class CreateComponentsInSwing{
+    public static void main(String[] args) {
+        JFrame frame = new JFrame("Components using swing");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+        frame.setLayout(new FlowLayout());
+        JTextField textField = new JTextField(15);
+        JButton button = new JButton("Click Me");
+        JCheckBox checkBox = new JCheckBox("Check Me");
+        JLabel label = new JLabel("Label Text");
+        
+        JRadioButton radioButton1 = new JRadioButton("Option 1");
+        JRadioButton radioButton2 = new JRadioButton("Option 2");
+        
+        ButtonGroup radioButtonGroup = new ButtonGroup();
+        radioButtonGroup.add(radioButton1);
+        radioButtonGroup.add(radioButton2);
+
+       
+        frame.add(textField);
+        frame.add(button);
+        frame.add(checkBox);
+        frame.add(label);
+        frame.add(radioButton1);
+        frame.add(radioButton2);
+
+        frame.setVisible(true);
+    }
+}
+
