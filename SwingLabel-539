@@ -1,0 +1,12 @@
+import java.swing.*;
+import java.event.awt.*;
+import java.awt.*;
+import java.lang.*;
+public static void main(){
+Jframe f = new frame("Gmail");
+Jlabel l = new label("Signin");
+l.setbounds(30,40,50,10);
+l.setlayout(null);
+l.setvisible(true);
+l.add(l);
+}
