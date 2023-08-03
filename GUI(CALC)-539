@@ -1,0 +1,89 @@
+package javalab;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class AdditionGUI extends Frame implements ActionListener
+{
+    Button b1, b2;
+    TextField tf1, tf2, tf_result;
+    Label l1, l2, l_result;
+    AdditionGUI()
+    {
+        this.setLayout(null);
+        b1 = new Button("Add");
+        b2 = new Button("Reset");
+        l1 = new Label("Number 1");
+        l2 = new Label("Number 2");
+        l_result = new Label("Result");
+        tf1 = new TextField();
+        tf2 = new TextField();
+        tf_result = new TextField();
+        
+        l1.setBounds(100, 150, 100, 50);
+        l2.setBounds(100, 200, 100, 50);
+        l_result.setBounds(100, 300, 100, 50);
+        
+        tf1.setBounds(200, 150, 100, 50);
+        tf2.setBounds(200, 200, 100, 50);
+        tf_result.setBounds(200, 300, 100, 50);
+        
+        b1.setBounds(150, 250, 100, 50);
+        b2.setBounds(150, 350, 100, 50);
+        
+        this.add(l1);
+        this.add(l2);
+        this.add(l_result);
+        this.add(tf1);
+        this.add(tf2);
+        this.add(tf_result);
+        this.add(b1);
+        this.add(b2);
+        
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        tf1.addActionListener(this);
+        tf2.addActionListener(this);
+        tf_result.addActionListener(this);
+    }
+    
+    public void actionPerformed(ActionEvent ae)
+    {
+        String str = ae.getActionCommand();
+        if(str.equals("Add"))
+        {
+            try 
+            {
+                int a = Integer.parseInt(tf1.getText());
+                int b = Integer.parseInt(tf2.getText());
+                int c = a + b;
+                tf_result.setText(String.valueOf(c));
+            } 
+            catch (NumberFormatException ex) 
+            {
+                tf_result.setText("Invalid input");
+            }
+        }
+        else if (str.equals("Reset"))
+        {
+            tf1.setText("");
+            tf2.setText("");
+            tf_result.setText("");
+        }
+    }
+    
+    public static void main(String args[])
+    {
+    	AdditionGUI agui = new AdditionGUI();
+        agui.setTitle("Arithmetic Operation GUI");
+        agui.setSize(400, 400);
+        agui.setVisible(true);
+        agui.addWindowListener(new WindowAdapter()
+        {
+            public void windowClosing(WindowEvent we)
+            {
+                System.exit(0);
+            }
+        });
+    }
+}
