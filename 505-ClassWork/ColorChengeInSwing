@@ -1,0 +1,16 @@
+import javax.swing.*;
+import java.awt.*;
+
+
+
+public class ColorChengeInSwing {
+	public static void main(String[] args) {
+        JFrame frame = new JFrame("Components using swing");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(400, 300);
+        Container c= frame.getContentPane();
+          c.setBackground(Color.green);
+
+        frame.setVisible(true);
+    }
+}
