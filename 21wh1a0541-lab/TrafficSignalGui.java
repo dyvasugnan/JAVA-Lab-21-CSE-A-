@@ -1,0 +1,68 @@
+package javaprograms;
+import java.awt.*;
+import java.awt.event.*;
+
+public class TrafficSignalGui extends Frame implements ItemListener {
+    CheckboxGroup c;
+
+    TrafficSignalGui() {
+        setTitle("Traffic Signal");
+        setSize(300, 500);
+        setLayout(null);
+        setVisible(true);
+
+        c = new CheckboxGroup();
+        Checkbox cb1 = new Checkbox("red", c, true);
+        Checkbox cb2 = new Checkbox("green", c, false);
+        Checkbox cb3 = new Checkbox("yellow", c, false);
+
+        cb1.setBounds(100, 100, 100, 100);
+        cb2.setBounds(100, 220, 100, 100);
+        cb3.setBounds(100, 340, 100, 100);
+
+        cb1.addItemListener(this);
+        cb2.addItemListener(this);
+        cb3.addItemListener(this);
+
+        add(cb1);
+        add(cb2);
+        add(cb3);
+        
+        cb1.setBackground(Color.RED);
+        cb2.setBackground(Color.GREEN);
+        cb3.setBackground(Color.YELLOW);
+
+        this.addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                dispose();
+                System.exit(0);
+            }
+        });
+    }
+
+   public void itemStateChanged(ItemEvent e) {
+        repaint();
+    }
+
+    public void paint(Graphics g) {
+        String str = c.getSelectedCheckbox().getLabel(); 
+        if (str.equals("red")) {
+            g.setColor(Color.RED);
+            g.drawString("stop", 250, 100);
+        }
+        else if (str.equals("green")) {
+            g.setColor(Color.GREEN);
+            g.drawString("go", 250, 100);
+        }
+        else if (str.equals("yellow")) {
+            g.setColor(Color.YELLOW);
+            g.drawString("Wait", 250, 100);
+        }
+    }
+    
+    public static void main(String[] args) {
+        TrafficSignalGui ts = new TrafficSignalGui();
+    }
+}
+
+
