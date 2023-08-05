@@ -1,0 +1,46 @@
+import java.util.*;
+import java.lang.*;
+import java.awt.*;
+import javax.swing.table.JTableHeader;
+import javax.swing.*;
+public class StudentsTable extends JFrame{
+	JTable table;
+	StudentsTable(){
+		Vector<Vector>data=new Vector<Vector>();
+		Vector<String>row= new Vector<String>();
+		row.add("1");
+		row.add("bhumika");
+		row.add("30000");
+		data.add(row);
+		row= new Vector<String>();
+		row.add("2");
+		row.add("ancina");
+		row.add("50000");
+		data.add(row);
+		row= new Vector<String>();
+		row.add("3");
+		row.add("mary");
+		row.add("90000");
+		data.add(row);
+		Vector<String>colms = new Vector<String>();
+		colms.add("Student ID");
+		colms.add("Student Name");
+		colms.add("Student Internship");
+		table =new JTable(data,colms);
+		JTableHeader head= table.getTableHeader();
+		Container c= getContentPane();
+		c.setLayout(new BorderLayout());
+		table.setRowHeight(30);
+		table.setGridColor(Color.blue);
+		c.add("North", head);
+		c.add("Center",table);
+		
+	}
+	public static void main(String[]args) {
+		StudentsTable st= new StudentsTable();
+		st.setSize(400,400);
+		st.setVisible(true);
+		st.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}
