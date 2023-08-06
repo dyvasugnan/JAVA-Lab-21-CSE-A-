@@ -1,0 +1,27 @@
+class Demo{
+    int a,b,c,d;
+    Demo(int p,int q){
+        a=p;
+        b=q;
+    }
+    Demo(int p,int q, int r){
+        this(p,q);
+        c=r;
+    }
+    Demo(int p,int q,int r,int s){
+        this(p,q,r);
+        d=s;
+    }
+    void display(){
+    System.out.println(a);
+    System.out.println(b);
+    System.out.println(c);
+    System.out.println(d);
+    }
+}
+class Chaining {
+    public static void main(String[] args) {
+        Demo d=new Demo(1,4,2,8);
+        d.display();
+    }
+}
