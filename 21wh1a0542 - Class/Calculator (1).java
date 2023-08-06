@@ -93,9 +93,9 @@ Double c;
 
 	public void actionPerformed(ActionEvent ae) {
 		String str = ae.getActionCommand();
-		if((str.charAt(0)>='0'&&str.charAt(0)<='9')) {
-			str1 = T.getText()+s;
-			T.setText(s1);
+		if((str.charAt(0)>='0' && str.charAt(0)<='9')) {
+			str1 = T.getText()+str;
+			T.setText(str1);
 					}
 		
 		 if(str.charAt(0)=='+') {
