@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class ClassTopper {
+		public static void main(String[] args) {
+			Scanner sc=new Scanner(System.in);
+			System.out.print("enter size: ");
+			int n=sc.nextInt();
+			int a[]=new int[n];
+			for(int i=0;i<n;i++) {
+				a[i]=sc.nextInt();
+			}
+			int fq[]=new int[n];
+			int c,s=0;
+			for(int i=0;i<n;i++) {
+				c=0;
+				for(int j=i+1;j<n;j++) {
+					if(a[i]==a[j]) {
+						c++;
+						fq[i]=c;
+						fq[j]=c;
+						s++;
+						
+					}
+				}
+			}
+			int r[]=new int[n-s];
+			for(int i=0;i<n;i++) {
+				if(fq[i]==0) {
+					for(int j=0;j<n-s;j++) {
+						r[j]=a[i];
+					}
+				}
+				
+			}
+				int max=r[0];
+				for(int k=0;k<n-s;k++) {
+						if(r[k]>max)
+							max=r[k];		
+			}
+				if(max>0)
+				System.out.println(max);
+				else
+				System.out.println("-1");
+				}	
+		}
+
+
+
+
