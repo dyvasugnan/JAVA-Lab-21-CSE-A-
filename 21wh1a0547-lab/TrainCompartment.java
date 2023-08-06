@@ -9,20 +9,19 @@ public class TrainCompartment {
 	a[i] = sc.nextInt();
 	}
 	Arrays.sort(a);
-	int long_seq = 0;
-	int curr_seq = 1;
+	int coiunt = 0;
+	int max = 0;
 	for(int i=1;i<a.length;i++){
-	if(a[i]!=a[i-1]){
-	if(a[i]== a[i-1]+1){
-	curr_seq++;
+	if((a[i]-a[i-1])==1){
+	c++;
+		if(coumt>max)
+			max = count;
 	}
 	else{
-	curr_seq = 1;
-	}
-	long_seq = Math.max(long_seq,curr_seq);
+	count =0 ;
 	}
 	}
-	System.out.println(long_seq);
+	System.out.println(max+1);
 	}
 	}
 
