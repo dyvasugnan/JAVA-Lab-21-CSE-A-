@@ -68,9 +68,9 @@ public class Array {
 		Array2D a1=new Array2D(2,3);
 		a1.get();
 		a1.print();
-		//Array3D a3=new Array3D(2,2,3);
-		//a3.get();
-		//a3.print();
+		Array3D a3=new Array3D(2,2,3);
+		a3.get();
+		a3.print();
 	}
 
 }
