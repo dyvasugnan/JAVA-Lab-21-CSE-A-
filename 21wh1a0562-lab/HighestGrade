@@ -1,0 +1,38 @@
+package java_lab;
+import java.util.*;
+class Student{
+	String name;
+	int id;
+	Double cgpa;
+	Student(String name,int id,Double cgpa){
+		this.name=name;
+		this.id=id;
+		this.cgpa=cgpa;
+	}
+}
+public class HighestGrade {
+	public static void main(String [] args) {
+		int n;
+		Scanner sc=new Scanner(System.in);
+		System.out.print("enter no of students: ");
+		n=sc.nextInt();
+		Student stu[]=new Student[n];
+		for(int i=0;i<n;i++) {
+		System.out.print("enter details of student "+(i+1));
+		String name=sc.next();
+		int id=sc.nextInt();
+		double cgpa=sc.nextDouble();
+		stu[i]=new Student(name,id,cgpa);
+		}
+		int max=0;
+		for(int i=0;i<n;i++) {
+			if(stu[i].cgpa>stu[max].cgpa) {
+				max=i;
+			}
+		}
+		System.out.println("Student details with Highest grade: ");
+		System.out.println(stu[max].name);
+		System.out.println(stu[max].id);
+		System.out.println(stu[max].cgpa);
+		}	
+	}
