@@ -63,7 +63,7 @@ import java.util.*;
 				 i.print();	 
 	 }
  }
-public class Array {
+public class ArrayOfArrays{
 	public static void main(String [] args) {
 		Array2D a1=new Array2D(2,3);
 		a1.get();
