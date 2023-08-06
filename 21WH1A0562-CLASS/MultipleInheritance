@@ -1,11 +1,11 @@
 package java_clss;
-interface A{
+interface One{
 	void method1();
 }
-interface B extends A{
+interface Two{
 	void method2();
 }
-class Child implements B{
+class Child implements One,Two{
 	public void method1() {
 		System.out.println("Method1 of interfaceA");
 	}
