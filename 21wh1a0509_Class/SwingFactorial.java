@@ -50,13 +50,13 @@ public class SwingFactorial extends JFrame implements ActionListener{
                 t2.setText("Invalid Input");
             }
         } else if (str.equals("Clear")) {
-            t1.setText("");
-            t2.setText("");
+            t1.setText(" ");
+            t2.setText(" ");
         }
     }
 	
 	public static void main(String[] args) {
-		FactorialSwing f = new FactorialSwing();
+		SwingFactorial f = new SwingFactorial();
 		f.setTitle("Factorial Swing");
         Image icon = Toolkit.getDefaultToolkit().getImage("C:\\Users\\vnave\\OneDrive\\Desktop\\calc.png");
         f.setIconImage(icon);
