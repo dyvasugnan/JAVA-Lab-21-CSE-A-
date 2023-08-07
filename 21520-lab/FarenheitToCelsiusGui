@@ -1,0 +1,70 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class FarenheitToCelsiusGui  extends Frame implements ActionListener{
+	Button b1,b2;
+	TextField tf1,tf2;
+	Label l1,l2;
+	FarenheitToCelsiusGui(){
+		this.setLayout(null);
+		b1=new Button("Convert");
+		b2=new Button("clear");
+		l1 = new Label("Celsius");
+		l2 = new Label("Farenhit");
+		b1.setBounds(200,350,100,50);
+		b2.setBounds(400,350,100,50);
+		tf1=new TextField();
+		tf2=new TextField();
+		tf1.setBounds(200,150,100,50);
+		tf2.setBounds(200,250,100,50);
+		l1.setBounds(100,150,100,50);
+		l2.setBounds(100,250,100,50);
+		this.add(b1);
+		this.add(b2);
+		this.add(tf1);
+		this.add(tf2);
+		this.add(l1);
+		this.add(l2);
+		b1.addActionListener(this);
+		b2.addActionListener(this);	
+		tf1.addActionListener(this);
+		tf2.addActionListener(this);
+		
+	}
+	public void actionPerformed(ActionEvent ae) {
+		String str=ae.getActionCommand();
+		double f=0;
+		if(str.equals("Convert")) {
+			int c=Integer.parseInt(tf1.getText());
+			 f=(c-32)*5/9;
+		}
+		tf2.setText(String.valueOf(f));
+		
+		
+		 if(str.equals("clear")) {
+			tf1.setText("");
+			tf2.setText("");
+		}
+		
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		FarenheitToCelsiusGui fa=new FarenheitToCelsiusGui();
+		fa.setTitle("Conversion Of Farenhit To Celsius");
+		fa.setSize(400,400);
+		fa.setVisible(true);
+		fa.addWindowListener(new WindowAdapter () {
+		public void windowClosing(WindowEvent we){
+				System.exit(0);
+			}
+			
+		});
+		
+		
+
+	}
+
+}
