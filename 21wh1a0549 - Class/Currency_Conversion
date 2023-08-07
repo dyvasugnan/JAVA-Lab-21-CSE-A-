@@ -1,0 +1,109 @@
+import java.awt.*;
+import javax.swing.*;
+import java.awt.event.*;
+public class Currency extends JFrame implements ActionListener{
+    JButton b1,b2,b3;
+    JLabel l1,l2;
+    JTextField t1,t2,t3,t4;
+    Currency()
+    {
+        this.setLayout(null);
+        this.setSize(900,500);
+        
+        b1=new JButton("R to $");
+        b2=new JButton("$ to R");
+        b3=new JButton("Clear");
+        l1=new JLabel("Amount : ");
+        l2=new JLabel("Conversion :");
+        t1=new JTextField();
+        t2=new JTextField();
+
+        Font bf = new Font("Casteller", Font.BOLD, 16);
+       
+        b1.setBackground(Color.ORANGE);
+        b1.setForeground(Color.BLACK);
+        b1.setFont(bf);
+
+        b2.setBackground(Color.ORANGE);
+        b2.setForeground(Color.BLACK);
+        b2.setFont(bf);
+
+        b3.setBackground(Color.ORANGE);
+        b3.setForeground(Color.BLACK);
+        b3.setFont(bf);
+
+        l1.setBackground(Color.ORANGE);
+        l1.setForeground(Color.BLACK);
+        l1.setFont(bf);
+        l1.setOpaque(true);
+
+        l2.setBackground(Color.ORANGE);
+        l2.setForeground(Color.BLACK);
+        l2.setFont(bf);
+        l2.setOpaque(true);
+
+        t1.setBackground(Color.ORANGE);
+        t1.setForeground(Color.BLACK);
+        t1.setFont(bf);
+
+        t2.setBackground(Color.ORANGE);
+        t2.setForeground(Color.BLACK);
+        t2.setFont(bf);
+        
+
+        Container c=getContentPane();
+        c.add(l1);
+        c.add(l2);
+        c.add(t1);
+        c.add(t2);
+        c.add(b1);
+        c.add(b2);
+        c.add(b3);
+        c.setBackground(Color.BLACK);
+
+        t1.addActionListener(this);
+        t2.addActionListener(this);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+        
+        b1.setBounds(200, 300,100,50);
+        b2.setBounds(375,300,100,50);
+        b3.setBounds(550,300,100,50);
+        l1.setBounds(100,100,100,50);
+        t1.setBounds(250,100,100,50);
+        l2.setBounds(450, 100,100,50);
+        t2.setBounds(600, 100,100, 50);
+
+    }
+
+    public  void actionPerformed(ActionEvent ae)
+        {
+            if(ae.getSource()==b1)
+            {
+                int num1=Integer.parseInt(t1.getText());
+                int ans=num1/85;
+                t2.setText(String.valueOf(ans));
+            }
+            if(ae.getSource()==b2)
+            {
+                int num1=Integer.parseInt(t1.getText());
+                int ans= num1*85;
+                t2.setText(String.valueOf(ans));
+            }
+            if(ae.getSource()==b3)
+            {
+                t1.setText("");
+                t2.setText("");
+            }
+        }
+
+
+    public static void main(String args[])
+    {
+        Currency t = new Currency();
+        t.setVisible(true);
+        t.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+}
