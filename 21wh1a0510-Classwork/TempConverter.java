@@ -61,11 +61,6 @@ public class TempConverter extends JFrame {
         panel.add(clearButton);
 
         getContentPane().add(panel);
-
-        cToFButton.setEnabled(true);
-        fToCButton.setEnabled(true);
-        f.setEditable(true);
-
         setVisible(true);
     }
 
