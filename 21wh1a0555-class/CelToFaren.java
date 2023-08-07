@@ -12,7 +12,7 @@ public class CelToFaren extends Frame implements ActionListener{
 		t1 = new TextField();
 		t2 = new TextField();
 		l1 = new Label("Temperature");
-		l2 = new Label("Farenheit");
+		l2 = new Label("Result");
 		this.setLayout(null);
 		cel.setBounds(100,350,200,50);
 		clr.setBounds(250,450,200,50);
