@@ -1,0 +1,96 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class CurrencyConverter extends Frame implements ActionListener {
+    Label rupeeLabel, dollarLabel, resultLabel;
+    TextField rupeeTextField, dollarTextField, resultTextField;
+    Button toDollarButton, toRupeeButton;
+
+    public CurrencyConverter() {
+        setTitle("Currency Converter");
+        setSize(300, 300);
+        setLayout(null);
+
+        rupeeLabel = new Label("Indian Rupees : ");
+        rupeeTextField = new TextField(10);
+        
+        dollarLabel = new Label("US Dollars $ : ");
+        dollarTextField = new TextField(10);
+        
+        resultLabel = new Label("Result: ");
+        resultTextField = new TextField(10);
+        resultTextField.setEditable(false);
+        
+        toDollarButton = new Button("Convert to USD");
+        toRupeeButton = new Button("Convert to INR");
+        
+        rupeeLabel.setBounds(70,70,100,40);
+        rupeeTextField.setBounds(200,70,100,40);
+        
+        dollarLabel.setBounds(70,150,100,40);
+        dollarTextField.setBounds(200,150,100,40);
+        
+        resultLabel.setBounds(70,230,100,40);
+        resultTextField.setBounds(200,230,100,40);
+        
+        toDollarButton.setBounds(100, 300, 100,40);
+        toRupeeButton.setBounds(100, 360, 100,40);
+        
+        add(rupeeLabel);
+        add(rupeeTextField);
+        add(dollarLabel);
+        add(dollarTextField);
+        add(resultLabel);
+        add(resultTextField);
+        add(toDollarButton);
+        add(toRupeeButton);
+        
+        toDollarButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                convertToDollars();
+            }
+        });
+
+        toRupeeButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                convertToRupees();
+            }
+        });
+
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+
+        setVisible(true);
+    }
+
+    private void convertToDollars() {
+        try {
+            double rupees = Double.parseDouble(rupeeTextField.getText());
+            double exchangeRate = 0.014; // Fixed exchange rate
+            double dollars = rupees * exchangeRate;
+            dollarTextField.setText(String.format("%.2f", dollars));
+            resultTextField.setText(rupees + " INR = " + dollars + " USD");
+        } catch (NumberFormatException ex) {
+            resultTextField.setText("Invalid input");
+        }
+    }
+
+    private void convertToRupees() {
+        try {
+            double dollars = Double.parseDouble(dollarTextField.getText());
+            double exchangeRate = 71.43; // Fixed exchange rate
+            double rupees = dollars * exchangeRate;
+            rupeeTextField.setText(String.format("%.2f", rupees));
+            resultTextField.setText(dollars + " USD = " + rupees + " INR");
+        } catch (NumberFormatException ex) {
+            resultTextField.setText("Invalid input");
+        }
+    }
+
+    public static void main(String[] args) {
+        new CurrencyConverter();
+    }
+}
