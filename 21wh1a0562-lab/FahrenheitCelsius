@@ -61,7 +61,7 @@ public class FheitCelsius extends JFrame implements ActionListener {
 
 public static void main(String[] args) {
     FheitCelsius fc = new FheitCelsius();
-    fc.setSize(500, 600);  // Adjusted height to fit all components
+    fc.setSize(500, 600);  
     fc.setTitle("Temperature Converter");
     fc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     fc.setVisible(true);
