@@ -1,0 +1,70 @@
+package java_clss;
+
+import java.awt.*;
+import java.awt.event.*;
+import java.util.*;
+import javax.swing.*;
+
+public class FheitCelsius extends JFrame implements ActionListener {
+    JLabel l1, l2;
+    JButton b1, b2, b3;
+    JTextField t1, t2;
+
+    FheitCelsius() {
+        Container c = getContentPane();
+        c.setLayout(null);
+        b1 = new JButton("Fahrenheit");
+        b2 = new JButton("Celsius");
+        b3 = new JButton("clear");
+        t1 = new JTextField();
+        t2 = new JTextField();
+        l1 = new JLabel("num");
+        l2 = new JLabel("res");
+        t1.setBounds(100, 150, 100, 50);
+        t2.setBounds(100, 250, 100, 50);
+        l1.setBounds(100, 100, 100, 50);
+        b1.setBounds(100, 300, 100, 50);
+        l2.setBounds(100, 200, 100, 50);
+        b2.setBounds(100, 400, 100, 50);
+        b3.setBounds(100, 500, 100, 50);
+        c.add(b1);
+        c.add(b2);
+        c.add(b3);
+        c.add(l1);
+        c.add(l2);
+        c.add(t1);
+        c.add(t2);
+        b1.addActionListener(this);
+        b2.addActionListener(this);
+        b3.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        String s = ae.getActionCommand();
+        if (s.equals("Fahrenheit")) {
+            float n = Float.parseFloat(t1.getText());
+            float c = (n * 9) / 5;
+            float r = c + 32;
+            t2.setText(String.valueOf(r));
+        }
+        if (s.equals("Celsius")) {
+            float f = Float.parseFloat(t1.getText());
+            float a = f - 32;
+            float fh = (a * 5) / 9;
+            t2.setText(String.valueOf(fh));
+        }
+        if (s.equals("clear")) {
+            t1.setText("");
+            t2.setText("");
+        }
+    }
+
+public static void main(String[] args) {
+    FheitCelsius fc = new FheitCelsius();
+    fc.setSize(500, 600);  // Adjusted height to fit all components
+    fc.setTitle("Temperature Converter");
+    fc.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    fc.setVisible(true);
+}
+}
+
