@@ -1,0 +1,63 @@
+package factFrameexample;
+
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+public class DollorConversion extends JFrame implements ActionListener {
+	JButton dollorConvertButton, clearButton;
+    JTextField  inputMoney;
+    Label moneyToConvertLabel, resultConversionLabel;
+    
+    DollorConversion(){
+    	Container c = getContentPane();
+    	c.setLayout(null);
+    	dollorConvertButton = new JButton("Convert To Rupee");
+    	clearButton = new JButton("clear");
+    	
+    	inputMoney = new JTextField();
+    	
+    	moneyToConvertLabel = new Label("Money In Dollors");
+    	resultConversionLabel = new Label();
+    	resultConversionLabel.setVisible(false);
+    	moneyToConvertLabel.setBounds(100,100,100,50);
+    	inputMoney.setBounds(200,100,100,50);
+    	
+    	dollorConvertButton.setBounds(100,200,200,50);
+    	clearButton.setBounds(300,200,100,50);
+    	resultConversionLabel.setBounds(100,250,100,50);
+    	
+    	c.add(dollorConvertButton);
+    	c.add(clearButton);
+    	c.add(resultConversionLabel);
+    	c.add(moneyToConvertLabel);
+    	c.add(inputMoney);
+    	
+    	dollorConvertButton.addActionListener(this);
+    	clearButton.addActionListener(this);
+	
+
+    }
+    public void actionPerformed(ActionEvent ae) {
+    	String str = ae.getActionCommand();
+    	if(str=="Convert To Rupee") {
+    		String c = inputMoney.getText();
+    		double enteredDollorAmount = Double.parseDouble(c);
+    		double indianRupeeAmount  = (enteredDollorAmount * 82.78);
+    		resultConversionLabel.setVisible(true);
+    		resultConversionLabel.setText(String.valueOf(indianRupeeAmount) + " Rupees");
+    	}
+    	else if(str=="clear")
+    	{
+    		inputMoney.setText("");
+    		resultConversionLabel.setVisible(false);
+    	}
+    
+    }
+    public static void main(String args[]) {
+    	DollorConversion  dollorConversion= new DollorConversion();
+    	dollorConversion.setSize(400,400);
+    	dollorConversion.setVisible(true);
+    	dollorConversion.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+    }
+}
