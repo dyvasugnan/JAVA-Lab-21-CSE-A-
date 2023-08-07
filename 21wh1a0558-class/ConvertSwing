@@ -1,0 +1,47 @@
+package javalab;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class ConvertSwing extends JFrame implements ActionListener {
+    JButton b1;
+    JTextField c, f;
+    JLabel celcius, result;
+
+    ConvertSwing() {
+        setLayout(null);
+        b1 = new JButton("Convert");
+        celcius = new JLabel("Degree Celsius");
+        result = new JLabel("Fahrenheit");
+        c = new JTextField();
+        f = new JTextField();
+        celcius.setBounds(100, 150, 100, 50);
+        c.setBounds(200, 150, 100, 50);
+        b1.setBounds(200, 250, 100, 50);
+        result.setBounds(100, 350, 100, 50);
+        f.setBounds(200, 350, 100, 50);
+        add(b1);
+        add(celcius);
+        add(result);
+        add(c);
+        add(f);
+        b1.addActionListener(this); 
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        String str = ae.getActionCommand();
+        if (str.equals("Convert")) { 
+            int a = Integer.parseInt(c.getText());
+            double fahrenheit = (a * 1.8) + 32; 
+            f.setText(String.valueOf(fahrenheit));
+        }
+    }
+
+    public static void main(String[] args) {
+        ConvertSwing co = new ConvertSwing();
+        co.setTitle("Test");
+        co.setSize(400, 400);
+        co.setVisible(true);
+        co.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
