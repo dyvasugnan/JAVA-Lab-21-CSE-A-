@@ -1,0 +1,70 @@
+
+import java.awt.*;
+import java.awt.event.*;
+public class FahrenheitToCelsiusConverter extends Frame implements ActionListener{
+		Button b1,b2;
+		TextField tf1,tf2;
+		Label l1,l2;
+		FahrenheitToCelsiusConverter(){
+        	this.setLayout(null);
+        	b1 = new Button("convertor");
+        	b2 = new Button("clear");
+        	l1 = new Label("Fahrenheit");
+			l2 = new Label("Celsius");
+			
+        	tf1 = new TextField();
+        	tf2 = new TextField();
+        	
+			tf1.setBounds(100, 150, 100, 50);
+			tf2.setBounds(100, 250, 100, 50);
+			
+			b1.setBounds(150, 450, 100, 50);
+			b2.setBounds(250,450,100,50);
+			
+			l1.setBounds(40,150,100,50);
+			l2.setBounds(50,250,100,50);
+			
+			
+			this.add(b2);
+			this.add(b1);
+			this.add(tf1);
+			this.add(tf2);
+			this.add(l1);
+			this.add(l2);
+			
+			b1.addActionListener(this);
+			b2.addActionListener(this);
+			tf1.addActionListener(this);
+			tf2.addActionListener(this);	
+        }
+		
+public void actionPerformed(ActionEvent ae) {
+	String str = ae.getActionCommand();
+	try {
+	if(str == "convertor") {
+		double f = Double.parseDouble(tf1.getText());
+		double c = (f-32) * 5/9;
+		tf2.setText(String.valueOf(c));
+	}
+	}
+	catch (NumberFormatException e) {
+        tf2.setText("Invalid input");
+    }
+	 if (str == "clear") {
+		tf1.setText("");
+		tf2.setText("");
+	}
+}
+	public static void main(String[] args) {
+		FahrenheitToCelsiusConverter f = new FahrenheitToCelsiusConverter();
+		f.setTitle("Fahrenheit_To_Celsius_Converter");
+		f.setSize(400, 400);
+		f.setBackground(Color.CYAN);
+		f.setVisible(true);
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.exit(0);
+			}
+		});
+	}
+}
