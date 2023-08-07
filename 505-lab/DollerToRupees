@@ -1,0 +1,65 @@
+package javalab;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public DollerToRupees() {
+        setTitle("Currency Converting");
+        setSize(300, 200);
+        setLayout(new GridLayout(4, 2, 10, 10)); // 4 rows, 2 columns, gaps
+
+        inputLabel1 = new JLabel("Enter the Dollar:");
+        inputField1 = new JTextField(10);
+
+        inputLabel2 = new JLabel("Enter the Exchange Rate:");
+        inputField2 = new JTextField(10);
+
+        resultLabel = new JLabel("Rupees:");
+        resultField = new JTextField(15);
+        resultField.setEditable(false);
+
+        calculateButton = new JButton("Convert");
+        calculateButton.addActionListener(this);
+
+        clear = new JButton("Clear");
+        clear.addActionListener(this);
+
+        add(inputLabel1);
+        add(inputField1);
+        add(inputLabel2);
+        add(inputField2);
+        add(resultLabel);
+        add(resultField);
+        add(calculateButton);
+        add(clear);
+
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    public void actionPerformed(ActionEvent e) {
+        String str = e.getActionCommand();
+
+        if (str.equals("Convert")) {
+            try {
+                double dollars = Double.parseDouble(inputField1.getText());
+                double exchangeRate = Double.parseDouble(inputField2.getText());
+
+                double rupees = dollars * exchangeRate;
+                resultField.setText(String.format("%.2f", rupees));
+            } catch (NumberFormatException ex) {
+                resultField.setText("Invalid input");
+            }
+        } else if (str.equals("Clear")) {
+            inputField1.setText("");
+            inputField2.setText("");
+            resultField.setText("");
+        }
+    }
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            new DollerToRupees().setVisible(true);
+        });
+    }
+}
