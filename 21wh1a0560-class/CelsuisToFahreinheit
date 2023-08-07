@@ -1,0 +1,64 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class CelsuisToFahreinheit extends Frame {
+    TextField celsiusTextField, fahrenheitTextField;
+
+    public CelsuisToFahreinheit() {
+        setTitle("Temperature Converter");
+        setSize(300, 300);
+        setLayout(null);
+
+        Label celsiusLabel = new Label("Celsius:");
+        Label fahrenheitLabel = new Label("Fahrenheit:");
+
+        celsiusTextField = new TextField(10);
+        fahrenheitTextField = new TextField(10);
+
+        Button cToFButton = new Button("C to F");
+        Button fToCButton = new Button("F to C");
+        
+        celsiusLabel.setBounds(60,60,80,40);
+        celsiusTextField.setBounds(180, 60, 80,40);
+        cToFButton.setBounds(300, 60, 60,40);
+        
+        fahrenheitLabel.setBounds(60,150,80,40);
+        fahrenheitTextField.setBounds(180, 150, 80,40);
+        fToCButton.setBounds(300,150,60,40);
+  
+
+        cToFButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double celsius = Double.parseDouble(celsiusTextField.getText());
+                double fahrenheit = (celsius * 9 / 5) + 32;
+                fahrenheitTextField.setText(Double.toString(fahrenheit));
+            }
+        });
+
+        fToCButton.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                double fahrenheit = Double.parseDouble(fahrenheitTextField.getText());
+                double celsius = (fahrenheit - 32) * 5 / 9;
+                celsiusTextField.setText(Double.toString(celsius));
+            }
+        });
+
+        add(celsiusLabel);
+        add(celsiusTextField);
+        add(cToFButton);
+        add(fahrenheitLabel);
+        add(fahrenheitTextField);
+        add(fToCButton);
+
+        setVisible(true);
+        addWindowListener(new WindowAdapter() {
+            public void windowClosing(WindowEvent e) {
+                System.exit(0);
+            }
+        });
+    }
+
+    public static void main(String[] args) {
+        new CelsuisToFahreinheit();
+    }
+}
