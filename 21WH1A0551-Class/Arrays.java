@@ -1,5 +1,3 @@
-package clss;
-
 import java.util.Scanner;
 class Array1D{
         int a[];
@@ -31,12 +29,12 @@ class Array2D extends Array1D{
     }
     }
     void read(){
-        for(Array1D ele:arr)
-            ele.read();
+        for(Array1D i:arr)
+            i.read();
     }
     void display(){
-        for(Array1D ele:arr)
-            ele.display();
+        for(Array1D i:arr)
+            i.display();
     }
 }
 
@@ -53,13 +51,13 @@ class Array3D extends Array2D {
     }
 
     void read() {
-        for (Array2D ele : arr)
-            ele.read();
+        for (Array2D i : arr)
+            i.read();
     }
 
     void display() {
-        for (Array2D ele : arr)
-            ele.display();
+        for (Array2D i : arr)
+            i.display();
     }
 }
 
