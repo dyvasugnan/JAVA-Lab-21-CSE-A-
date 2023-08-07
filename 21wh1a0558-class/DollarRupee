@@ -1,0 +1,46 @@
+package javalab;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+public class DollarRupee extends JFrame implements ActionListener {
+    JButton b1;
+    JTextField d, r;
+    JLabel dollar, rupee;
+
+    DollarRupee() {
+        setLayout(null);
+        b1 = new JButton("Convert");
+        dollar = new JLabel("Dollar");
+        rupee = new JLabel("Rupee");
+        d = new JTextField();
+        r = new JTextField();
+        dollar.setBounds(100, 150, 100, 50);
+        d.setBounds(200, 150, 100, 50);
+        b1.setBounds(200, 250, 100, 50);
+        rupee.setBounds(100, 350, 100, 50);
+        r.setBounds(200, 350, 100, 50);
+        add(b1);
+        add(dollar);
+        add(rupee);
+        add(d);
+        add(r);
+        b1.addActionListener(this);
+    }
+
+    public void actionPerformed(ActionEvent ae) {
+        String str = ae.getActionCommand();
+        if (str.equals("Convert")) {
+            double dollars = Double.parseDouble(d.getText());
+            double rupees = dollars*74.5;
+            r.setText(String.valueOf(rupees));
+        }
+    }
+
+    public static void main(String[] args) {
+        DollarRupee dr = new DollarRupee();
+        dr.setTitle("Dollar to Rupee Converter");
+        dr.setSize(400, 400);
+        dr.setVisible(true);
+        dr.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+}
