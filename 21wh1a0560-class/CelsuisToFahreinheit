@@ -1,7 +1,7 @@
 import java.awt.*;
 import java.awt.event.*;
 
-public class CelsuisToFahreinheit extends Frame {
+public class CelsuisToFahreinheit extends Frame implemets ActionListener{
     TextField celsiusTextField, fahrenheitTextField;
 
     public CelsuisToFahreinheit() {
