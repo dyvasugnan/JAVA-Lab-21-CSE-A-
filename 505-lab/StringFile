@@ -1,0 +1,73 @@
+import javax.swing.*;
+import javax.swing.table.AbstractTableModel;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+public class StringFile extends JFrame {
+
+    public StringFile() {
+        setTitle("Student File");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        String filePath = ""C:\Users\Bhumika\Documents\StringFile.txt"";
+        MyTableModel tableModel = new MyTableModel();
+
+        try (BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                String[] rowData = line.split(",");
+                tableModel.addRow(rowData);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        JTable table = new JTable(tableModel);
+        table.setRowHeight(50);
+        JScrollPane scrollPane = new JScrollPane(table);
+        getContentPane().add(scrollPane);
+
+        pack();
+        setLocationRelativeTo(null);
+    }
+
+    class MyTableModel extends AbstractTableModel {
+        private List<String[]> data = new ArrayList<>();
+        private String[] columnNames = {"stu-ID", "stu-Name", "stu-marks"};
+
+        public void addRow(String[] rowData) {
+            data.add(rowData);
+            fireTableRowsInserted(data.size() - 1, data.size() - 1);
+        }
+
+        @Override
+        public int getRowCount() {
+            return data.size();
+        }
+
+        @Override
+        public int getColumnCount() {
+            return columnNames.length;
+        }
+
+        @Override
+        public String getColumnName(int columnIndex) {
+            return columnNames[columnIndex];
+        }
+
+        @Override
+        public Object getValueAt(int rowIndex, int columnIndex) {
+            return data.get(rowIndex)[columnIndex];
+        }
+    }
+    
+
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(() -> {
+            new StringFile().setVisible(true);
+        });
+    }
+}
