@@ -1,0 +1,81 @@
+package factFrameexample;
+import java.awt.*;
+import java.awt.event.*;
+import java.lang.*;
+import javax.swing.*;
+public class FahrenheitConverstion extends JFrame implements ActionListener
+{
+	JButton fahrenheitconvertButton,clearButton;
+	JTextField inputTemp;
+	JLabel fahrenheitLabel,celciusResultLabel;
+	FahrenheitConverstion()
+	{ 
+	
+	    Container c = getContentPane();
+		this.setLayout(null);
+		fahrenheitconvertButton=new JButton("Change");
+		clearButton=new JButton("Clear");
+		
+		fahrenheitLabel= new JLabel("Enter Fahrenheit Temp");
+		celciusResultLabel = new JLabel("Result");
+		celciusResultLabel.setVisible(false);
+		inputTemp=new JTextField();
+		
+		c.add(fahrenheitconvertButton);
+		c.add(clearButton);
+		c.add(inputTemp);
+		c.add(fahrenheitLabel);
+		c.add(celciusResultLabel);
+		
+		fahrenheitconvertButton.addActionListener(this);
+		clearButton.addActionListener(this);
+		
+		fahrenheitconvertButton.setBounds(100,200, 200, 50);
+		clearButton.setBounds(350, 200,100,50);
+		fahrenheitLabel.setBounds(50, 150, 100, 50);
+		inputTemp.setBounds(200, 150, 100, 50);
+		celciusResultLabel.setBounds(50, 250, 100, 50);
+		
+	}
+	public void actionPerformed(ActionEvent ae)
+	{
+		String str = ae.getActionCommand();
+		if(str=="Change")
+		{
+			int a = Integer.parseInt(inputTemp.getText());
+			int ans=(a*(9/5)+32);
+			celciusResultLabel.setText(String.valueOf(ans));
+			
+			celciusResultLabel.setVisible(true);
+		
+		}
+		if(str=="Clear")
+		{
+
+			 inputTemp.setText(String.valueOf(""));
+			celciusResultLabel.setVisible(false);
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		FahrenheitConverstion f = new FahrenheitConverstion();
+		f.setTitle("Convertor");
+		f.setSize(400, 400);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+	
+	
+}
+	
+
+
