@@ -9,7 +9,7 @@ public class CurrencyConversion extends JFrame implements ActionListener {
 	
 	CurrencyConversion() {
 		Container co = getContentPane();
-		c.setLayout(null);
+		co.setLayout(null);
 		
 		
 		t1 = new JTextField();
