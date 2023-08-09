@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class FibonacciSeries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the value of n: ");
+        int n = sc.nextInt();
+
+        if (n <= 0) {
+            System.out.println("-1");
+        } else {
+            int firstTerm = 0;
+            int secondTerm = 1;
+            int nextTerm;
+
+            System.out.print("Fibonacci Series up to " + n + " terms: ");
+
+            for (int i = 1; i <= n; i++) {
+                System.out.print(firstTerm + " ");
+
+                nextTerm = firstTerm + secondTerm;
+                firstTerm = secondTerm;
+                secondTerm = nextTerm;
+            }
+        }
+    }
+}
