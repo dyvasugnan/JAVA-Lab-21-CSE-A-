@@ -1,0 +1,122 @@
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+public class MenuDemo1 extends JFrame implements ActionListener {
+
+		JMenuBar mb;
+		JMenu file,edit,help,font;
+		JMenuItem op,sa,ex,ct,cpy,pst,cnctspt,fedbck,f1,f2;
+		MenuDemo1(){
+			Container c=getContentPane();
+			mb=new JMenuBar();
+			
+			file=new JMenu("File");
+			edit=new JMenu("Edit");
+			help=new JMenu("Help");
+			font=new JMenu("Font");
+			mb.setBounds(50,100,200,100);
+			
+			op=new JMenuItem("Open");
+			sa=new JMenuItem("Save");
+			ex=new JMenuItem("Exit");
+			ct=new JMenuItem("Cut");
+			cpy=new JMenuItem("Copy");
+			pst=new JMenuItem("Paste");
+			cnctspt=new JMenuItem("ContactSupport");
+			fedbck=new JMenuItem("FeedBck");
+			f1=new JMenuItem("Font 1");
+			f2=new JMenuItem("Font 2");
+			
+			c.setLayout(null);
+			c.add(mb);
+
+		
+		mb.add(file);
+		mb.add(edit);
+		mb.add(help);
+		file.add(font);
+		
+		file.add(op);
+		file.add(sa);
+		file.add(ex);
+		
+		edit.add(ct);
+		edit.add(cpy);
+		edit.add(pst);
+		
+		help.add(cnctspt);
+		help.add(fedbck);
+		
+		font.add(f1);
+		font.add(f2);
+			
+		op.addActionListener(this);
+		sa.addActionListener(this);
+		ex.addActionListener(this);
+	    ct.addActionListener(this);
+		cpy.addActionListener(this);
+		pst.addActionListener(this);
+		cnctspt.addActionListener(this);
+		fedbck.addActionListener(this);
+		f1.addActionListener(this);
+		f2.addActionListener(this);
+			 
+		}
+		public void actionPerformed(ActionEvent ae) {
+			if(op.isArmed()) {
+				JOptionPane.showMessageDialog(this,"fileopend");
+			}
+			if(ex.isArmed())
+				this.dispose();
+			if(op.isArmed()) { 
+				this.openFile();
+				}
+			}
+		private void openFile() {
+			JFileChooser jc=new JFileChooser();
+			int i=jc.showOpenDialog(this);
+			if(i==JFileChooser.APPROVE_OPTION) {
+				File f=jc.getSelectedFile();
+				String str=f.getPath();
+				NewFrame nf=new NewFrame(str);
+				nf.setSize(400,400);
+				nf.setVisible(true);
+			}
+			
+			
+		}
+		 
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		MenuDemo1 d=new MenuDemo1();
+		d.setSize(400,400);
+		d.setTitle("MenuDemo");
+		d.setVisible(true);
+		d.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+
+}
+class NewFrame extends JFrame{
+	JTextArea ta;
+	String str;
+	String str1=" ";
+	NewFrame(String fname){
+		Container c=getContentPane();
+		ta=new JTextArea();
+		c.add(new JScrollPane(ta));
+		try {
+		BufferedReader br = new BufferedReader(new   FileReader(fname));
+		while((str=br.readLine())!=null) {
+			str1=str1+str+'\n';
+			ta.setText(str1);
+	
+		}
+		}
+		catch(Exception e) {
+			ta.setText("Error reading file: " + e.getMessage());
+		}
+	}
+}
+
+
