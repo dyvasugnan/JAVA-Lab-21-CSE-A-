@@ -1,0 +1,37 @@
+import java.lang.*;
+import java.util.*;
+
+public abstract class AbstractShape {
+    abstract void calculate(double x);
+}
+
+class Square extends AbstractShape {
+    void calculate(double x) {
+        System.out.println(x * x);
+    }
+}
+
+class Cube extends AbstractShape {
+    void calculate(double x) {
+        System.out.println(x * x * x);
+    }
+}
+
+class SquareRoot extends AbstractShape {
+    void calculate(double x) {
+        System.out.println(Math.sqrt(x));
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Square s2 = new Square();
+        s2.calculate(25);
+        
+        Cube c = new Cube();
+        c.calculate(34);
+        
+        SquareRoot r = new SquareRoot();
+        r.calculate(225);
+    }
+}
