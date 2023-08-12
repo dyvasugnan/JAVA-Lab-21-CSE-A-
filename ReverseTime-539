@@ -1,0 +1,65 @@
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+import javax.swing.Timer;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+public class MirrorDigitalTime extends JFrame {
+    private Map<Character, Character> mirroredDigits;
+
+    public MirrorDigitalTime() {
+        mirroredDigits = createMirroredDigitMapping();
+
+        setSize(400, 200);
+        setTitle("MIRROR DIGITAL TIME");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JLabel clockLabel = new JLabel();
+        clockLabel.setHorizontalAlignment(JLabel.CENTER);
+        add(clockLabel, BorderLayout.CENTER);
+
+        Timer timer = new Timer(1000, new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+                String time = sdf.format(new Date());
+                String mirrorImg = convertToMirrorImage(time);
+                clockLabel.setText(mirrorImg);
+            }
+        });
+        timer.start();
+    }
+
+    private Map<Character, Character> createMirroredDigitMapping() {
+        Map<Character, Character> mapping = new HashMap<>();
+        mapping.put('0', '0');
+        mapping.put('1', 'Ɩ');
+        mapping.put('2', 'ᘔ');
+        mapping.put('3', 'Ɛ');
+        mapping.put('4', 'ㄣ');
+        mapping.put('5', 'ϛ');
+        mapping.put('6', '9');
+        mapping.put('7', 'ㄥ');
+        mapping.put('8', '8');
+        mapping.put('9', '6');
+        return mapping;
+    }
+
+    private String convertToMirrorImage(String input) {
+        StringBuilder mirrored = new StringBuilder();
+        for (char c : input.toCharArray()) {
+            Character mirroredChar = mirroredDigits.get(c);
+            mirrored.append(mirroredChar != null ? mirroredChar : c);
+        }
+        return mirrored.toString();
+    }
+
+    public static void main(String args[]) {
+        SwingUtilities.invokeLater(() -> {
+            MirrorDigitalTime d = new MirrorDigitalTime();
+            d.setVisible(true);
+        });
+    }
+}
