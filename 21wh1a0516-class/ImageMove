@@ -1,0 +1,87 @@
+
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+
+
+
+public class ImageMove extends JFrame  implements ActionListener{
+	int x = 100;
+	int y = 100;
+	JLabel img;
+	Button up,down,left,right;
+	ImageMove(){
+
+		ImageIcon i = new ImageIcon("D:/ashwi/Pictures/Saved Pictures/Screenshot (146).png");
+		img = new JLabel(i);
+		
+		
+		// Toolkit t = Toolkit.getDefaultToolkit();
+		// Image i = t.getImage("D:/ashwi/Pictures/Saved Pictures/Screenshot (143).png");
+
+
+		
+
+
+		up = new Button("Up");
+		down = new Button("Down");
+		left = new Button("Left");
+		right = new Button("Right");
+
+		Container c= getContentPane();
+	
+		c.setLayout(null);
+		c.add(img);
+		c.add(up);
+		c.add(down);
+		c.add(left);
+		c.add(right);
+		img.setBounds(x,y,500,250);
+		up.setBounds(400, 400, 50, 50);
+		down.setBounds(400,500,50,50);
+		left.setBounds(300,450,50,50);
+		right.setBounds(500,450,50,50);
+		up.addActionListener(this);
+		down.addActionListener(this);
+		left.addActionListener(this);
+		right.addActionListener(this);
+
+	}
+
+	// public void paint(Graphics g){
+	// 	Toolkit t = Toolkit.getDefaultToolkit();
+	// 	Image i = t.getImage("D:/ashwi/Pictures/Saved Pictures/Screenshot (143).png");
+	// 	g.drawImage(i, 120,100,this);
+	// }
+
+	public void actionPerformed(ActionEvent ae){
+		//img.setBounds(100,100,500,300);
+		String str = ae.getActionCommand();
+		if(str=="Right"){
+			x = x + 10;
+			img.setBounds(x,y,500,250);
+		}
+		if(str=="Left"){
+			x = x-10;
+			img.setBounds(x,y,500,250);
+		}
+		if(str=="Up"){
+			y = y-10;
+			img.setBounds(x,y,500,250);
+		}
+		if(str=="Down"){
+			y = y+10;
+			img.setBounds(x,y,500,250);
+		}
+	}
+
+	public static void main(String[] args) {
+		ImageMove im = new ImageMove();
+		im.setSize(800,800);
+		im.setVisible(true);
+		im.setTitle("Image mover");
+		im.setDefaultCloseOperation(EXIT_ON_CLOSE);
+		im.setBackground(Color.LIGHT_GRAY);
+	}
+}
