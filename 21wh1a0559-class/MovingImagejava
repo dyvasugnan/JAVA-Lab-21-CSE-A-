@@ -1,0 +1,66 @@
+package javalab;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class MovingImage extends JFrame implements ActionListener {
+	JButton b1,b2,b3,b4;
+	JLabel img;
+	int axis_x=400,axis_y=100;
+	MovingImage(){
+		Container c = getContentPane();
+		c.setLayout(null);
+		//c.setBackground(Color.black);
+		b1 = new JButton("Up");
+		b2 = new JButton("Down");
+		b3 = new JButton("Left");
+		b4 = new JButton("Right");
+		img = new JLabel();
+		
+		b1.setBounds(600, 420, 90, 60);
+		b2.setBounds(600, 540, 90, 60);
+		b3.setBounds(510, 480, 90, 60);
+		b4.setBounds(690, 480, 90, 60);
+		
+		this.add(b1);
+		this.add(b2);
+		this.add(b3);
+		this.add(b4);
+		
+		b1.addActionListener(this);
+		b2.addActionListener(this);
+		b3.addActionListener(this);
+		b4.addActionListener(this);
+		img.setIcon(new ImageIcon("car.jpg"));
+		Dimension d = img.getPreferredSize();
+		img.setBounds(axis_x, axis_y, 490, 300);
+		c.add(img);
+	}
+	public void actionPerformed(ActionEvent ae) {
+		String str = ae.getActionCommand();
+		if(str == "Up") {
+			axis_y -= 50;
+			img.setBounds(axis_x, axis_y, 490, 300);
+		}
+		if(str == "Down") {
+			axis_y += 50;
+			img.setBounds(axis_x, axis_y, 490, 300);
+		}
+		if(str == "Left") {
+			axis_x -= 50;
+			img.setBounds(axis_x, axis_y, 490, 300);
+		}
+		if(str == "Right") {
+			axis_x += 50;
+			img.setBounds(axis_x, axis_y, 490, 300);
+		}
+	}
+	
+	public static void main(String args[]) {
+		MovingImage f =new MovingImage();
+		f.setTitle("Image Moving");
+		f.setSize(1290,680);
+		f.setVisible(true);
+		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	}
+}
