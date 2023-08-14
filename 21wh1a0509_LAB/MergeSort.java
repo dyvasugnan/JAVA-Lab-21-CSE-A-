@@ -50,7 +50,7 @@ public class MergeSort{
         int a[] = new int[n];
         for(int i=0;i<n;i++)
             a[i] = sc.nextInt();
-        Main ms = new Main();
+        MergeSort ms = new MergeSort();
         ms.merging(a,0,a.length-1);
         for(int i=0;i<n;i++)
             System.out.print(a[i]+" ");
