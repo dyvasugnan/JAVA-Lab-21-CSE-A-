@@ -1,0 +1,57 @@
+import java.util.*;
+
+public class MergeSort{
+    static void merge(int a[],int l,int h,int m){
+        int i=l,j=m+1;
+        int temp[]=new int[h-l+1];
+        int s=0;
+        while(i<=m && j<=h){
+            if(a[i]<=a[j]){
+                temp[s]=a[i];
+                i++;
+                s++;
+            }
+            else{
+                temp[s]=a[j];
+                j++;
+                s++;
+            }
+        }
+        while(i<=m){
+            temp[s]=a[i];
+            s++;
+            i++;
+        }
+        while(j<=h){
+            temp[s]=a[j];
+            s++;
+            j++;
+        }
+        int y=0;
+        for(int x=l;x<=h;x++){
+            a[x]=temp[y];
+            y++;
+        }
+    }
+    static void sortsub(int a[],int low,int high){
+        if(low<high){
+            int mid=(low+high)/2;
+            sortsub(a,low,mid);
+            sortsub(a,mid+1,high);
+            merge(a,low,high,mid);
+        }
+    }
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+        System.out.print("Enter size : ");
+        int n=sc.nextInt();
+        int[] a=new int[n];
+        for(int i=0;i<n;i++){
+            a[i]=sc.nextInt();
+        }
+        sortsub(a,0,n-1);
+        for(int i=0;i<n;i++){
+            System.out.print(a[i]+" ");
+        }
+    }
+}
