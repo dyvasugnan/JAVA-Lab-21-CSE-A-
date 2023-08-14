@@ -1,0 +1,48 @@
+package lab;
+
+import java.util.*;
+
+class LinkedList{
+	Scanner sc = new Scanner(System.in);
+	 class Node{
+		int val;
+		Node next;
+	}
+	
+	
+	
+	Node insertFront(Node head) {
+	Node p = new Node();
+	System.out.print("Enter n value");
+	int n = sc.nextInt();
+	p.val = n ;
+	p.next = head;
+	
+	head = p;
+	return head;
+	}
+	
+	void display(Node head) {
+		Node t = head;
+		while(t!= null) {
+			System.out.print(t.val+" ");
+			t = t.next;
+		}
+	}
+	
+	
+	
+	
+}
+
+public class SingleLinkedList {
+	public static void main(String args[]) {
+		LinkedList.Node head = new LinkedList().new Node();
+		
+		LinkedList si = new LinkedList();
+		head = si.insertFront(head);
+		si.display(head);
+	}
+	
+	
+}
