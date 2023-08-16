@@ -30,7 +30,7 @@ class Cube {
     }
 }
 
-public class Main {
+public class ReferenceObject {
     public static void main(String[] args) {
         Three t = new Three();
         Square s = new Square(t);
