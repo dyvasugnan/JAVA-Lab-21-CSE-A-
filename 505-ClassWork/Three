@@ -1,0 +1,44 @@
+class Three {
+    int getx(int x) {
+        return x;
+    }
+}
+
+class Square {
+    Three o3;
+
+    Square(Three o3) {
+        this.o3 = o3;
+    }
+
+    int square(int x) {
+        int result = x * o3.getx(x);
+        return result;
+    }
+}
+
+class Cube {
+    Square o2;
+
+    Cube(Square o2) {
+        this.o2 = o2;
+    }
+
+    int cube(int x) {
+        int result = x * o2.square(x);
+        return result;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Three t = new Three();
+        Square s = new Square(t);
+        Cube c = new Cube(s);
+        int r1 = c.cube(6);
+        int r2 = s.square(6);
+
+        System.out.println(r1);  
+        System.out.println(r2);  
+    }
+}
