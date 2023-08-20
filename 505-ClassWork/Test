@@ -1,0 +1,44 @@
+package javalab;
+import javax.swing.*;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.*;
+
+public class Test extends JFrame implements MouseListener, MouseMotionListener {
+    JPanel p1, p2;
+    JLabel l1;
+    JTextArea ta;
+    String str = "";
+
+    Test() {
+        p1 = new JPanel();
+        p2 = new JPanel();
+        getContentPane().add(p1, BorderLayout.NORTH);
+        getContentPane().add(p2, BorderLayout.CENTER);
+
+        l1 = new JLabel("Mouse Event");
+        ta = new JTextArea(20, 50);
+
+        p1.add(l1);
+        p2.add(ta);
+
+        ta.addMouseListener(this);
+        ta.addMouseMotionListener(this);
+    }
+
+    public void mouseClicked(MouseEvent me) {
+        str = "X-coordinate: " + me.getX() + " Y-coordinate: " + me.getY();
+        ta.setText(str);
+    }
+
+    
+    public static void main(String[] args) {
+        Test testFrame = new Test();
+        
+        testFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        
+        testFrame.setSize(400, 300);
+        testFrame.setVisible(true);
+    }
+}
