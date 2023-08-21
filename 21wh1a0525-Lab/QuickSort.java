@@ -1,14 +1,14 @@
 import java.util.*;
 
-public class quickSort 
+public class QuickSort 
 {
-    public static void quickSorting(int[] a, int l, int h)
+    public static void quickSort(int[] a, int l, int h)
     {
         if (l < h)
         {
             int j = partition(a, l, h);
-            quickSorting(a, l, j - 1);
-            quickSorting(a, j + 1, h);
+            quickSort(a, l, j - 1);
+            quickSort(a, j + 1, h);
         }
     }    
 
@@ -37,8 +37,6 @@ public class quickSort
                 j--;
             }
         }
-        
-        // Swap pivot with element at index j
         int t = a[l];
         a[l] = a[j];
         a[j] = t;
@@ -55,7 +53,7 @@ public class quickSort
         {
             a[i] = sc.nextInt();
         }
-        quickSorting(a, 0, n - 1);
+        quickSort(a, 0, n - 1);
         for (int i = 0; i < n; i++)
         {
             System.out.print(a[i] + " ");
