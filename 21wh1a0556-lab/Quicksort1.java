@@ -8,7 +8,7 @@ public class QuickSort1 {
 		while(i<j) {
 			while(a[i]<=pi && i<h)
 				i++;
-			while(a[j]>pi && j>=l)
+			while(a[j]>pi && j>l)
 				j--;
 			if(i<j) {
 				int t=a[i];
