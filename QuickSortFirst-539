@@ -1,0 +1,49 @@
+public class FirstPivotQuickSort {
+    public static void main(String[] args) {
+        int[] array = { 7, 2, 1, 6, 8, 5, 3, 4 };
+        
+        System.out.println("Original Array: ");
+        printArray(array);
+        
+        firstPivotQuickSort(array, 0, array.length - 1);
+        
+        System.out.println("\nSorted Array: ");
+        printArray(array);
+    }
+    
+    public static void firstPivotQuickSort(int[] array, int low, int high) {
+        if (low < high) {
+            int pivotIndex = firstPartition(array, low, high);
+            firstPivotQuickSort(array, low, pivotIndex - 1);
+            firstPivotQuickSort(array, pivotIndex + 1, high);
+        }
+    }
+    
+    public static int firstPartition(int[] array, int low, int high) {
+        int pivot = array[low];
+        int i = high + 1;
+        
+        for (int j = high; j > low; j--) {
+            if (array[j] >= pivot) {
+                i--;
+                swap(array, i, j);
+            }
+        }
+        
+        swap(array, i - 1, low);
+        return i - 1;
+    }
+    
+    public static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+    
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
