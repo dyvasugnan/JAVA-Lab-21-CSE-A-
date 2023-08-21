@@ -1,0 +1,59 @@
+import java.util.Scanner;
+
+public class MiddlePivotQuickSort {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter the number of elements: ");
+        int n = sc.nextInt();
+        int[] array = new int[n];
+
+        System.out.println("Enter the elements: ");
+        for (int i = 0; i < n; i++) {
+            array[i] = sc.nextInt();
+        }
+        System.out.println("Original Array: ");
+        printArray(array);
+
+        middlePivotQuickSort(array, 0, array.length - 1);
+
+        System.out.println("\nSorted Array: ");
+        printArray(array);
+    }
+
+    public static void middlePivotQuickSort(int[] array, int low, int high) {
+        if (low < high) {
+            int pivotIndex = middlePartition(array, low, high);
+            middlePivotQuickSort(array, low, pivotIndex - 1);
+            middlePivotQuickSort(array, pivotIndex + 1, high);
+        }
+    }
+
+    public static int middlePartition(int[] array, int low, int high) {
+        int mid = (low + high) / 2;
+        int pivot = array[mid];
+        int i = low - 1;
+
+        for (int j = low; j <= high; j++) {
+            if (array[j] <= pivot) {
+                i++;
+                swap(array, i, j);
+            }
+        }
+
+        return i;
+    }
+
+    public static void swap(int[] array, int i, int j) {
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+
+    public static void printArray(int[] array) {
+        for (int num : array) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+    }
+}
