@@ -1,58 +1,49 @@
+package javalab;
+import java.lang.*;
 import java.util.*;
 
-public class QuickSort 
-{
-    public static void main(String args[]) 
-    {
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-        int a[] = new int[n];
-        for (int i = 0; i < n; i++) 
-        {
-            a[i] = sc.nextInt();
-        }
-        sorting(a, 0, n - 1);
-        for (int k = 0; k < n; k++) 
-        {
-            System.out.print(a[k] + " ");
-        }
-    }
+class Quicksort {
+	  static int partition(int array[], int low, int high) {
+	    int pivot = array[high];
+	    int i = (low - 1);
+	    for (int j = low; j < high; j++) {
+	      if (array[j] <= pivot) {
 
-    public static int pivot(int a[], int low, int high) {
-        int p = a[low];
-        int i = low + 1;
-        int j = high;
-        while (i <= j) 
-        {
-            while (i <= j && a[i] <= p) 
-            {
-                i++;
-            }
-            while (i <= j && a[j] >= p) 
-            {
-                j--;
-            }
-            if (i < j) 
-            {
-                int temp = a[i];
-                a[i] = a[j];
-                a[j] = temp;
-            }
-        }
-        int auxiliary = a[low];
-        a[low] = a[j];
-        a[j] = auxiliary;
+	        // if element smaller than pivot is found
+	        // swap it with the greater element pointed by i
+	        i++;
 
-        return j;
-    }
+	        // swapping element at i with element at j
+	        int temp = array[i];
+	        array[i] = array[j];
+	        array[j] = temp;
+	      }
 
-    public static void sorting(int a[], int low, int high) 
-    {
-        if (low < high) 
-        {
-            int j = pivot(a, low, high);
-            sorting(a, low, j - 1);
-            sorting(a, j + 1, high);
-        }
-    }
-}
+	    }
+	    int temp = array[i + 1];
+	    array[i + 1] = array[high];
+	    array[high] = temp;
+	    return (i + 1);
+	  }
+
+	  static void quickSort(int array[], int low, int high) {
+	    if (low < high) {
+	      int pi = partition(array, low, high);
+	      quickSort(array, low, pi - 1);
+	      quickSort(array, pi + 1, high);
+	    }
+	  }
+	
+	  public static void main(String args[]) {
+
+	    int[] data = { 8, 7, 2, 1, 0, 9, 6 };
+	    System.out.println("Unsorted Array");
+	    System.out.println(Arrays.toString(data));
+	    int size = data.length;
+	    Quicksort.quickSort(data, 0, size - 1);
+
+	    System.out.println("Sorted Array in Ascending Order ");
+	    System.out.println(Arrays.toString(data));
+	  }
+	  }
+	 
