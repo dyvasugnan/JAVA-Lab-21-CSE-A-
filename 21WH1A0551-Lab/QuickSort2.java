@@ -3,30 +3,24 @@ package labprograms;
 import java.util.Scanner;
 
 public class QuickSort2 {
-	int partition(int a[], int l, int h) {
-	    int pivot = a[h];
-	    int i = l - 1;
-	    int j = l;
-
-	    while (j <= h - 1) {
-	        if (a[j] <= pivot) {
-	            i++;
-	            int temp = a[i];
-	            a[i] = a[j];
-	            a[j] = temp;
-	        }
-	        j++;
-	    }
-
-	    int t = a[i + 1];
-	    a[i + 1] = a[h];
-	    a[h] = t;
-
-	    return i + 1;
-	}
-
-
-
+    int partition(int a[],int low,int high) {
+		int pivot = a[high];
+		int i = low;
+		int j = high-1;
+		while(i<=j) {
+			while(i<=j && a[i]<=pivot) i++;
+			while(i<=j && pivot<=a[j]) j--;
+			if(i<j) {
+				int temp = a[i];
+				a[i]=a[j];
+				a[j]=temp;
+			}
+		}
+		int temp = a[high];
+		pivot = a[i];
+		a[i] = temp;
+		return i;
+    }
     void sort(int a[], int l, int h) {
         if (l < h) {
             int j = partition(a, l, h);
