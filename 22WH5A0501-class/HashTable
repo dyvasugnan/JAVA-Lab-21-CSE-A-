@@ -1,0 +1,20 @@
+import java.util.*;
+public class MyHT{
+  public static void main(String args[]){
+    Scanner sc = new Scanner(System.in);
+    Hashtable<String, Integer> ht = new Hashtable<>();
+    ht.put("aaa",100);
+    ht.put("bbb",50);
+    ht.put("ccc",90);
+    ht.put("ddd",90);
+    Enumeration e = ht.keys();
+    while(e.hasMoreElements()){
+      System.out.println(e.nextElement());
+    }
+    String s = sc.next();
+    if(ht.containsKey(s))
+      System.out.println(ht.get(s));
+    else
+      System.out.println("Not Found");
+  }
+}
