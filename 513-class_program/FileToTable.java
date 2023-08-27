@@ -26,6 +26,16 @@ public class FileToTable {
                 String value = ht.get(key);
                 System.out.println("Student: " + key + ", marks: " + value);
             }
+            System.out.println("Provide name: ");
+            Scanner scanner = new Scanner(System.in);
+            String s1 = scanner.next();
+            if(ht.containsKey(s1)) {
+            	String s2 = ht.get(s1);
+            	System.out.println("marks: "+s2);
+            }
+            else {
+            	System.out.println("Not found!!!");
+            }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
