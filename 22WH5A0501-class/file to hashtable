@@ -1,0 +1,24 @@
+import java.io.*;
+import java.util.*;
+public class MyClass{
+  public static void main(String args[]){
+    try{
+      FileInputStream fis = new FileInputStream("test.txt");
+      Scanner sc = new Scanner(fis).useDelimiter("\t");
+      Hashtable<String, String> ht = new Hashtable<>();
+      while(sc.hasNext()){
+        String s = sc.nextLine();
+        String str[] = s.split("\t");
+        ht.put(str[0], str[1]);
+      }
+      Enumeration<String> keys = ht.keys();
+      while (keys.hasMoreElements()) {
+        String key = keys.nextElement();
+        System.out.println("Key: " + key + "\tValue: " + ht.get(key));
+      }
+    }
+    catch (IOException e) {
+        e.printStackTrace();
+    }
+  }
+}
