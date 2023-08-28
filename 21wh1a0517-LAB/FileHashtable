@@ -1,0 +1,41 @@
+package javalab_517;
+import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
+
+public class FileHashtable {		
+			public static void main (String args[]) throws FileNotFoundException {
+					FileInputStream fis = new FileInputStream("C:\\CSE-B\\name_phone.txt");
+					Scanner sc = new Scanner(fis).useDelimiter(",");
+
+
+					Hashtable<String,String> ht = new Hashtable<String,String>();
+					String line;
+
+					while(sc.hasNextLine()) {
+						line = sc.nextLine();
+						System.out.println(line );
+						String arr[];
+						arr = line.split(",");
+		             	ht.put(arr[0], arr[1]);
+						System.out.println(ht.get(arr[0]));
+					}
+
+					Scanner si = new Scanner(System.in);
+					System.out.println("Enter a name");
+					String names = si.next();
+
+					if(ht.containsKey(names)) {
+						String phn = ht.get(names);
+						System.out.println(phn);
+					}
+					else {
+						System.out.println("not present");
+					}
+
+				}
+		}
+
+
+
