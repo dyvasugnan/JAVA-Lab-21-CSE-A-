@@ -1,0 +1,50 @@
+package listsfolder;
+
+
+
+
+import java.util.*;
+
+public class listExc {
+	
+	public static void main(String args[]) {
+	Scanner sc = new Scanner(System.in);
+//	LinkedList<Integer> li = new LinkedList<Integer> ();
+	
+	LinkedList<Integer> li = new LinkedList<Integer> ();
+	System.out.println("1.add 2.deleteFIRST  3.display 4.exit");
+	
+	while(true) {
+		int ch = sc.nextInt();
+		switch(ch) {
+		case 1: System.out.print("enter an ele to push");
+				int ele = sc.nextInt();
+				li.add(ele);
+				break;
+				
+		case 2: Iterator itr = li.iterator();
+				if(itr.hasNext()) {
+				int e = li.removeFirst();
+				System.out.println(e);
+				}else {
+					System.out.println("no ele ");
+				}
+				break;
+				
+		case 3 : Iterator it = li.iterator();
+					while(it.hasNext()) {
+							System.out.print(it.next() + " ");
+					}
+				break;
+				
+		case 4 : System.exit(0);
+				
+		default : System.out.println("not present");
+				
+		}
+		
+		
+	}
+	}
+}
+
