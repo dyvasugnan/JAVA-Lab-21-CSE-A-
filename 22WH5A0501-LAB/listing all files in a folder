@@ -1,0 +1,10 @@
+import java.io.*;
+public class FileNameDisplay {
+	public static void main(String[] args) {
+		File f=new File("C:\\Program Files (x86)");
+		String files[]=f.list();
+		for(String s:files) {
+			System.out.println(s);
+		}
+	}
+}
