@@ -1,0 +1,47 @@
+package cse21549;
+import java.util.*;
+public class Linkedlist {
+	public static void main(String args[])
+	{
+		LinkedList<Integer> ll=new LinkedList<Integer>();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter number of nodes : ");
+		int x=sc.nextInt();
+		for(int i=1;i<=x;i++)
+		{
+			int y=sc.nextInt();
+			ll.add(y);
+		}
+		for(int a:ll)
+		{
+			System.out.print(a + " ");
+		}
+		sc.close();
+		/*ll.clear();
+		for(int a:ll)
+		{
+			System.out.println(a + " ");
+		}*/
+		System.out.println();
+		ll.add(4, 100);
+		for(int a:ll)
+		{
+			System.out.print(a + " ");
+		}
+		System.out.println();
+		int fir=ll.getFirst();
+		System.out.println("The first element is :"+ fir);
+		int las=ll.getLast();
+		System.out.println("The Last element is :"+ las);
+		int rfir= ll.removeFirst();
+		System.out.println("The First element has been removed and that is : " + rfir);
+		int rlas=ll.removeLast();
+		System.out.println("The last element has been removed and that is : " + rlas);
+		if(ll.contains(70))
+			System.out.println("present");
+		else
+			System.out.println("70 is not present");
+			
+	}
+	
+}
