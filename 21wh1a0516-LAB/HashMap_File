@@ -1,0 +1,41 @@
+package listsfolder;
+
+
+import java.io.*;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.*;
+
+public class FileHashMap {
+		public static void main (String args[]) throws FileNotFoundException {
+			FileInputStream fi = new FileInputStream("C:\\Users\\admin\\eclipse-workspace\\21wh1a0516\\src\\listsfolder\\PhnNum");
+			Scanner sc = new Scanner(fi).useDelimiter(",");
+			
+			
+			Hashtable<String,String> ht = new Hashtable<String,String>();
+			String line;
+			
+			while(sc.hasNextLine()) {
+				line = sc.nextLine();
+				System.out.println(line );
+				String arr[];
+				arr = line.split(",");
+//				System.out.println(arr[0] +" "+ arr[1]);
+				ht.put(arr[0], arr[1]);
+				System.out.println(ht.get(arr[0]));
+			}
+			
+			Scanner si = new Scanner(System.in);
+			System.out.println("Enter a name");
+			String names = si.next();
+			
+			if(ht.containsKey(names)) {
+				String phn = ht.get(names);
+				System.out.println(phn);
+			}
+			else {
+				System.out.println("not present");
+			}
+
+		}
+}
