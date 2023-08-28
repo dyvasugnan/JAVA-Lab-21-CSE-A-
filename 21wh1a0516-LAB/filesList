@@ -4,7 +4,11 @@ package listsfolder;
 import java.io.*;
 import java.util.*;
 
-public class filesPlay {
+public abstract class filesPlay implements FilenameFilter {
+	
+	
+	
+	
 	public static void main(String args[]) {
 	
 
@@ -30,26 +34,36 @@ public class filesPlay {
 		
 		System.out.println("+++++++++++++++++++++++");
 		
-//		for(File it : obj) {
-//			try {
-//				if(accept(f,it.getName())) {
-//					System.out.println(it.getName());
-//				}
-//			} catch (Exception e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-//		}
-		  
-		 
-		}
-	
-	
-//	 public boolean accept(File dir, String fileName)
-//	  {
-//	    return fileName.endsWith(".java");
-//	  }
 		
+		FilenameFilter fnf = new FilenameFilter() {
+		 public boolean accept(File dir, String fileName)
+		  {
+		    if(fileName.endsWith("txt")) {
+		    	return true;
+		    }else return false;
+		  }
+		};
+		 
+		 
+		 File[] ffiles = f.listFiles(fnf);
+		 
+		 for(File fs : ffiles) {
+			 if (fs.exists()) {
+					System.out.println(fs);
+				} else {
+					System.out.print("     file:");
+				}
+		 }
+		 System.out.println("+++++++++++++++++++++++");
+		 
+		 
+		
+		
+		
+	}
 	
+	
+	
+	 
 	
 }
