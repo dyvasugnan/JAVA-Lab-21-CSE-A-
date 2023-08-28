@@ -1,0 +1,51 @@
+package cse501;
+import java.util.*;
+public class DoublyLL {
+	public static void main(String[] args) {
+		LinkedList<Integer> dll=new LinkedList<>();
+		Scanner sc=new Scanner(System.in);
+		System.out.println("1.Insert\t2.Delete\t3.Display\t4.size\t5.indexof\t6.Exit");
+		while(true) {
+			System.out.println("enter your choice\t");
+			int ch=sc.nextInt();
+			try {
+				switch(ch){
+					case 1:{
+						System.out.println("enter a number to be inserted");
+						int n=sc.nextInt();
+						dll.add(n);
+						break;
+					}
+					case 2:{
+						System.out.println("enter the position of the element to be deleted");
+						int idx=sc.nextInt();
+						System.out.println(dll.remove(idx));
+						break;
+					}
+					case 3:{
+						System.out.println(dll);
+						break;
+					}
+					case 4:{
+						System.out.println(dll.size());
+						break;
+					}
+					case 5:{
+						System.out.println("enter the element for whose index to be known");
+						int n=sc.nextInt();
+						System.out.println(dll.indexOf(n));
+						break;
+					}
+					case 6:{
+						System.out.println("Exit");
+						System.exit(0);
+					}
+					default:System.out.println("Invalid input");
+				}
+			}
+			catch(Exception e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}
