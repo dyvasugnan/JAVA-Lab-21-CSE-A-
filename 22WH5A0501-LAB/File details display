@@ -1,0 +1,21 @@
+package cse501;
+import java.io.*;
+public class FileDetailsDisplay {
+	public static void main(String[] args)throws IOException {
+		try {
+			File f=new File("C:\\Program Files (x86)");
+			File files[]=f.listFiles();
+			for(File file:files) {
+				System.out.print(file.getAbsolutePath()+"\t");
+				System.out.print(file.getName()+"\t");
+				System.out.print(file.getTotalSpace()+"\t");
+				System.out.print(file.getFreeSpace()+"\t");
+				System.out.print(file.canRead()+"\t");
+				System.out.println();
+			}
+		}
+		catch(Exception e) {
+			System.out.println("File not found");
+		}
+	}
+}
