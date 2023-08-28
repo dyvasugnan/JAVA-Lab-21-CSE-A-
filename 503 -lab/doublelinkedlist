@@ -1,0 +1,91 @@
+package doublelinkedlist;
+
+import java.util.*;
+
+public class Linkedlist{	
+
+	public static void main(String[] args) {
+
+         LinkedList<Integer> ll = new LinkedList<Integer>();		
+
+		 Scanner sc = new Scanner(System.in);
+
+		 while(true) {
+
+			 System.out.print("1. InsertFront \n 2. InsertEnd \n 3. DeleteFront \n 4.DeleteEnd \n 5.Display \n 6.Remove");
+
+			 System.out.println("Enter your choice:");
+
+			 int ch = sc.nextInt();		
+
+			 switch(ch) {
+
+			 case 1 :
+
+				 System.out.println("Enter values to insert:");
+
+				 int valf = sc.nextInt();
+
+				 ll.addFirst(valf);
+
+			 	 break;
+
+			 case 2 :
+
+				 System.out.println("Enter values to insert at end:");
+
+				 int vale = sc.nextInt();
+
+				 ll.addLast(vale);
+
+				 break;
+
+			 case 3 :
+
+				 ll.removeFirst();
+
+				 break;
+
+			 case 4 :
+
+				 ll.removeLast();
+
+				 break;
+
+			 case 5 :
+
+				 System.out.print(ll);
+
+				 break;
+
+			 case 6 :
+
+				 System.out.println("Enter the index to be deleted:");
+
+				 int pos = sc.nextInt();
+
+				 ll.remove(pos);
+
+				 break;
+
+			 case 7 :
+
+				 System.out.println("Return index of value:");
+
+				 int v = sc.nextInt();
+
+				 System.out.println(ll.indexOf(v));
+
+				 break;
+
+			 case 8 :
+
+				 System.exit(0);
+
+			 }	 
+
+		 }
+
+	}
+
+}
