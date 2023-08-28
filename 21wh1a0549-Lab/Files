@@ -1,0 +1,24 @@
+package cse21549;
+import java.util.*;
+import java.io.*;
+public class Filesjava {
+	public static void main(String args[])
+	{
+		File f=new File("C:\\Users\\admin\\eclipse-workspace\\cse21549\\src\\cse21549");
+		/*String s[]= f.list();
+		for(String x: s)
+		{
+			System.out.println(x + " ");
+		}*/
+		 FilenameFilter filter = new FilenameFilter() { 
+             public boolean accept(File f, String name)
+             {
+                 return name.startsWith("F");
+             }
+         };
+         File[] files = f.listFiles(filter);
+         System.out.println("Files are:");
+         for (int i = 0; i < files.length; i++)
+             System.out.println(files[i].getName());
+	}
+};
