@@ -1,0 +1,41 @@
+import java.util.*;
+import java.lang.*;
+
+public class  DoubleLinkedList{
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in); 
+		LinkedList<Integer> ll = new LinkedList<Integer>();
+		//Iterator it=ll.iterator();
+		
+		System.out.println("1.add\n2.delete\n3.display\n4.exit\n:");
+		while(true) {
+			System.out.println("Enter the choice: ");
+			int ch=sc.nextInt();
+			
+			switch(ch) {
+			case 1: System.out.println("insert the element: ");
+			       int data=sc.nextInt();
+			        ll.add(data);
+			        //System.out.println(data);
+			        break;
+			case 2: System.out.println("delete the element: ");
+			         int n=ll.removeFirst();
+			         System.out.println(n);
+			        break;
+			case 3: Iterator it=ll.iterator();
+			         while(it.hasNext()) {
+			             System.out.println("display the elements: ");
+			    	   System.out.println(it.next());
+			          }
+			        break;
+			case 4: System.exit(0);
+			         break;
+			}
+		}
+		
+		}
+
+	}
+
+
+
