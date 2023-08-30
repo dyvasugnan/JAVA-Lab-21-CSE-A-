@@ -1,0 +1,37 @@
+package java_clss;
+import java.util.*;
+
+public class SetOp {
+    public static void main(String[] args) {
+        Integer[] a = {1, 2, 3, 4, 5};
+        Integer[] b = {2, 3, 4, 6};
+        
+        Set<Integer> s1 = new HashSet<Integer>();
+        Set<Integer> s2 = new HashSet<Integer>();
+        
+        s1.addAll(Arrays.asList(a));
+        s2.addAll(Arrays.asList(b));
+        
+        ArrayList<Integer> a1 = new ArrayList<Integer>();
+        a1.add(3);
+        a1.add(3); 
+        
+        Set<Integer> s3 = new HashSet<Integer>(a1);
+        
+        Set<Integer> uset = new HashSet<Integer>(s1);
+        uset.addAll(s2);
+        
+        System.out.println("Union of s1 and s2: " + uset);
+        
+        Set<Integer> iset = new HashSet<Integer>(s1);
+        iset.retainAll(s2);
+        
+        System.out.println("Intersection of s1 and s2: " + iset);
+        
+        Set<Integer> dset = new HashSet<Integer>(s1);
+        dset.removeAll(s2);
+        
+        System.out.println("Set difference of s1 and s2: " + dset);
+    }
+}
+  
