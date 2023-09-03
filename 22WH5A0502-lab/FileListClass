@@ -1,0 +1,11 @@
+package javalab;
+import java.io.*;
+public class FileListClass {
+	public static void main(String[] args) {
+		File fl = new File("C:\\Program Files");
+		String name [] = fl.list();
+		for(String n : name) {
+			System.out.println(n);
+		}
+	}
+}
