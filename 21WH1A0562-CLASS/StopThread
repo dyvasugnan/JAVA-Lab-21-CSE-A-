@@ -1,0 +1,25 @@
+package java_lab;
+import java.util.*;
+import java.io.*;
+class Threads extends Thread{
+boolean stop=false;
+public void run() {
+for(int i=1;i<=10;i++) {
+System.out.println(i+" ");
+if(stop)
+return ;
+}
+}
+}
+public class StopThread {
+public static void main(String [] args)throws IOException{
+Threads t=new Threads();
+Thread t1=new Thread(t);
+t1.start();
+System.out.println(t1.currentThread());
+System.in.read();
+t.stop=true;
+
+}
+}
+
