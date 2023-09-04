@@ -1,0 +1,23 @@
+package cse22501;
+public class SingleThread {
+	public static void main(String[] args) {
+		MyThread obj=new MyThread();
+		obj.start();
+	}
+}
+class MyThread extends Thread{
+	public void run() {
+		task1();
+		task2();
+		task3();
+	}
+	void task1() {
+		System.out.println("Task1 executed");
+	}
+	void task2() {
+		System.out.println("Task2 executed");
+	}
+	void task3() {
+		System.out.println("Task3 executed");
+	}
+}
