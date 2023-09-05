@@ -1,0 +1,100 @@
+package javalab;
+import java.awt.*;
+import java.awt.event.*;
+public class Factorial extends Frame implements ActionListener{
+    Button com,clear;
+    TextField t1,t2;
+    Label l1,l2;
+    Factorial()
+    {
+        Font bf = new Font("Casteller", Font.BOLD, 16);
+        this.setBackground(Color.BLACK);
+        this.setLayout(null);
+        this.setSize(900,500);
+
+        com=new Button("Compute");
+        com.setBackground(Color.WHITE);
+        com.setForeground(Color.BLACK);
+        com.setFont(bf);
+
+        clear=new Button("Clear");
+        clear.setBackground(Color.WHITE);
+        clear.setForeground(Color.BLACK);
+        clear.setFont(bf);
+
+        l1=new Label("Enter any number: ");
+        l1.setBackground(Color.WHITE);
+        l1.setForeground(Color.BLACK);
+        l1.setFont(bf);
+
+        l2=new Label("Result : ");
+        l2.setBackground(Color.WHITE);
+        l2.setForeground(Color.BLACK);
+        l2.setFont(bf);
+
+        t1=new TextField();
+        t1.setBackground(Color.WHITE);
+        t1.setForeground(Color.BLACK);
+        t1.setFont(bf);
+
+        t2=new TextField();
+        t2.setBackground(Color.WHITE);
+        t2.setForeground(Color.BLACK);
+        t2.setFont(bf);
+        
+        this.add(clear);
+        this.add(com);
+        this.add(t1);
+        this.add(t2);
+        this.add(l1);
+        this.add(l2);
+
+        t1.addActionListener(this);
+        t2.addActionListener(this);
+        com.addActionListener(this);
+        clear.addActionListener(this);
+        
+        com.setBounds(300, 300,100,50);
+        clear.setBounds(450,300,100,50);
+        l1.setBounds(100,100,150,50);
+        t1.setBounds(300,100,100,50);
+        l2.setBounds(450, 100,100,50);
+        t2.setBounds(600, 100,100, 50);
+        
+        
+    }
+
+        public void actionPerformed(ActionEvent ae)
+        {
+            String s= ae.getActionCommand();
+            ae.getSource();
+            int num=Integer.parseInt(t1.getText());
+            int x=1;
+            if(ae.getSource()==com)
+            {
+                for(int i=1;i<=num;i++)
+                {
+                    x=x*i;
+                }
+                t2.setText(String.valueOf(x));
+            }
+            if(ae.getSource()==clear)
+            {
+                t1.setText("");
+                t2.setText("");
+            }
+        }
+
+
+    public static void main(String args[])
+    {
+        Factorial f=new Factorial();
+        f.setVisible(true);
+        f.addWindowListener(new WindowAdapter() {
+                public void windowClosing(WindowEvent we) {
+                    System.exit(0);
+                }
+            });
+    }
+
+}
