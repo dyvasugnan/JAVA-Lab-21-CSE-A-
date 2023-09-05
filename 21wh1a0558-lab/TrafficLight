@@ -1,0 +1,56 @@
+package javalab;
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+public class TrafficLight extends JFrame implements ActionListener {
+	private JPanel panel;
+	private JLabel l;
+	private JRadioButton r,y,g;
+	private ButtonGroup b;
+	public TrafficLight() {
+		setTitle("Traffic Lights");
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setSize(900,500);
+		panel = new JPanel();
+		panel.setLayout(new BoxLayout(panel, BoxLayout.X_AXIS));
+		l = new JLabel("",JLabel.CENTER);
+		l.setFont(new Font("Arial",Font.BOLD,60));
+		panel.add(l);
+		r = new JRadioButton("Red");
+		y = new JRadioButton("Yellow");
+		g = new JRadioButton("Green");
+		b = new ButtonGroup();
+		b.add(r);
+		b.add(y);
+		b.add(g);
+		r.addActionListener(this);
+		y.addActionListener(this);
+		g.addActionListener(this);
+		panel.add(r);
+		panel.add(y);
+		panel.add(g);
+		add(panel,BorderLayout.CENTER);
+		setVisible(true);
+		
+	}
+	public void actionPerformed(ActionEvent e) {
+		if(r.isSelected()) {
+			l.setText("Stop");
+			l.setForeground(Color.RED);	
+		}
+		else if(y.isSelected()) {
+			l.setText("Ready");
+			l.setForeground(Color.YELLOW);	
+		}
+		else if(g.isSelected()) {
+			l.setText("Go");
+			l.setForeground(Color.GREEN);	
+		}
+	}
+	
+	public static void main(String args[])
+    {
+        TrafficLight f=new TrafficLight();
+    }
+}
