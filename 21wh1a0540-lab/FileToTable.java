@@ -10,7 +10,7 @@ public class FileToTable extends JFrame  {
 	Vector<String>r;
 	Vector<String>col;
 	FileToTable() throws IOException{
-	  FileInputStream fis = new FileInputStream("C:\\Users\\Likitha\\Desktop\\swing.txt");
+	  FileInputStream fis = new FileInputStream("C:\\Users\\Sindhu\\Desktop\\swing.txt");
 	  int ch;
 	  char str[] = new char[100];
 	  int i = 0;
