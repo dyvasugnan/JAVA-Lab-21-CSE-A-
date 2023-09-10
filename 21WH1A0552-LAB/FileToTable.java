@@ -1,0 +1,47 @@
+import javax.swing.*;
+import java.awt.*;
+import java.io.*;
+import java.util.*;
+import javax.swing.table.*;
+public class FileToTable extends JFrame  {
+	JTable tab;
+	Vector<Vector>data;
+	Vector<String>r;
+	Vector<String>col;
+	FileToTable() throws IOException{
+	  FileInputStream fis = new FileInputStream("C:\\Users\\Sindhu\\Desktop\\swing.txt");
+	  int ch;
+	  char str[] = new char[100];
+	  int i = 0;
+	  String line = " ";
+	  while((ch = fis.read())!=-1) {
+		  line = line+ (char)ch;
+	  }
+	 String arr[] = new String[3];
+	 arr = line.split(",");
+	  r = new Vector<String>();
+	  for(String x:arr)
+		  r.add(x);
+	  data = new Vector<Vector>();
+	  data.add(r);
+	  col = new Vector<String>();
+	  col.add("name");
+	  col.add("id");
+	  col.add("marks");
+	  tab = new JTable(data,col);
+	  JTableHeader head = tab.getTableHeader();
+	  Container c = getContentPane();
+	  c.setLayout(new BorderLayout());
+	  tab.setRowHeight(30);
+	  c.add("North",head);
+	  c.add("Center",tab);
+	  
+	}
+	 public static void main(String args[]) throws IOException {
+		 FileToTable f =  new  FileToTable();
+	    	f.setSize(400,400);
+	    	f.setVisible(true);
+	    	f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+	    }
+}
