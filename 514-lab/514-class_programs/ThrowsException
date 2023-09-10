@@ -1,0 +1,18 @@
+import java.io.*;
+public class Demo {
+	String str;
+	void input()throws IOException{
+		InputStreamReader isr=new InputStreamReader(System.in);
+		BufferedReader br=new BufferedReader(isr);
+		str=br.readLine();
+	}
+	void display(){
+		System.out.println(str);
+	}
+}
+	
+public class ThrowsException{
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		De
