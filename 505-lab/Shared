@@ -1,0 +1,90 @@
+
+import java.util.LinkedList;
+import java.util.Queue;
+
+class Shared {
+    private Queue<Integer> buffer;
+    private int capacity;
+
+    public Shared(int capacity) {
+        this.capacity = capacity;
+        buffer = new LinkedList<>();
+    }
+
+    public synchronized void produce(int item) throws InterruptedException {
+        while (buffer.size() == capacity) {
+            // Buffer is full, wait for a consumer to remove an item
+            wait();
+        }
+
+        buffer.add(item);
+        System.out.println("Produced: " + item);
+        // Notify a waiting consumer that an item is available
+        notify();
+    }
+
+    public synchronized int consume() throws InterruptedException {
+        while (buffer.isEmpty()) {
+            // Buffer is empty, wait for a producer to add an item
+            wait();
+        }
+
+        int item = buffer.poll();
+        System.out.println("Consumed: " + item);
+        // Notify a waiting producer that space is available
+        notify();
+        return item;
+    }
+}
+
+class Producer extends Thread {
+    private Shared buffer;
+
+    public Producer(Shared buffer) {
+        this.buffer = buffer;
+    }
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 1; i <= 5; i++) {
+                buffer.produce(i);
+                sleep(1000); // Simulate time taken to produce an item
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+class Consumer extends Thread {
+    private Shared buffer;
+
+    public Consumer(Shared buffer) {
+        this.buffer = buffer;
+    }
+
+    @Override
+    public void run() {
+        try {
+            for (int i = 1; i <= 5; i++) {
+                int item = buffer.consume();
+                sleep(1000); // Simulate time taken to consume an item
+            }
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+//public class ProducerConsumerDemo{
+    public static void main(String[] args) {
+        Shared buffer = new Shared(3); // Buffer size is 3
+
+        Producer producer = new Producer(buffer);
+        Consumer consumer = new Consumer(buffer);
+
+        producer.start();
+        consumer.start();
+    }
+}
