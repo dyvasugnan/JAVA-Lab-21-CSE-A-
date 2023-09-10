@@ -1,0 +1,64 @@
+import java.awt.*;
+import java.awt.event.*;
+
+public class MouseEventDemo extends Frame {
+    private String eventName;
+
+    public MouseEventDemo() {
+        eventName = "";
+
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                eventName = "Mouse Clicked";
+                repaint();
+            }
+
+            @Override
+            public void mousePressed(MouseEvent e) {
+                eventName = "Mouse Pressed";
+                repaint();
+            }
+
+            @Override
+            public void mouseReleased(MouseEvent e) {
+                eventName = "Mouse Released";
+                repaint();
+            }
+
+            @Override
+            public void mouseEntered(MouseEvent e) {
+                eventName = "Mouse Entered";
+                repaint();
+            }
+
+            @Override
+            public void mouseExited(MouseEvent e) {
+                eventName = "Mouse Exited";
+                repaint();
+            }
+        });
+
+        setSize(400, 300);
+        setTitle("Mouse Event Demo");
+        setVisible(true);
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        g.setColor(Color.BLACK);
+        Font font = new Font("Arial", Font.BOLD, 24);
+        g.setFont(font);
+        FontMetrics fontMetrics = g.getFontMetrics();
+        int textWidth = fontMetrics.stringWidth(eventName);
+        int textHeight = fontMetrics.getHeight();
+        int x = (getWidth() - textWidth) / 2;
+        int y = (getHeight() + textHeight) / 2;
+        g.drawString(eventName, x, y);
+    }
+
+    public static void main(String[] args) {
+        new MouseEventDemo();
+    }
+}
