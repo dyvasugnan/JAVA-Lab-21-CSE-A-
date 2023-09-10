@@ -1,5 +1,3 @@
-package likhitha;
-
 import java.util.*;
 
 public class RandomNumber{
