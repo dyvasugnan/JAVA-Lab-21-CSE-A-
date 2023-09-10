@@ -1,0 +1,84 @@
+package java_lab;
+import java.util.*;
+
+public class RandomNumber{
+
+	public static void main(String args[]) {
+
+		Th1 obj = new Th1();
+
+		obj.start();
+
+	}
+
+	}
+
+	class Th1 extends Thread{
+
+		int n;
+
+		public void run() {
+
+			for(int i = 0;i<10;i++) {
+
+				Random r = new Random ();
+
+				n = r.nextInt(5);
+
+				System.out.println("The number generated is : "+n);
+
+				if(n%2==0) {
+
+					Even e = new Even(n);
+
+					e.start();
+
+				}
+
+				else {
+
+					Odd o = new Odd(n);
+
+					o.start();
+
+				}
+
+				try {
+
+					Thread.sleep(2);
+
+				}
+
+				catch(InterruptedException e) {
+
+					System.out.print(e);
+
+				}
+
+			}
+
+		}
+
+	}
+
+	class Even extends Thread{
+
+		Even(int n){
+
+			System.out.print("Even number square is"+n*n);
+
+		}
+
+	}
+
+	class Odd extends Thread{
+
+		Odd(int n){
+
+			System.out.print("Odd number cube is "+n*n*n);
+
+		}
+
+}
+
+
