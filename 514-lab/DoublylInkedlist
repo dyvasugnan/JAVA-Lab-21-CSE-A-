@@ -1,0 +1,135 @@
+import java.util.*;
+
+public class DoublylLinkedlist {
+
+public static void main(String args[]) {
+
+	Scanner sc=new Scanner(System.in);
+
+	LinkedList <Integer> ll=new LinkedList<>();
+
+	int ch;
+
+	do{
+
+		System.out.println("1.add\n"+"2.AddFirst\n"+"3.AddLast\n"+"4.remove\n"+"5.removeFirst\n"+"6.removeLast\n"+"7.Size\n"+"8.clear\n"+"9.get\n"+"10.Display\n"+"11.exit\n");
+
+		System.out.println("Enter ur choice:");
+
+		ch=sc.nextInt();
+
+		switch(ch) {
+
+		case 1:System.out.println("Inserting the elements");
+
+				ll.addFirst(10);
+
+				ll.add(11);
+
+				ll.add(12);
+
+				ll.add(13);
+
+				ll.add(14);
+
+				ll.add(15);
+
+				ll.add(16);
+
+				ll.add(17);
+
+				ll.add(18);
+
+				ll.add(19);
+
+				break;
+
+		case 2:System.out.println("Inserting the First element");
+
+				ll.addFirst(20);
+
+				break;
+
+		case 3:System.out.println("Insert the Last Element");
+
+				ll.addLast(45);
+
+				break;
+
+				
+
+		case 4:System.out.println("Remove the Element");
+
+				System.out.println("Enter the position to remove an element");
+
+				int pos=sc.nextInt();
+
+				ll.remove(pos);
+
+				break;
+
+		case 5:System.out.println("Remove the First Element");
+
+				ll.removeFirst();
+
+				break;
+
+		case 6:System.out.println("Remove the Second Element");
+
+				ll.removeLast();
+
+				break;
+
+		case 7:System.out.println("The size of the linkedlist is:");
+
+					ll.size();
+
+					break;
+
+		case 8:System.out.println("Clear the linked list");
+
+				ll.clear();
+
+				break;
+
+		case 9:System.out.println("Get the element from the linked list");
+
+				System.out.println("Enter the position to get the element");
+
+				int pos1=sc.nextInt();
+
+				ll.get(pos1);
+
+				break;
+
+		case 10:System.out.println("Display th elements");
+
+				System.out.println(ll);
+
+				break;
+
+		case 11:System.out.println("Exited");
+
+				System.exit(0);
+
+				break;
+
+		
+
+			}
+
+		
+
+	}while(true);
+
+	
+
+	
+
+	
+
+	
+
+}
+
+}
