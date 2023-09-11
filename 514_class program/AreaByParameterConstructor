@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+class BoxA{
+	int l;
+	int b;
+	BoxA(int length,int breadth){
+		l=length;
+		b=breadth;
+		System.out.println(l*b);
+	}
+}
+public class AreaByParameterConstructor {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		System.out.println("Enter length");
+		Scanner sc=new Scanner(System.in);
+		int length=sc.nextInt();
+		System.out.println("Enter Breadth");
+		int breadth=sc.nextInt();
+		BoxA a=new BoxA(length,breadth);
+	}
+
+}
