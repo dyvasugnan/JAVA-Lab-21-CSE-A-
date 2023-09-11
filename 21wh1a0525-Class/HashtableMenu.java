@@ -1,6 +1,7 @@
 import java.util.*;
 
-public class HashtableMenu {
+public class HashtableMenu
+{
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         Hashtable<String, Integer> ht = new Hashtable<>();
@@ -16,7 +17,7 @@ public class HashtableMenu {
                     "7. Exit\n" +
                     "Enter your choice: ");
 
-            int choice = scanner.nextInt();
+            int choice = sc.nextInt();
 
             switch (choice) {
                 case 1:
