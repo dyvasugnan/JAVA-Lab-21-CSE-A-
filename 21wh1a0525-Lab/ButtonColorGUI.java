@@ -1,9 +1,4 @@
-
-Shivani Pondugula
-3:14 PM (15 minutes ago)
-to me
-
-import java.awt.*;// abstract window toolkit
+import java.awt.*;
 import java.awt.event.*;
 public class FrameClass extends Frame implements ActionListener {
   Button b1,b2,b3;
