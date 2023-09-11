@@ -1,0 +1,18 @@
+import java.io.*;
+
+
+public class CreationOfTheFileWriter {
+
+	public static void main(String[] args) throws IOException{
+		// TODO Auto-generated method 
+		String str="Divya";
+		FileWriter fw=new FileWriter("Sample");
+		for(int i=0;i<str.length();i++) {
+			fw.write(str.charAt(i));
+	
+		}
+		fw.close();
+
+	}
+
+}
