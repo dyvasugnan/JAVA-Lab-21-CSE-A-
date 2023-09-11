@@ -33,7 +33,7 @@ public class TrafficLights extends Frame implements ItemListener {
 
     public void paint(Graphics g) {
         String str = cbg.getSelectedCheckbox().getLabel();
-        this.setBackground(Color.PINK);
+        this.setBackground(Color.WHITE);
 
         Font f = new Font("Arial", Font.BOLD, 36);
         g.setFont(f);
