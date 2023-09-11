@@ -1,0 +1,22 @@
+class A{
+	final void show() {
+		System.out.println("Class A");
+	}
+}
+//if final keyword is used then we can't extend the method of class B
+class B extends  A{
+	/*void show() {
+		System.out.println("Class B");
+	}*/
+}
+public class FinalMethod {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		A a=new A();
+		B b=new B();
+		a.show();
+		b.show();
+	}
+
+}
