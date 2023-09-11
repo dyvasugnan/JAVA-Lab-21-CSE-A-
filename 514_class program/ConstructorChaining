@@ -1,0 +1,35 @@
+class Test1{
+	int a,b,c,d;
+	Test1(int p,int q){
+		a=p;
+		b=q;	
+	}
+	Test1(int p,int q,int r){
+		this(p,q);
+		c=r;
+	}
+	Test1(int p,int q,int r,int s){
+		this(p,q,r);
+		d=s;
+	}
+	void display() {
+		System.out.println("a: " + a);
+        System.out.println("b: " + b);
+        System.out.println("c: " + c);
+        System.out.println("d: " + d);
+	}
+}
+public class ConstructorChaning {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Test1 t=new Test1(10,5,4,3);
+		t.display();
+		//Without display method
+		/*System.out.println("a: " + t.a);
+        System.out.println("b: " + t.b);
+        System.out.println("c: " + t.c);
+        System.out.println("d: " + t.d);*/
+	}
+
+}
