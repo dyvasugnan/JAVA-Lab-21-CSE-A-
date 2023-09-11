@@ -1,0 +1,19 @@
+import java.io.*;
+import java.util.zip.DeflaterOutputStream;
+public class CompressingFile {
+
+	public static void main(String[] args)throws IOException {
+		// TODO Auto-generated method stub
+		FileInputStream fis=new FileInputStream("OriginalFile.txt");
+		FileOutputStream fos=new FileOutputStream("Compressed.txt");
+		DeflaterOutputStream dos=new DeflaterOutputStream(fos);
+		int ch;
+		while((ch=fis.read())!=-1) {
+			dos.write((char)ch);
+		}
+		fis.close();
+		dos.close();
+
+	}
+
+}
