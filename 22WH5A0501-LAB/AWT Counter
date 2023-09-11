@@ -1,0 +1,42 @@
+package cse21501;
+
+import java.awt.*;
+import java.awt.event.*;
+
+public class AWTCounter extends Frame implements ActionListener {
+	Label l;
+	TextField t;
+	Button b;
+	int c=0;
+	AWTCounter(){
+		this.setLayout(null);
+		l=new Label("Counter");
+		t=new TextField();
+		b=new Button("Count");
+		l.setBounds(100,100,100,50);
+		t.setBounds(200,100,100,50);
+		b.setBounds(350,100,100,50);
+		this.add(l);
+		this.add(t);
+		this.add(b);
+		t.addActionListener(this);
+		b.addActionListener(this);
+	}
+	public void actionPerformed(ActionEvent ae) {
+		if(ae.getSource()==b) {
+			c++;
+			t.setText(Integer.toString(c));
+		}
+	}
+	public static void main(String[] args) {
+		AWTCounter f=new AWTCounter();
+		f.setTitle("AWT Counter");
+		f.setSize(400,400);
+		f.setVisible(true);
+		f.addWindowListener(new WindowAdapter() {
+			public void windowClosing(WindowEvent we) {
+				System.exit(0);
+			}
+		});
+	}
+}
