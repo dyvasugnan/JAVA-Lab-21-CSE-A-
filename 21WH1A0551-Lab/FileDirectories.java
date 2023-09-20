@@ -6,7 +6,7 @@ public class FileDirectories {
 	
 	public static void main(String args[])throws Exception {
 		System.out.println("\nFile names");
-		File f = new File("C:\\Users\\Varshini\\eclipse-workspace\\varshini");
+		File f = new File("C:\\Users\\harsh\\eclipse-workspace\\harsh");
 		String names[] = f.list();
 		for(int i=0;i<names.length;i++) {
 			System.out.print(names[i]+'\t');
