@@ -1,4 +1,4 @@
-package labprograms;
+package gui;
 import java.io.*;
 
 public class FileDirectories {
