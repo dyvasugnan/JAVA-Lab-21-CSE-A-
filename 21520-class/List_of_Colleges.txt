@@ -1,0 +1,31 @@
+1.JNTUH
+2.OU
+3.CBIT
+4.VNRVJIT
+5.VASAVI
+6.Gokaraju Rangaraju
+7.sreenidhi
+8.MGIT
+10.CVR
+11.KMIT
+12.IARE
+13.MLRIT
+14.VBIT
+15.VJIT
+16.Geethanjali
+17.CMR
+18.Mallareddy(MRCET,MRIT)
+19.MVSR
+20.JBIT
+21.HITAM
+22.INDU College
+23.ACE College
+24.Vardhaman College of Engineering
+25.BVRIT Narsapur
+26.CMR College
+27.Spoorthy
+28.Sreyas College of Engineering
+29.St Martins
+30.St Marrys
+31.GURUNANAk
+32.JBIT
